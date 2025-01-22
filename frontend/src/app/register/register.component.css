@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@800&display=swap');
 
 .register-container {
   width: 600px;
@@ -10,7 +10,7 @@
   background-color: #521010;
   position: relative;
   color: #FFB109;
-  font-family: 'Italiana', sans-serif;/*<-----font change here*/
+  font-family: 'Merienda', sans-serif;/*<-----font change here*/
   font-weight: bold;/*<----make the font bigger?*/
 }
 
