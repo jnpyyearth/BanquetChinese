@@ -5204,19 +5204,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\acer\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ku\\year3\\softwareEngineer\\project\\BanquetChinese\\backend\\backend.csproj",
+      "projectUniqueName": "E:\\learn\\ปี 3 เทอม 2\\SE\\code\\BanquetChinese\\backend\\backend.csproj",
       "projectName": "backend",
-      "projectPath": "D:\\ku\\year3\\softwareEngineer\\project\\BanquetChinese\\backend\\backend.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\ku\\year3\\softwareEngineer\\project\\BanquetChinese\\backend\\obj\\",
+      "projectPath": "E:\\learn\\ปี 3 เทอม 2\\SE\\code\\BanquetChinese\\backend\\backend.csproj",
+      "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
+      "outputPath": "E:\\learn\\ปี 3 เทอม 2\\SE\\code\\BanquetChinese\\backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
