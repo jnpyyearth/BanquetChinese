@@ -9,6 +9,7 @@ import { MainpageComponent } from './mainpage/mainpage.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 import { MaindishComponent } from './maindish/maindish.component';
 import { AppetizerComponent } from './appetizer/appetizer.component';
 import { DrinksComponent } from './drinks/drinks.component';
@@ -24,12 +25,12 @@ import { DessertComponent } from './dessert/dessert.component';
     MaindishComponent,
     AppetizerComponent,
     DrinksComponent,
-    DessertComponent
+    DessertComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule
+    AppRoutingModule
   ],
   providers: [
     provideClientHydration(withEventReplay())
