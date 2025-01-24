@@ -1,3 +1,148 @@
-.sidbar-bar{
-  background-color: #D9D9D9;
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@800&display=swap');
+
+.tab{
+  margin-left: -40px;
+  position: fixed;
+  margin-top: 70px
+}
+
+.nav-link{
+  text-decoration: none;
+  color: black;
+  font-family: Kanit , sans-serif;
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+button {
+  width: 200px;
+  padding: 10px 25px;
+  border: unset;
+  border-radius: 15px;
+  color: #212121;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  font-weight: 1000;
+  font-size: 15px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms;
+  overflow: hidden;
+ }
+ 
+ button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 0;
+  width: 0;
+  border-radius: 15px;
+  background-color: #212121;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+
+button:hover {
+  color: #FFD95A;
+}
+
+button:hover::before {
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+button:active {
+  transform: scale(80%);
+}
+
+/* :hover.menubar-1 {
+  background-color: #FFB109;
+}
+
+:hover.menubar-2 {
+  background-color: #FFB109;
+}
+
+:hover.menubar-3 {
+  background-color: #FFB109;
+}
+
+:hover.menubar-4 {    
+  background-color: #FFB109;  
+}
+
+:hover.menubar-5 {
+  background-color: #FFB109;
+}
+
+:hover.menubar-6 {
+  background-color: #FFB109;
+}
+
+:hover.menubar-7 {
+  background-color: #FFB109;
+}
+
+:hover.menubar-8 {
+  background-color: #FFB109;
+} */
+
+.menubar-1{
+  margin-top: 25px;
+  margin-left: 10px;
+  
+}
+.menubar-2{     
+  margin-left: 10px;  
+  margin-top: 10px;
+}
+
+.menubar-3{     
+  margin-left: 10px;  
+  margin-top: 10px;
+}
+.menubar-4{     
+  margin-left: 10px;  
+  margin-top: 10px;
+}
+.menubar-5{     
+  margin-left: 10px;  
+  margin-top: 10px;
+}
+
+.menubar-6{     
+  margin-left: 10px;  
+  margin-top: 10px;
+}
+
+.menubar-7{     
+  margin-left: 10px;  
+  margin-top: 10px;
+}
+
+.menubar-8{     
+  margin-left: 10px;  
+  margin-top: 10px;
+}
+
+.redbar{
+  background-color: #A31D1D;
+  width: 280px;
+  height: 100px;
+  position: fixed;
+  margin-top: 15px;
+}
+
+p{
+  margin-top: 30px;
+  font-family: Merienda , sans-serif;
+  font-size: 18px;
+  margin-left: 20px;
 }
