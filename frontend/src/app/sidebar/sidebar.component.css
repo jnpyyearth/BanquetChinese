@@ -3,7 +3,7 @@
 
 .tab{
   margin-left: -40px;
-  position: relative;
+  position: fixed;
   margin-top: 70px
 }
 

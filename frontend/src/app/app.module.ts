@@ -7,13 +7,21 @@ import { AppComponent } from './app.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { MaindishComponent } from './maindish/maindish.component';
+import { AppetizerComponent } from './appetizer/appetizer.component';
+import { DrinksComponent } from './drinks/drinks.component';
+import { DessertComponent } from './dessert/dessert.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainpageComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    MaindishComponent,
+    AppetizerComponent,
+    DrinksComponent,
+    DessertComponent
   ],
   imports: [
     BrowserModule,
