@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\learn\\ปี 3 เทอม 2\\SE\\code\\BanquetChinese\\backend\\backend.csproj": {}
+    "e:\\learn\\ปี 3 เทอม 2\\SE\\code\\BanquetChinese\\backend\\backend.csproj": {}
   },
   "projects": {
-    "E:\\learn\\ปี 3 เทอม 2\\SE\\code\\BanquetChinese\\backend\\backend.csproj": {
+    "e:\\learn\\ปี 3 เทอม 2\\SE\\code\\BanquetChinese\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\learn\\ปี 3 เทอม 2\\SE\\code\\BanquetChinese\\backend\\backend.csproj",
+        "projectUniqueName": "e:\\learn\\ปี 3 เทอม 2\\SE\\code\\BanquetChinese\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "E:\\learn\\ปี 3 เทอม 2\\SE\\code\\BanquetChinese\\backend\\backend.csproj",
+        "projectPath": "e:\\learn\\ปี 3 เทอม 2\\SE\\code\\BanquetChinese\\backend\\backend.csproj",
         "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "E:\\learn\\ปี 3 เทอม 2\\SE\\code\\BanquetChinese\\backend\\obj\\",
+        "outputPath": "e:\\learn\\ปี 3 เทอม 2\\SE\\code\\BanquetChinese\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,6 +43,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.12, )"
