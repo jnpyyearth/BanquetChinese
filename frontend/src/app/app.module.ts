@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { MaindishComponent } from './maindish/maindish.component';
+import { AppetizerComponent } from './appetizer/appetizer.component';
+import { DrinksComponent } from './drinks/drinks.component';
+import { DessertComponent } from './dessert/dessert.component';
 import { RegisterComponent } from './register/register.component';
 
 @NgModule({
@@ -14,12 +18,18 @@ import { RegisterComponent } from './register/register.component';
     AppComponent,
     MainpageComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    MaindishComponent,
+    AppetizerComponent,
+    DrinksComponent,
+    DessertComponent,
+    RegisterComponent
   ],
+
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    RegisterComponent
+    AppRoutingModule
+    
   ],
   providers: [
     provideClientHydration(withEventReplay())

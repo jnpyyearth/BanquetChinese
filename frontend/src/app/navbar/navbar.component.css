@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@800&display=swap');
+
+.navbar {
+    background-color: #650303;
+    top: 0 auto;
+    left: 0;
+    box-shadow: 0 10px 10px  rgba(0, 0, 0, 0.329); 
+    height: 80px;
+    width: 1540px;
+    margin-left: 0rem;
+    margin-top: -2rem;
+    z-index: 1000;
+    position: fixed;
+}
+
+.navbar p{
+    
+    margin-top: 20px;
+    margin-left: 650px;
+    font-family: Merienda , sans-serif;
+    font-size: 32px;
+    color: #FFB109;
+    
+
+}
