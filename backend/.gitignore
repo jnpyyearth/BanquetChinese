@@ -6,6 +6,8 @@
 appsettings.json
 # Optional: Ignore all appsettings.*.json (e.g., appsettings.Development.json)
 appsettings.*.json
+/backend/bin/
+/backend/obj/
 
 # dotenv files
 .env
