@@ -1,15 +1,7 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
-namespace backnet.Models;
-
-public partial class User
-{
-    [Key]
-    public int User_ID { get; set; }
-
-    public string username { get; set; } = null!;
+namespace backnet.Model;
+public class RegisterRequestModel{
+   public string username { get; set; } = null!;
 
     public string password { get; set; } = null!;
 
@@ -21,9 +13,9 @@ public partial class User
 
     public string phone { get; set; } = null!;
 
-    public string? role { get; set; }
+    public string? role { get; set; }=null!;
 
-    public string? User_Address { get; set; }=null!;
-
+    public string? User_Address { get; set; } = null!; 
    
+
 }
