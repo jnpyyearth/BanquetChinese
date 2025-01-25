@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+.register-container {
+  width: 600px;
+  margin: 170px auto;
+  padding: 20px;
+  border: 1px solid #521010;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(112, 12, 12, 0.1);
+  background-color: #521010;
+  position: relative;
+  color: #FFB109;
+  font-family: 'Merienda','Kanit', sans-serif;/*<-----font change here*/
+  font-weight: bold;/*<----make the font bigger?*/
+}
+
+/* Styling for headings */
+.register-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #FFB109;
+}
+
+/* Form grid structure */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Form group styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid #FFB109;
+  border-radius: 5px;
+  background-color: white;
+  color: #521010;
+  font-size: 14px;
+}
+
+/* Button container */
+.btn-container {
+  grid-column: span 3;
+  text-align: center;
+}
+
+/* Button styling */
+.btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #FFB109;
+  color: #521010;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #FF9900;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 35px;
+  font-weight: bold;
+  color: #FFB109;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: white;
+}

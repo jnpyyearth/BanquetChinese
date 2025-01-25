@@ -13,6 +13,8 @@ import { MaindishComponent } from './maindish/maindish.component';
 import { AppetizerComponent } from './appetizer/appetizer.component';
 import { DrinksComponent } from './drinks/drinks.component';
 import { DessertComponent } from './dessert/dessert.component';
+import { RegisterComponent } from './register/register.component';
+import { HirelistComponent } from './hirelist/hirelist.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { DessertComponent } from './dessert/dessert.component';
     MaindishComponent,
     AppetizerComponent,
     DrinksComponent,
-    DessertComponent
+    DessertComponent,
+    RegisterComponent,
+    HirelistComponent
   ],
   imports: [
     BrowserModule,
