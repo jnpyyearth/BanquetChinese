@@ -36,53 +36,62 @@ body {
   label {
     display: block;
     margin-bottom: 5px;
+    
   }
   
   input {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 8px;
   }
   
   .button-group {
     display: flex;
-    justify-content: space-between; /* จัดให้ปุ่มอยู่ซ้ายและขวา */
-    gap: 10px; /* เพิ่มช่องว่างระหว่างปุ่ม */
+    flex-direction: column; /* จัดปุ่มในแนวตั้ง */
+    align-items: center; /* จัดให้อยู่ตรงกลาง */
+    gap: 10px; /* ระยะห่างระหว่างปุ่ม */
     margin-top: 20px;
   }
+
   
   button {
     padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 20px;
     cursor: pointer;
     background-color: #FFD95A;
     color: #6D2323;
+    width: 100%;
   }
-
+  
   button:hover {
     background-color: #ffc400;
+  }
+  
+  
+a{
     
+    text-decoration: none ;
+    color: #FFD95A;
+    font-size: 14px;
   }
   
-  .register-button {
-    margin-right: 80px; /* ระยะห่างด้านขวาของปุ่ม Register */
-    background-color: #FFD95A;
-    color: #6D2323;
+a:hover {
+    text-decoration: underline;
+  }
+
+  .register-link {
+    text-align: center;
+    display: block;
+    color: #FFD95A;
+    font-size: 14px;
+    margin-top: 10px; /* เพิ่มระยะห่างเล็กน้อยจากปุ่ม */
   }
   
-  .register-button:hover {
-    background-color: #fcc100;
-  }
-  
-  button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  
+
   small {
     color: red;
     font-size: 0.8em;
   }
-  
