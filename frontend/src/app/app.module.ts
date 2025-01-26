@@ -15,6 +15,7 @@ import { AppetizerComponent } from './appetizer/appetizer.component';
 import { DrinksComponent } from './drinks/drinks.component';
 import { DessertComponent } from './dessert/dessert.component';
 import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     MaindishComponent,
     AppetizerComponent,
     DrinksComponent,
-    DessertComponent,
-    RegisterComponent
+    DessertComponent
   ],
   imports: [
     BrowserModule,
