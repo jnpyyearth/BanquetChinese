@@ -18,15 +18,15 @@ namespace backnet.Controllers
             if(registerRequest ==null){
                 return BadRequest("Invalid register input");
             }
-            if(registerRequest.password !=registerRequest.confirmPassword){
-                return StatusCode(402,new{ Status =402, Message="password and confirmpassword unmatch"});
-            }
+            if (registerRequest.password != registerRequest.confirmPassword){         
+                  return StatusCode(402, new { Status = 402, Message = "Password and Confirm Password do not match" });
+               }
             try{
                 registerRequest.role ="customer";
                 registerRequest.password=BCrypt.Net.BCrypt.HashPassword(registerRequest.password);
                 _context.Users.Add(registerRequest);
                 await _context.SaveChangesAsync();
-                return Ok(new{Message ="register successfully",Data =registerRequest});
+                return Ok(new{ Status=200 ,Message ="register successfully",Data =registerRequest});
             }catch(Exception ex){
                 return StatusCode(500,new{Message ="error while add register",Error =ex.Message});
             }

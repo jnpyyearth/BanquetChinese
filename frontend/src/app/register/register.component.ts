@@ -36,16 +36,20 @@ onRegis(){
   console.log(regisData)
   this.apiService.Register(regisData).subscribe(
     (response:any)=>{
-      if(response.Status ===200){
+      console.log('Response from server:', response);
+      if(response.status ===200){
         this.registerForm.reset();
       Swal.fire('success', 'Registration succesccfully!', 'success');
-      }else if(response.Status ===402){
-        Swal.fire('failed', 'confirmpassword unmatch !', 'error');
       }
       
     },(error:any)=>{
       console.error('Error register',error);
-      Swal.fire('failed', 'can not  registration', 'error');
+      if(error.status ===402){
+        Swal.fire('failed', 'confirmpassword unmatch !', 'error');
+      }else{
+        Swal.fire('failed', 'can not  registration', 'error');
+      }
+      
     }
   )
 }
