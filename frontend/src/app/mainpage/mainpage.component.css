@@ -13,7 +13,8 @@ p {
     position: absolute;
     width: 220px;
     height: 320px;
-    background: mediumturquoise;
+    background: #911F27;
+    color: bisque;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,6 +24,7 @@ p {
     cursor: pointer;
     margin-top: 200px;
     margin-left: 300px;
+    font-family: Kanit , sans-serif;
   }
   
   .card::before,
