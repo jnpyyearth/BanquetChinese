@@ -13,6 +13,8 @@ public class RegisterRequestModel{
 
     public string phone { get; set; } = null!;
 
+    public string confirmpassword { get; set; } = null!;
+
     public string? role { get; set; }=null!;
 
     public string? User_Address { get; set; } = null!; 

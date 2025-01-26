@@ -18,8 +18,11 @@ namespace backnet.Controllers
             if(registerRequest ==null){
                 return BadRequest("Invalid register input");
             }
+            if(registerRequest.password !=registerRequest.confirmpassword){
+                return BadRequest("password and confirmpassword unmatch");
+            }
             try{
-
+                registerRequest.role ="customer";
                 registerRequest.password=BCrypt.Net.BCrypt.HashPassword(registerRequest.password);
                 _context.Users.Add(registerRequest);
                 await _context.SaveChangesAsync();

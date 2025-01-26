@@ -15,7 +15,7 @@ import { AppetizerComponent } from './appetizer/appetizer.component';
 import { DrinksComponent } from './drinks/drinks.component';
 import { DessertComponent } from './dessert/dessert.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ApiServiceService } from './Service/api-service.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     MaindishComponent,
     AppetizerComponent,
     DrinksComponent,
-    DessertComponent
+    DessertComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    ApiServiceService 
   ],
   bootstrap: [AppComponent]
 })
