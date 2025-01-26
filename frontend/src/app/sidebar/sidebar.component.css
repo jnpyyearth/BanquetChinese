@@ -4,7 +4,8 @@
 .tab{
   margin-left: -40px;
   position: fixed;
-  margin-top: 70px
+  margin-top: 70px;
+  background-color: #212121;
 }
 
 .nav-link{
@@ -95,7 +96,7 @@ button:active {
 } */
 
 .menubar-1{
-  margin-top: 25px;
+  margin-top: 60px;
   margin-left: 10px;
   
 }
@@ -137,7 +138,7 @@ button:active {
   width: 280px;
   height: 100px;
   position: fixed;
-  margin-top: 15px;
+  margin-top: 30px;
 }
 
 p{
