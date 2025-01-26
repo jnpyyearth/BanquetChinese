@@ -19,7 +19,7 @@ namespace backnet.Controllers
                 return BadRequest("Invalid register input");
             }
             if(registerRequest.password !=registerRequest.confirmpassword){
-                return badRequest("password and confirmpassword unmatch");
+                return BadRequest("password and confirmpassword unmatch");
             }
             try{
                 registerRequest.role ="customer";

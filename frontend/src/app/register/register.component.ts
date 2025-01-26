@@ -29,7 +29,7 @@ ngOnInit(): void {
 }
 onRegis(){
   if (this.registerForm.invalid) {
-    console.log('invlide singUp Form')
+    console.log('invlide register Form')
     return;
   }
   const regisData =this.registerForm.value;
