@@ -14,6 +14,7 @@ import { MaindishComponent } from './maindish/maindish.component';
 import { AppetizerComponent } from './appetizer/appetizer.component';
 import { DrinksComponent } from './drinks/drinks.component';
 import { DessertComponent } from './dessert/dessert.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
