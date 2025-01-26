@@ -27,6 +27,6 @@ public partial class User
     public string? User_Address { get; set; }=null!;
 
     [NotMapped] // ระบุว่าไม่ต้องแมปกับฐานข้อมูล
-     public string confirmpassword { get; set; } = null!;
+     public string confirmPassword { get; set; } = null!;
    
 }

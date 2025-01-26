@@ -18,8 +18,8 @@ namespace backnet.Controllers
             if(registerRequest ==null){
                 return BadRequest("Invalid register input");
             }
-            if(registerRequest.password !=registerRequest.confirmpassword){
-                return BadRequest("password and confirmpassword unmatch");
+            if(registerRequest.password !=registerRequest.confirmPassword){
+                return StatusCode(402,new{ Status =402, Message="password and confirmpassword unmatch"});
             }
             try{
                 registerRequest.role ="customer";
