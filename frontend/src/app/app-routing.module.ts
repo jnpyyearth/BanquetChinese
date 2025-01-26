@@ -6,6 +6,7 @@ import { MaindishComponent } from './maindish/maindish.component';
 import { AppetizerComponent } from './appetizer/appetizer.component';
 import { DrinksComponent } from './drinks/drinks.component';
 import { DessertComponent } from './dessert/dessert.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/mainpage', pathMatch: 'full' },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'maindish',component: MaindishComponent },
   { path: 'appetizer',component: AppetizerComponent },
   { path: 'drinks',component: DrinksComponent },
-  { path: 'dessert',component: DessertComponent }
+  { path: 'dessert',component: DessertComponent },
+  { path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({
