@@ -3,7 +3,7 @@
 <button class="close-btn" aria-label="Close">&times;</button>
 
 <h2>Register</h2>
-<form>
+<form [formGroup]="registerForm" (ngSubmit)="onRegis()">
 <div class="form-grid">
 <!-- First Name -->
 <div class="form-group">
@@ -12,6 +12,7 @@
 type="text"
 id="name"
 name="name"
+formControlName="firstname"
 placeholder="Enter your first name"
 required/>
 </div>
@@ -22,6 +23,7 @@ required/>
 <input
 type="text"
 id="lastname"
+formControlName="lastname"
 name="lastname"
 placeholder="Enter your last name"
 required/>
@@ -33,6 +35,7 @@ required/>
 <input
 type="text"
 id="username"
+formControlName="username"
 name="username"
 placeholder="Enter your username"
 required/>
@@ -44,6 +47,7 @@ required/>
 <input
 type="email"
 id="email"
+formControlName="email"
 name="email"
 placeholder="Enter your email"
 required/>
@@ -56,6 +60,7 @@ required/>
 type="password"
 id="password"
 name="password"
+formControlName="password"
 placeholder="Enter your password"
 required/>
 </div>
@@ -66,6 +71,7 @@ required/>
 <input
 type="tel"
 id="telephone"
+formControlName="phone"
 name="telephone"
 placeholder="Enter your telephone number"
 required/>
