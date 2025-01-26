@@ -25,7 +25,7 @@ ngOnInit(): void {
         confirmPassword: ['', Validators.required],
         phone:['',Validators.required],
         email:['',Validators.required]
-      });
+      },);
 }
 onRegis(){
   if (this.registerForm.invalid) {
@@ -36,8 +36,13 @@ onRegis(){
   console.log(regisData)
   this.apiService.Register(regisData).subscribe(
     (response:any)=>{
-      this.registerForm.reset();
+      if(response.Status ===200){
+        this.registerForm.reset();
       Swal.fire('success', 'Registration succesccfully!', 'success');
+      }else if(response.Status ===402){
+        Swal.fire('failed', 'confirmpassword unmatch !', 'error');
+      }
+      
     },(error:any)=>{
       console.error('Error register',error);
       Swal.fire('failed', 'can not  registration', 'error');
