@@ -9,7 +9,7 @@ namespace backnet.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Tour> Tour { get; set; } = null!;
-        // public DbSet <User> Users{get;set;}=null!;
+        public DbSet <User> Users{get;set;}=null!;
         // public DbSet<Customer> Customers { get; set; } = null!;
 
     } 

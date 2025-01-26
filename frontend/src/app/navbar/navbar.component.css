@@ -5,7 +5,7 @@
     top: 0 auto;
     left: 0;
     box-shadow: 0 10px 10px  rgba(0, 0, 0, 0.329); 
-    height: 80px;
+    height: 100px;
     width: 1540px;
     margin-left: 0rem;
     margin-top: -2rem;
@@ -14,12 +14,35 @@
 }
 
 .navbar p{
-    
     margin-top: 20px;
-    margin-left: 650px;
+    margin-left: 22px;
     font-family: Merienda , sans-serif;
-    font-size: 32px;
-    color: #FFB109;
-    
+    font-size: 22px;
+    color: #A31D1D;
+    background-color: aliceblue;
+    padding: 12px;
+    border-radius: 15px;
 
+}
+.nav-item {
+    font-family: Merienda , sans-serif;
+  }
+  .navbar-nav {
+    margin-right: 450px;
+  }
+
+  .nav-link {
+    color: rgb(255, 255, 255); 
+    font-size: 16px; 
+    margin: 10px;
+}
+
+.nav-link:hover {
+    color: #FFD95A;
+    text-decoration:none;
+}
+
+.nav-link.active {
+    color: #fcdeaa; 
+    text-decoration:underline; 
 }
