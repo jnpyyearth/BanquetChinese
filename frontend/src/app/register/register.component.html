@@ -1,57 +1,37 @@
 <div class="register-container">
     <!-- Close Button -->
-    <button class="close-btn" aria-label="Close"routerLink="/login">&times;</button>
+    <button class="close-btn" aria-label="Close" routerLink="/login">&times;</button>
 
-<h2>Register</h2>
-<form [formGroup]="registerForm" (ngSubmit)="onRegis()">
-<div class="form-grid">
-<!-- First Name -->
-<div class="form-group">
-<label for="name">First Name</label>
-<input
-type="text"
-id="name"
-name="name"
-formControlName="firstname"
-placeholder="Enter your first name"
-required/>
-</div>
+    <h2>Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onRegis()">
+        <div class="form-grid">
+            <!-- First Name -->
+            <div class="form-group">
+                <label for="name">First Name</label>
+                <input type="text" id="name" name="name" formControlName="firstname" placeholder="Enter your first name"
+                    required />
+            </div>
 
-<!-- Last Name -->
-<div class="form-group">
-<label for="lastname">Last Name</label>
-<input
-type="text"
-id="lastname"
-formControlName="lastname"
-name="lastname"
-placeholder="Enter your last name"
-required/>
-</div>
+            <!-- Last Name -->
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" formControlName="lastname" name="lastname"
+                    placeholder="Enter your last name" required />
+            </div>
 
-<!-- Username -->
-<div class="form-group">
-<label for="username">Username</label>
-<input
-type="text"
-id="username"
-formControlName="username"
-name="username"
-placeholder="Enter your username"
-required/>
-</div>
+            <!-- Username -->
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" formControlName="username" name="username"
+                    placeholder="Enter your username" required />
+            </div>
 
-<!-- Email -->
-<div class="form-group">
-<label for="email">Email</label>
-<input
-type="email"
-id="email"
-formControlName="email"
-name="email"
-placeholder="Enter your email"
-required/>
-</div>
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" formControlName="email" name="email" placeholder="Enter your email"
+                    required />
+            </div>
 
 <!-- Password -->
 <div class="form-group">
