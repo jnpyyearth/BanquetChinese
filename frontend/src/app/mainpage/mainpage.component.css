@@ -1,12 +1,14 @@
 
 .top-content{
    position: absolute;
+   width: 1150px;
   margin-top: 100px;
-  margin-left: 200px;
+  margin-left: 220px;
   font-family: Kanit , sans-serif;
   font-size: 20px;
-  background-color: blue;
+  background-color: #A31D1D;
   border-radius: 15px;
+  margin-bottom: 120px;
 }
 
 
@@ -15,6 +17,7 @@ p {
     font-size: 25px;
     color: #1d1401;
     text-align: center;
+    margin-top: 5px;
   }
 
 
