@@ -96,3 +96,7 @@ button {
   button:active {
     transform: scale(80%);
   }
+
+  #btnlogout{
+    color: #212121;
+  }

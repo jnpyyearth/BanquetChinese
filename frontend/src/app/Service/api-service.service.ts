@@ -14,4 +14,6 @@ export class ApiServiceService {
     console.log("hello register service");
     return this.http.post(`${apiUrl}/api/register/register`,registerData);
   }
+
+  
 }

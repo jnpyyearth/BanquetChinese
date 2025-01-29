@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../Service/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,5 +10,32 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+
+  isLoggedIn: boolean = false;
+
+  constructor(private authService: AuthService,private router: Router,) {
+    const navigation = this.router.getCurrentNavigation();
+  
+    
+
+  // เข้าถึง loggedIn โดยใช้ ['loggedIn']
+  if (navigation?.extras?.state?.['loggedIn']) {
+    this.isLoggedIn = true; // ตั้งค่าสถานะการล็อกอินเป็น true
+  }
+  } 
+
+  ngOnInIt(): void{
+    this.isLoggedIn = this.authService.isLoggedIn();
+  }
+  
+  goToLogin() {
+    this.router.navigate(['/login']);
+  }
+
+  logout() {
+    this.authService.logout(); // เรียกใช้ฟังก์ชัน Logout
+    this.isLoggedIn = false;
+    this.router.navigate(['/']); // กลับไปหน้า Home
+  }
 
 }

@@ -31,6 +31,19 @@
     </ul>
   </div>
   <div class="login">
-    <button routerLink="/login">login</button>
+    <button *ngIf="!isLoggedIn" class="btn btn-primary" (click)="goToLogin()">Login</button>
+
+    <div *ngIf="isLoggedIn" class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="accountMenu" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-person-circle"></i>
+      </button>
+
+      <ul class="dropdown-menu" aria-labelledby="accountMenu">
+        <li><a class="dropdown-item" >Edit Profile</a></li>
+        <li><a class="nav-link" (click)="logout()" href="/" id="btnlogout">Logout</a></li>
+      </ul>
+    </div>
+
+
   </div>
 </nav>

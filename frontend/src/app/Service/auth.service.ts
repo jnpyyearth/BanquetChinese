@@ -11,9 +11,7 @@ export class AuthService {
     
    }
 
-   login(token:string):void{
-    localStorage.setItem('token',token);
-   }
+   
    getRole(){
     const token =localStorage.getItem('token');
     if(token){
@@ -23,5 +21,27 @@ export class AuthService {
     }
     return null;
    }
+   
+    login(token:string):void{
+      localStorage.setItem('token',token);
+    }
+  //remove token
+  logout(): void {
+    localStorage.removeItem('token');
+    localStorage.removeItem('loggedIn');
+    this.router.navigate(['/']);
+  }
 
+    // //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    private loggedIn: boolean = false;
+
+    setLoggedIn(status: boolean) {
+      localStorage.setItem('loggedIn', JSON.stringify(status));
+    }
+  
+    isLoggedIn() {
+      return JSON.parse(localStorage.getItem('loggedIn') || 'false');
+    }
+  
 }
