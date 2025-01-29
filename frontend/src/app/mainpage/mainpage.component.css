@@ -1,182 +1,20 @@
 
+.top-content{
+   position: absolute;
+  margin-top: 100px;
+  margin-left: 200px;
+  font-family: Kanit , sans-serif;
+  font-size: 20px;
+  background-color: blue;
+  border-radius: 15px;
+}
+
+
 p {
     font-family: Kanit , sans-serif;
     font-size: 25px;
     color: #1d1401;
     text-align: center;
-    position: absolute;
-    margin-top: 100px;
-    margin-left: 200px;
-}
-
-.card {
-    position: absolute;
-    width: 220px;
-    height: 320px;
-    background: #911F27;
-    color: bisque;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    font-weight: bold;
-    border-radius: 15px;
-    cursor: pointer;
-    margin-top: 200px;
-    margin-left: 300px;
-    font-family: Kanit , sans-serif;
   }
-  
-  .card::before,
-  .card::after {
-    position: absolute;
-    content: "";
-    width: 20%;
-    height: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    font-weight: bold;
-    background-color: lightblue;
-    transition: all 0.5s;
-  }
-  
-  .card::before {
-    top: 0;
-    right: 0;
-    border-radius: 0 15px 0 100%;
-  }
-  
-  .card::after {
-    bottom: 0;
-    left: 0;
-    border-radius: 0 100%  0 15px;
-  }
-  
-  .card:hover::before,
-  .card:hover:after {
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    transition: all 0.5s;
-    
-  }
-  
-  .card:hover:after {
-    content: "HELLO";
-  }
-  
 
 
-  .card2 {
-    position: absolute;
-    width: 220px;
-    height: 320px;
-    background: mediumturquoise;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    font-weight: bold;
-    border-radius: 15px;
-    cursor: pointer;
-    margin-top: 200px;
-    margin-left: 600px;
-  }
-  
-  .card2::before,
-  .card2::after {
-    position: absolute;
-    content: "";
-    width: 20%;
-    height: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    font-weight: bold;
-    background-color: lightblue;
-    transition: all 0.5s;
-  }
-  
-  .card2::before {
-    top: 0;
-    right: 0;
-    border-radius: 0 15px 0 100%;
-  }
-  
-  .card2::after {
-    bottom: 0;
-    left: 0;
-    border-radius: 0 100%  0 15px;
-  }
-  
-  .card2:hover::before,
-  .card2:hover:after {
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    transition: all 0.5s;
-  }
-  
-  .card2:hover:after {
-    content: "HELLO";
-  }
-  
-
-  .card3 {
-    position: absolute;
-    width: 220px;
-    height: 320px;
-    background: mediumturquoise;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    font-weight: bold;
-    border-radius: 15px;
-    cursor: pointer;
-    margin-top: 200px;
-    margin-left: 900px;
-  }
-  
-  .card3::before,
-  .card3::after {
-    position: absolute;
-    content: "";
-    width: 20%;
-    height: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    font-weight: bold;
-    background-color: lightblue;
-    transition: all 0.5s;
-  }
-  
-  .card3::before {
-    top: 0;
-    right: 0;
-    border-radius: 0 15px 0 100%;
-  }
-  
-  .card3::after {
-    bottom: 0;
-    left: 0;
-    border-radius: 0 100%  0 15px;
-  }
-  
-  .card3:hover::before,
-  .card3:hover:after {
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    transition: all 0.5s;
-  }
-  
-  .card3:hover:after {
-    content: "HELLO";
-  }
-  

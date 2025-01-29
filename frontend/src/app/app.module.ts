@@ -16,6 +16,10 @@ import { DrinksComponent } from './drinks/drinks.component';
 import { DessertComponent } from './dessert/dessert.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiServiceService } from './Service/api-service.service';
+import { PackageComponent } from './package/package.component';
+import { PackageSizeComponent } from './package-size/package-size.component';
+import { SidebarPackageComponent } from './sidebar-package/sidebar-package.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +31,10 @@ import { ApiServiceService } from './Service/api-service.service';
     AppetizerComponent,
     DrinksComponent,
     DessertComponent,
-    RegisterComponent
+    RegisterComponent,
+    PackageComponent,
+    PackageSizeComponent,
+    SidebarPackageComponent
   ],
   imports: [
     BrowserModule,
