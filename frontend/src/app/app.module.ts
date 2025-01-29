@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApiServiceService } from './Service/api-service.service';
 import { PackageComponent } from './package/package.component';
 import { PackageSizeComponent } from './package-size/package-size.component';
+import { SidebarPackageComponent } from './sidebar-package/sidebar-package.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,8 @@ import { PackageSizeComponent } from './package-size/package-size.component';
     DessertComponent,
     RegisterComponent,
     PackageComponent,
-    PackageSizeComponent
+    PackageSizeComponent,
+    SidebarPackageComponent
   ],
   imports: [
     BrowserModule,
