@@ -11,6 +11,7 @@ import { ApiServiceService } from './Service/api-service.service';
 import { AuthService } from './Service/auth.service';
 import { PackageComponent } from './package/package.component';
 import { PackageSizeComponent } from './package-size/package-size.component';
+import { SidebarPackageComponent } from './sidebar-package/sidebar-package.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/mainpage', pathMatch: 'full' },
@@ -22,7 +23,9 @@ const routes: Routes = [
   { path: 'dessert',component: DessertComponent },
   { path: 'register', component: RegisterComponent},
   { path: 'package', component: PackageComponent},
-  { path: 'package-size', component: PackageSizeComponent}
+  { path: 'package-size', component: PackageSizeComponent},
+  { path: 'sidebar-package', component: SidebarPackageComponent}
+  
 ];
 
 @NgModule({
