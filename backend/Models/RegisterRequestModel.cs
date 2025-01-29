@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-namespace backnet.Model;
+namespace backnet.Models;
 public class RegisterRequestModel{
    public string username { get; set; } = null!;
 

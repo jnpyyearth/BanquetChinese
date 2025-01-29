@@ -11,7 +11,7 @@ export class ApiServiceService {
 
   constructor(private http: HttpClient) { }
   Register(registerData:FormData):Observable<any>{
-    console.log("hello register service");
+    console.log("hello register ser+++++++++++++++vice");
     return this.http.post(`${apiUrl}/api/register/register`,registerData);
   }
 }

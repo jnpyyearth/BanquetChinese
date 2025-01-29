@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using backnet.Models;
 using backnet.Data;
 using Microsoft.EntityFrameworkCore;
-using backnet.Model;
+using backnet.Models;
 
 namespace backnet.Controllers
 {
