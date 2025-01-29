@@ -7,6 +7,10 @@ import { AppetizerComponent } from './appetizer/appetizer.component';
 import { DrinksComponent } from './drinks/drinks.component';
 import { DessertComponent } from './dessert/dessert.component';
 import { RegisterComponent } from './register/register.component';
+import { ApiServiceService } from './Service/api-service.service';
+import { AuthService } from './Service/auth.service';
+import { PackageComponent } from './package/package.component';
+import { PackageSizeComponent } from './package-size/package-size.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/mainpage', pathMatch: 'full' },
@@ -16,7 +20,9 @@ const routes: Routes = [
   { path: 'appetizer',component: AppetizerComponent },
   { path: 'drinks',component: DrinksComponent },
   { path: 'dessert',component: DessertComponent },
-  { path: 'register', component: RegisterComponent}
+  { path: 'register', component: RegisterComponent},
+  { path: 'package', component: PackageComponent},
+  { path: 'package-size', component: PackageSizeComponent}
 ];
 
 @NgModule({
