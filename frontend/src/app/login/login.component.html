@@ -1,34 +1,34 @@
 <div class="login-container">
-    <form>
-      <h2>Login</h2>
-      <div>
-        <label for="username">Username</label>
-        <input
-          id="username"
-     
-          type="username"
-          placeholder="Enter your username"
-        />
-        <!-- <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
-          <small *ngIf="loginForm.get('username')?.errors?.['required']">Username is required.</small>
-          <small *ngIf="loginForm.get('username')?.errors?.['username']">Invalid username format.</small>
-        </div> -->
-      </div>
-      <div>
-        <label for="password">Password</label>
-        <input
-          id="password"
-          
-          type="password"
-          placeholder="Enter your password"
-        />
-        <!-- <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
-          <small>Password is required.</small>
-        </div> -->
-      </div>
-      <button type="button" class="register-button">Register</button>
-      <button type="submit">Login</button>
-    </form>
-  </div>
-  
-  
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <h2>Login</h2>
+    <div>
+      <label for="username">Username</label>
+      <input
+        id="username"
+        formControlName="username"
+        type="username"
+        placeholder="Enter your username"
+      />
+      <!-- <div ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+        <smallngIf="loginForm.get('username')?.errors?.['required']">Username is required.</small>
+        <small ngIf="loginForm.get('username')?.errors?.['username']">Invalid username format.</small>
+      </div> -->
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input
+        id="password"
+        formControlName="password"
+        type="password"
+        placeholder="Enter your password"
+      />
+      <!-- <divngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        <small>Password is required.</small>
+      </div> -->
+    </div>
+    <button type="submit" >Login</button>
+    <a href="register" class="register-link">Register</a>
+
+  </form>
+</div>
+

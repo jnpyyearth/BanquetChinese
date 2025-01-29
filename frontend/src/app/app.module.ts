@@ -9,10 +9,16 @@ import { MainpageComponent } from './mainpage/mainpage.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 import { MaindishComponent } from './maindish/maindish.component';
 import { AppetizerComponent } from './appetizer/appetizer.component';
 import { DrinksComponent } from './drinks/drinks.component';
 import { DessertComponent } from './dessert/dessert.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiServiceService } from './Service/api-service.service';
+import { PackageComponent } from './package/package.component';
+import { PackageSizeComponent } from './package-size/package-size.component';
+import { SidebarPackageComponent } from './sidebar-package/sidebar-package.component';
 
 @NgModule({
   declarations: [
@@ -24,15 +30,21 @@ import { DessertComponent } from './dessert/dessert.component';
     MaindishComponent,
     AppetizerComponent,
     DrinksComponent,
-    DessertComponent
+    DessertComponent,
+    RegisterComponent,
+    PackageComponent,
+    PackageSizeComponent,
+    SidebarPackageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    ApiServiceService 
   ],
   bootstrap: [AppComponent]
 })

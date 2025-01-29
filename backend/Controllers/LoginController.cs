@@ -1,32 +1,62 @@
-// using Microsoft.AspNetCore.Mvc;
-// using backnet.Data;
-// using Microsoft.EntityFrameworkCore;
-// using Microsoft.AspNetCore.Identity.Data;
-// using backnet.Models;
+using Microsoft.AspNetCore.Mvc;
+using backnet.Data;
+using Microsoft.EntityFrameworkCore;
+using backnet.Models;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
 
-// namespace backnet.Controllers
-// {
-//     [Route("api/[controller]")]
-//     [ApiController]
-//     public class LoginController:ControllerBase{
-//         //inject db เข้ามา
-//         private readonly AppDbContext _context;
-//         public LoginController(AppDbContext context){
-//             _context = context; 
-//         }
-//         [HttpPost("login")]
-//         public async Task<IActionResult> Login([FromBody] LoginRequestModel loginRequest ){
-//             if(loginRequest ==null){
-//                 return BadRequest("Invalid request body");
-//             }
-//             var user = await _context.Users.Where(u=>u.username==loginRequest.username&&u.password==loginRequest.password)
-//             .FirstOrDefaultAsync();
+namespace backnet.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class LoginController:ControllerBase{
+        //inject db เข้ามา
+        private readonly AppDbContext _context;
+        public LoginController(AppDbContext context){
+            _context = context; 
+        }
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginRequestModel loginRequest ){//รับ request มา
+            Console.WriteLine("Login Request Received");
+    Console.WriteLine($"Username: {loginRequest?.username}");
+    Console.WriteLine($"Password: {loginRequest?.password}");
+           
+           
+            if(loginRequest ==null){ //check ว่า มี request ใช่มั้ย
+                return BadRequest("Invalid request body");
+            }
+            var user = await _context.Users.Where(u=>u.username==loginRequest.username) //queryทุกcolumn ตาม Users where ตามนั้น เเล้วก็เอาเเถวเเรกที่select ได้
+            .FirstOrDefaultAsync();
 
-//             if(user== null){
-//                 return Unauthorized("Invalid username or password");
-//             }
-//             if(!BCrypt)
-//             return Ok(new{Message="login successful",Username =user.username});
-//         }
-//     }
-// }
+            if(user== null){//check if dont have match data
+             Console.WriteLine("Invalid username: User not found");
+                return Unauthorized("Invalid username or password");
+            }
+            //check  password compared to hash
+            if(!BCrypt.Net.BCrypt.Verify(loginRequest.password,user.password)){
+             Console.WriteLine("Invalid password: Password does not match");
+                return Unauthorized("invalid hash password");
+            }//
+
+            //create token
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.UTF8.GetBytes("aP9#Df6!Xz&Kw3@Lm7V8Gh$NqYpTzUj2");
+            var tokenDescriptor =new SecurityTokenDescriptor{
+                Subject = new ClaimsIdentity(new[]{
+                    new Claim("username",user.username),
+                    new Claim("role",user.role ??"")
+                }),
+                Expires =DateTime.UtcNow.AddHours(1),
+                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                };
+                var token =tokenHandler.CreateToken(tokenDescriptor);
+                var tokenString =tokenHandler.WriteToken(token);
+                Console.WriteLine($"Generated Token: {tokenString}");
+            return Ok(new{Message="login successful",Token =tokenString});
+        }
+        
+    }
+    
+}

@@ -1,3 +1,176 @@
 <app-navbar />
 <app-sidebar />
-<p>dessert</p>
+
+<div class="container mt-4">
+    <div class="container ml-4">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="row">
+
+    <div class="col-3">
+      <label class="card" style="cursor: pointer;">
+        <div class="text-center">
+          <img src="..." class="rounded" style="width: 150px;">
+        </div>
+        <div class="card-body position-relative">
+          <div class="card-title h5 text-center">
+            แปะก๊วยรังนก
+          </div>
+          <div class="text-center mt-2">
+            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);">
+          </div>
+        </div>
+      </label>
+    </div>
+    
+    <div class="col-3">
+      <label class="card" style="cursor: pointer;">
+        <div class="text-center">
+          <img src="..." class="rounded" style="width: 150px;">
+        </div>
+        <div class="card-body position-relative">
+          <div class="card-title h5 text-center">
+            บัวลอย
+          </div>
+          <div class="text-center mt-2">
+            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);">
+          </div>
+        </div>
+      </label>
+    </div>
+
+    <div class="col-3">
+      <label class="card" style="cursor: pointer;">
+        <div class="text-center">
+          <img src="..." class="rounded" style="width: 150px;">
+        </div>
+        <div class="card-body position-relative">
+          <div class="card-title h5 text-center">
+            สาคู
+          </div>
+          <div class="text-center mt-2">
+            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);">
+          </div>
+        </div>
+      </label>
+    </div>
+
+    <div class="col-3">
+      <label class="card" style="cursor: pointer;">
+        <div class="text-center">
+          <img src="..." class="rounded" style="width: 150px;">
+        </div>
+        <div class="card-body position-relative">
+          <div class="card-title h5 text-center">
+            เต้าฮวย
+          </div>
+          <div class="text-center mt-2">
+            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);">
+          </div>
+        </div>
+      </label>
+    </div>
+
+    <div class="col-3">
+      <label class="card" style="cursor: pointer;">
+        <div class="text-center">
+          <img src="..." class="rounded" style="width: 150px;">
+        </div>
+        <div class="card-body position-relative">
+          <div class="card-title h5 text-center">
+            ขนมเปี๊ยะ
+          </div>
+          <div class="text-center mt-2">
+            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);">
+          </div>
+        </div>
+      </label>
+    </div>
+
+    <div class="col-3">
+      <label class="card" style="cursor: pointer;">
+        <div class="text-center">
+          <img src="..." class="rounded" style="width: 150px;">
+        </div>
+        <div class="card-body position-relative">
+          <div class="card-title h5 text-center">
+            วุ้นมะพร้าว
+          </div>
+          <div class="text-center mt-2">
+            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);">
+          </div>
+        </div>
+      </label>
+    </div>
+
+    <div class="col-3">
+      <label class="card" style="cursor: pointer;">
+        <div class="text-center">
+          <img src="..." class="rounded" style="width: 150px;">
+        </div>
+        <div class="card-body position-relative">
+          <div class="card-title h5 text-center">
+            ทับทิมกรอบน้ำกะทิ
+          </div>
+          <div class="text-center mt-2">
+            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);">
+          </div>
+        </div>
+      </label>
+    </div>
+
+    <div class="col-3">
+      <label class="card" style="cursor: pointer;">
+        <div class="text-center">
+          <img src="..." class="rounded" style="width: 150px;">
+        </div>
+        <div class="card-body position-relative">
+          <div class="card-title h5 text-center">
+            เฉาก๊วยนมสด
+          </div>
+          <div class="text-center mt-2">
+            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);">
+          </div>
+        </div>
+      </label>
+    </div>
+
+    <div class="col-3">
+      <label class="card" style="cursor: pointer;">
+        <div class="text-center">
+          <img src="..." class="rounded" style="width: 150px;">
+        </div>
+        <div class="card-body position-relative">
+          <div class="card-title h5 text-center">
+            ไอศครีมกะทิ
+          </div>
+          <div class="text-center mt-2">
+            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);">
+          </div>
+        </div>
+      </label>
+    </div>
+
+    <div class="col-3">
+      <label class="card" style="cursor: pointer;">
+        <div class="text-center">
+          <img src="..." class="rounded" style="width: 150px;">
+        </div>
+        <div class="card-body position-relative">
+          <div class="card-title h5 text-center">
+            พุดดิ้ง
+          </div>
+          <div class="text-center mt-2">
+            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);">
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+
+<!-- ส่วนของปุ่ม "ถัดไป" -->
+<button class="next" id="nextButton" style="position: fixed; bottom: 24px; right: 120px; font-size: 18px; padding: 15px 30px;" routerLink="/drinks">
+  ถัดไป
+</button>
+
