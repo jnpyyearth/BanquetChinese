@@ -1,0 +1,9 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr)); /* 4 columns, each responsive */
+    gap: 15px; /* Reduce gap between cards */
+    justify-content: start; /* Align cards properly */
+    margin-top: 100px; /* Avoid navbar overlap */
+    width: 80%; /* Ensure proper alignment */
+    margin-left: 180px; /* Adjust to move right slightly */
+}
