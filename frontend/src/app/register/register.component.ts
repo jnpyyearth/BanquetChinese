@@ -17,6 +17,7 @@ registerForm!: FormGroup;
 errorMessage:string ='';
 constructor(private fb:FormBuilder,private http: HttpClient,private router: Router,private authService:AuthService,private apiService:ApiServiceService){}
 ngOnInit(): void {
+
      this.registerForm = this.fb.group({
         username: ['', Validators.required],
         password: ['', [Validators.required, Validators.minLength(6)]],
@@ -26,7 +27,11 @@ ngOnInit(): void {
         phone:['',Validators.required],
         email:['',Validators.required]
       },);
+
+      
 }
+
+
 onRegis(){
   if (this.registerForm.invalid) {
     console.log('invlide register Form')
@@ -53,4 +58,6 @@ onRegis(){
     }
   )
 }
+
+
 }
