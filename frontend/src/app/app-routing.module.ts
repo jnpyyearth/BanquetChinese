@@ -12,6 +12,8 @@ import { AuthService } from './Service/auth.service';
 import { PackageComponent } from './package/package.component';
 import { PackageSizeComponent } from './package-size/package-size.component';
 import { SidebarPackageComponent } from './sidebar-package/sidebar-package.component';
+import { DrinksCardComponent } from './drinks/drinks-card/drinks-card.component';
+import { MaindishCardComponent } from './maindish/maindish-card/maindish-card.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/mainpage', pathMatch: 'full' },
@@ -24,7 +26,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'package', component: PackageComponent},
   { path: 'package-size', component: PackageSizeComponent},
-  { path: 'sidebar-package', component: SidebarPackageComponent}
+  { path: 'sidebar-package', component: SidebarPackageComponent},
+  { path: 'drinks-card', component: DrinksCardComponent},
+  { path: 'maindish-card', component: MaindishCardComponent},
   
 ];
 
