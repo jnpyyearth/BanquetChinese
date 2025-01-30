@@ -14,13 +14,17 @@ export class ApiServiceService {
     console.log("hello register ser+++++++++++++++vice");
     return this.http.post(`${apiUrl}/api/register/register`,registerData);
   }
-<<<<<<< HEAD
   getMainDish():Observable<any>{
     console.log("Hello get maindish service");
     return this.http.get(`${apiUrl}/api/Menu/getMainDish`);
   }
-=======
-
+  getDessert():Observable<any>{
+    console.log("Hello get dessert service");
+    return this.http.get(`${apiUrl}/api/Menu/Getdessert`);
+  }
+  getAppetizer():Observable<any>{
+    console.log("Hello get Appetizer service");
+    return this.http.get(`${apiUrl}/api/Menu/GetAppetizer`);
+  }
   
->>>>>>> tew
 }
