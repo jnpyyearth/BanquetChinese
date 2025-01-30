@@ -32,7 +32,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();//บังคับให้ httpเปลี่ยนเป็น https ก่อนดำเนินการต่อ
 app.UseCors("AllowAngularApp");
-
+app.UseStaticFiles(); //allow to upload file
 app.MapControllers();
 app.Run();
 

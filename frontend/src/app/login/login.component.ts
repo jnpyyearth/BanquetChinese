@@ -29,6 +29,7 @@ ngOnInit(){
 }
 
 onLogin():void{
+  
   const loginData = this.loginForm.value;
   //ยิงapi
   console.log(loginData)

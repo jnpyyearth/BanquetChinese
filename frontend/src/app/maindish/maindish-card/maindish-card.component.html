@@ -5,7 +5,9 @@
         <div class="card">
           <!-- <img [src]="'http://localhost:3000/' + Tour.Tour_Picture" onerror="this.src='assets/images/error.gif'" class="card-img-top" alt="Tour Image"> -->
           <div class="card-body">
-            <h5 class="card-title">ทัวร์:{{ maindish.menu_Name }}</h5>
+            <h5 class="card-title">ชื่อ:{{ maindish.menu_Name }}</h5>
+            <h5 class="card-title">ไอดี:{{ maindish.menu_ID }}</h5>
+            <!-- <button class="btn btn-success"button [routerLink]="['/tour-detail',Tour.ProgramTour_ID]">ดูรายละเอียด</button> -->
             <!-- <button class="btn btn-success"button [routerLink]="['/tour-detail',Tour.ProgramTour_ID]">ดูรายละเอียด</button> -->
           </div>
         </div>
