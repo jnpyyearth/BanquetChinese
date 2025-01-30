@@ -38,7 +38,8 @@ import { DrinksCardComponent } from './drinks/drinks-card/drinks-card.component'
     PackageComponent,
     PackageSizeComponent,
     SidebarPackageComponent,
-    MaindishCardComponent
+    MaindishCardComponent,
+    DrinksCardComponent
   ],
   imports: [
     BrowserModule,
