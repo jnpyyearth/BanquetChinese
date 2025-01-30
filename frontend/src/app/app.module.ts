@@ -20,6 +20,8 @@ import { PackageComponent } from './package/package.component';
 import { PackageSizeComponent } from './package-size/package-size.component';
 import { SidebarPackageComponent } from './sidebar-package/sidebar-package.component';
 import { MaindishCardComponent } from './maindish/maindish-card/maindish-card.component';
+import { DessertCardComponent } from './dessert/dessert-card/dessert-card.component';
+import { AppetizerCardComponent } from './appetizer/appetizer-card/appetizer-card.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { MaindishCardComponent } from './maindish/maindish-card/maindish-card.co
     PackageComponent,
     PackageSizeComponent,
     SidebarPackageComponent,
-    MaindishCardComponent
+    MaindishCardComponent,
+    DessertCardComponent,
+    AppetizerCardComponent
   ],
   imports: [
     BrowserModule,
