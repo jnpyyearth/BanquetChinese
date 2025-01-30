@@ -14,12 +14,8 @@ export class ApiServiceService {
     console.log("hello register service");
     return this.http.post(`${apiUrl}/api/register/register`,registerData);
   }
-
-
-
   getMainDish():Observable<any>{
     console.log("Hello get maindish service");
     return this.http.get(`${apiUrl}/api/Menu/getMainDish`);
   }
-
 }
