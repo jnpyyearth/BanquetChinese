@@ -51,11 +51,18 @@ onLogin():void{
   private navigateBaseOnRole():void{
     console.log("yourRole: ",this.userRole);
     if(this.userRole ==='customer'){
-      this.router.navigate(['/mainpage'])
-      console.log("route to cus main")
+      this.router.navigate(['/mainpage'], { state: { loggedIn: true } }).then(() => {
+
+     // ซน
+     this.authService.setLoggedIn(true);
+     console.log('Navigated to home');
+    });
+
+
     }else if(this.userRole ==='manager'){
       this.router.navigate(['/mainpage'])
       console.log("route to mm main")
+      
     }else {
       console.log("cannot route")
       this.errorMessage = 'Unknown role. Cannot navigate.';

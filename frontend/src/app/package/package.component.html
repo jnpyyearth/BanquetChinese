@@ -1,6 +1,66 @@
-<div class="recomment-package d-flex flex-wrap justify-content-center gap-5 " >
+<app-navbar />
+<app-sidebar />
+
+<div class="top-content">
+  <div class="row">
+    <div class="col">
+      <div class="th">
+        <p> เลือกแพ็กเกจโต๊ะกันเลย!!</p>
+      </div>
+      <div class="en">
+        <p> Choose your package </p>
+      </div>
+      <div class="ch">
+        <p> 立即选择餐桌套餐。 </p>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="slider">
+        <input type="radio" name="slide" id="slide1" checked>
+        <input type="radio" name="slide" id="slide2">
+        <input type="radio" name="slide" id="slide3">
+
+        <div class="slides">
+          <div class="slide">
+            <img src="https://www.mendetails.com/wp-content/uploads/2023/09/03-%E0%B9%82%E0%B8%95%E0%B9%8A%E0%B8%B0%E0%B8%88%E0%B8%B5%E0%B8%99-chinese-food-sep23.jpg"
+              alt="Burger">
+          </div>
+          <div class="slide">
+            <img src="https://img.sabuywedding.com/stories/6629fb98be1c65002e09cd5b/6629fb98be1c65002e09cd5b-1714038183778.jpeg.jpg?width=720" alt="Pancakes">
+        </div>
+          <div class="slide">
+            <img src="/assets/images/คุณพีรทัต.png" alt="Pasta">
+            <p>ผมหิวแล้วนะ!!</p>
+          </div>
+        </div>
+
+        <div class="navigation">
+          <label for="slide1"></label>
+          <label for="slide2"></label>
+          <label for="slide3"></label>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+
+
+<div class="package">
+  <div class="recomment-package d-flex flex-wrap justify-content-center gap-5 ">
     <div class="card" routerLink="/package-size">size m</div>
     <div class="card" routerLink="/package-size">size L</div>
     <div class="card" routerLink="/package-size">size XL</div>
+  </div>
+
 </div>
 
+<div class="container-emoji">
+  <div class="row">
+    <p>🍕</p>
+    <p>🍕</p>
+  </div>
+</div>

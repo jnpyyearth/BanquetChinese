@@ -4,33 +4,41 @@
       <p>Toh-Wang-Soi </p>
     </a>
   </div>
-  <div class="collapse navbar-collapse justify-content-center" id="navbarNav"> <!-- ส่วนนี้จะอยู่ตรงกลาง -->
+  <div class="collapse navbar-collapse justify-content-center" id="navbarNav"> 
     <ul class="navbar-nav">
 
-
-      <!-- <li class="nav-item">
-        <a class="nav-link" routerLink="/package" routerLinkActive="active">Package</a>
-      </li> -->
-
       <li class="nav-item">
-        <a class="nav-link" routerLink="/maindish" routerLinkActive="active">Maindish</a>
+        <a class="nav-link" >Maindish</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" routerLink="/appetizer" routerLinkActive="active">Appetizer</a>
+        <a class="nav-link" >Appetizer</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" routerLink="/dessert" routerLinkActive="active"> Dessert</a>
+        <a class="nav-link" > Dessert</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" routerLink="/drinks" routerLinkActive="active"> Drinks</a>
+        <a class="nav-link" > Drinks</a>
       </li>
 
     </ul>
   </div>
   <div class="login">
-    <button routerLink="/login">login</button>
+    <button *ngIf="!isLoggedIn" class="btn btn-primary" (click)="goToLogin()">Login</button>
+
+    <div *ngIf="isLoggedIn" class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="accountMenu" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-person-circle"></i>
+      </button>
+
+      <ul class="dropdown-menu" aria-labelledby="accountMenu">
+        <li><a class="dropdown-item" >Edit Profile</a></li>
+        <li><a class="nav-link" (click)="logout()" href="/" id="btnlogout">Logout</a></li>
+      </ul>
+    </div>
+
+
   </div>
 </nav>
