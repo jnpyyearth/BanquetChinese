@@ -20,6 +20,7 @@ import { PackageComponent } from './package/package.component';
 import { PackageSizeComponent } from './package-size/package-size.component';
 import { SidebarPackageComponent } from './sidebar-package/sidebar-package.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
