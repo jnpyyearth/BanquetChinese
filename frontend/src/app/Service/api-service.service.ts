@@ -18,4 +18,9 @@ export class ApiServiceService {
     console.log("Hello get maindish service");
     return this.http.get(`${apiUrl}/api/Menu/getMainDish`);
   }
+
+  getDrink():Observable<any>{
+    console.log("Hello get maindish service");
+    return this.http.get(`${apiUrl}/api/Menu/getDrink`);
+  }
 }

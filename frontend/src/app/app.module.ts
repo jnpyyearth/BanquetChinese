@@ -20,6 +20,8 @@ import { PackageComponent } from './package/package.component';
 import { PackageSizeComponent } from './package-size/package-size.component';
 import { SidebarPackageComponent } from './sidebar-package/sidebar-package.component';
 import { MaindishCardComponent } from './maindish/maindish-card/maindish-card.component';
+import { DrinksCardComponent } from './drinks/drinks-card/drinks-card.component';
+
 
 
 @NgModule({
@@ -37,7 +39,8 @@ import { MaindishCardComponent } from './maindish/maindish-card/maindish-card.co
     PackageComponent,
     PackageSizeComponent,
     SidebarPackageComponent,
-    MaindishCardComponent
+    MaindishCardComponent,
+    DrinksCardComponent
   ],
   imports: [
     BrowserModule,
