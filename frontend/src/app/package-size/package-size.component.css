@@ -1,7 +1,7 @@
 .package-choose{
     box-sizing: border-box;
     width: 800px;
-    height: 400px;
+    height: 500px;
     background: rgba(217, 217, 217, 0.58);
     border: 1px solid white;
     box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
@@ -24,22 +24,27 @@
 .form{
     background-color: #FEF9E1;
     font-family: Merienda, sans-serif;
-    color: black;
+    color: rgb(157, 60, 60);
     width: 100%;
     height: 100%;
+    border-radius: 12px ;
+    padding-top: 20px;
 }
 
 .topic{
-    width: 600px;
-    margin-top: 100px;
-    margin-left: 500px;
-    padding: 5px;
+    width: 380px;
+    font-size: 20px;
+    margin-top: 120px;
+    margin-left: 600px;
+    padding: 20px;
     font-family: Kanit , sans-serif;
     background-color: #A31D1D;
     border-radius: 15px;
-    margin-bottom: 120px;
     position: absolute;
     color: azure;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
 p {
@@ -47,5 +52,40 @@ p {
     font-size: 25px;
     text-align: center;
     margin-top: 5px;
+    padding: 0.2px 2px 0px 2px;
   }
+
+
+  /* From Uiverse.io by shadowmurphy */ 
+.input {
+    border: 2px solid transparent;
+    width: 15em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #0c0202;
+    border-radius: 10px;
+    transition: all 0.5s;
+    margin-top: 15px;
+    color: #FF005C;
+    font-family: Kanit , sans-serif;
+    font-size: 15px;
+   
+  }
+  
+  .input:hover,
+  .input:focus {
+    border: 2px solid #FF005C;
+    box-shadow: 0px 0px 0px 7px #d7c4cc;
+    background-color: white;
+  }
+
+  label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+  }
+
+  
+  
 
