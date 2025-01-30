@@ -26,7 +26,8 @@
         <small>Password is required.</small>
       </div> -->
     </div>
-    <button type="submit" >Login</button>
+    <button type="submit" [disabled]="loginForm.invalid">Sign In</button>
+    
     <a href="register" class="register-link">Register</a>
 
   </form>
