@@ -19,6 +19,7 @@ import { ApiServiceService } from './Service/api-service.service';
 import { PackageComponent } from './package/package.component';
 import { PackageSizeComponent } from './package-size/package-size.component';
 import { SidebarPackageComponent } from './sidebar-package/sidebar-package.component';
+import { MaindishCardComponent } from './maindish/maindish-card/maindish-card.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { SidebarPackageComponent } from './sidebar-package/sidebar-package.compo
     RegisterComponent,
     PackageComponent,
     PackageSizeComponent,
-    SidebarPackageComponent
+    SidebarPackageComponent,
+    MaindishCardComponent
   ],
   imports: [
     BrowserModule,

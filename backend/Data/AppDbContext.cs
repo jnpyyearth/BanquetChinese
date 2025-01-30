@@ -10,6 +10,7 @@ namespace backnet.Data
 
         public DbSet<Tour> Tour { get; set; } = null!;
         public DbSet <User> Users{get;set;}=null!;
+        public DbSet <Menu> Menu {get;set; } = null!;
         // public DbSet<Customer> Customers { get; set; } = null!;
 
     } 
