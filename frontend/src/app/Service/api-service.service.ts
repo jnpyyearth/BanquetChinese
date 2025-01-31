@@ -29,7 +29,7 @@ export class ApiServiceService {
   
 
   getDrink():Observable<any>{
-    console.log("Hello get maindish service");
+    console.log("Hello get Drink service");
     return this.http.get(`${apiUrl}/api/Menu/getDrink`);
   }
 }

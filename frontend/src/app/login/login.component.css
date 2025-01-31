@@ -94,3 +94,9 @@ small {
   color: red;
   font-size: 0.8em;
 }
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 10px;
+}

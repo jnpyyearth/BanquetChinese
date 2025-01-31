@@ -1,0 +1,31 @@
+<app-navbar/>
+<app-sidebar-admin/>
+<div>
+    <form [formGroup]="addmenuForm" (ngSubmit)="onSubmit()">
+
+        <p> | Add menu | </p>
+        <label for="foodname">ชื่อเมนู : </label>
+        <input type="text" id="foodname" formControlName="foodname" placeholder="กรอกชื่อเมนู" required>
+        
+        <label for="image">ภาพเมนูอาหาร :</label>
+                <input type="file" id="image" (change)= "onFileSelected($event)" class="form-control" />
+         <!-- change คือ การ binding เพราะมีค่า input ที่เปลี่ยนไป  -->
+         <!-- onFileSelected($event)  คือ ตัวตรวจจับการใส่ข้อมูลที่เลือกและเก็บค่าในevent -->
+        <label for="cost">ราคา :</label>
+        <input type="text" id="cost" formControlName="cost" placeholder="ระบุราคาเมนูอาหาร" required>
+      
+        <label for="category">ประเภทหมวดหมู่ : </label>
+        <select id="category" formControlName="category">
+          <option value="maindish">อาหารจานหลัก</option>
+          <option value="appetizer">อาหารเรียกน้ำย่อย</option>
+          <option value="dessert">ขนมหวาน</option>
+          <option value="drinks">เครื่องดื่ม</option>
+        </select>
+
+        <span *ngIf="addmenuForm.get('category')?.invalid && addmenuForm.get('category')?.touched" style="color: red;">
+          กรุณาเลือกหมวดหมู่ก่อนนะครับ!
+      </span>
+  
+        <button type="submit">Submit</button>
+      </form>
+  </div>

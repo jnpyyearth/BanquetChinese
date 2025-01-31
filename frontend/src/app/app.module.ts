@@ -23,6 +23,10 @@ import { MaindishCardComponent } from './maindish/maindish-card/maindish-card.co
 import { DrinksCardComponent } from './drinks/drinks-card/drinks-card.component';
 import { DessertCardComponent } from './dessert/dessert-card/dessert-card.component';
 import { AppetizerCardComponent } from './appetizer/appetizer-card/appetizer-card.component';
+import { AddmenuComponent } from './admin/addmenu/addmenu.component';
+
+import { SidebarAdminComponent } from './admin/sidebar-admin/sidebar-admin.component';
+import { OrerlistComponent } from './admin/orerlist/orerlist.component';
 
 
 @NgModule({
@@ -43,7 +47,10 @@ import { AppetizerCardComponent } from './appetizer/appetizer-card/appetizer-car
     MaindishCardComponent,
     DrinksCardComponent,
     DessertCardComponent,
-    AppetizerCardComponent
+    AppetizerCardComponent,
+    AddmenuComponent,
+    SidebarAdminComponent,
+    OrerlistComponent
   ],
   imports: [
     BrowserModule,
