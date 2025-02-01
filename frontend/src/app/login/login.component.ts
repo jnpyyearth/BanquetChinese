@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -6,7 +6,6 @@ import {AuthService} from '../Service/auth.service'
 @Component({
   selector: 'app-login',
   standalone: false,
-  
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
   
@@ -17,6 +16,9 @@ errorMessage:string ='';
 userRole:string|null =null;
 constructor(private fb:FormBuilder,private http: HttpClient,private router: Router,private authService:AuthService){}
 ngOnInit(){
+
+  document.body.classList.add('login-page');
+
   const token = localStorage.getItem('token');// check token 
   if(token){
     this.userRole =this.authService.getRole();
@@ -26,6 +28,11 @@ ngOnInit(){
     username: ['', Validators.required],
     password: ['', [Validators.required, Validators.minLength(6)]]
   });
+}
+
+
+ngOnDestroy() {
+  document.body.classList.remove('login-page');
 }
 
 onLogin():void{

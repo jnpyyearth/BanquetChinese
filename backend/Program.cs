@@ -57,11 +57,12 @@
 // app.MapControllers();
 // app.Run();
 
-
+//////////////////////////////////////////////////////////////////////////////////
 using backnet.Data;
 using backnet.Models;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -98,6 +99,8 @@ builder.Services.AddSwaggerGen(c =>
         Type = "string",
         Format = "binary"
     });
+      // ✅ เพิ่ม Support สำหรับ File Upload
+    c.OperationFilter<SwaggerFileOperationFilter>(); 
 });
 
 var app = builder.Build();
@@ -115,7 +118,7 @@ app.UseStaticFiles();
 app.MapControllers();
 
 // ✅ Minimal API สำหรับ Upload File
-var uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "Uploads");
+var uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "uploads");
 if (!Directory.Exists(uploadPath))
 {
     Directory.CreateDirectory(uploadPath);
@@ -130,14 +133,14 @@ app.MapPost("/api/file/upload", async (IFormFile file) =>
     {
         var fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
         var filePath = Path.Combine(uploadPath, fileName);
-        var fileUrl = $"/Uploads/{fileName}";
+        var fileUrl = $"/uploads/{fileName}";
 
         using (var stream = new FileStream(filePath, FileMode.Create))
         {
             await file.CopyToAsync(stream);
         }
 
-        return Results.Ok(new { fileName, fileUrl });
+        return Results.Ok(new { fileUrl });
     }
     catch (Exception ex)
     {
@@ -160,10 +163,13 @@ app.MapGet("/api/Uploads/{fileName}", async (string fileName) =>
 
     return Results.File(fileStream, contentType, fileName);
 });
-
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(uploadPath),
+    RequestPath = "/uploads"
+});
 
 app.Run();
-
 
 
 

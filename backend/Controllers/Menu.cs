@@ -59,17 +59,23 @@ namespace backnet.Controllers
                 return StatusCode(500, new{Mesasge="can not fecthing Drink data",Error=ex.Message});
             }
         }
-
-    //       [HttpPost("AddMenu")]
-    // public async Task<IActionResult> AddMenu([FromBody]){
-
-    //     try{
-    //         var addMenu = await _context.
-    //     }catch(Exception ex){
-
-    //     }
-    // }
+        [HttpPost("AddMenu")]
+        public async Task<IActionResult> AddMenu([FromBody] Menu addMenuRequest){
+            if(addMenuRequest ==null){
+                return BadRequest("Invalid register input");
+            }
+            try{
+                _context.Menu.Add(addMenuRequest);
+                await _context.SaveChangesAsync();
+                 return Created($"/api/menu/{addMenuRequest.Menu_ID}", addMenuRequest);
+            }catch(Exception ex){
+                 return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+  
     }
     }
-    
+
+
+
   
