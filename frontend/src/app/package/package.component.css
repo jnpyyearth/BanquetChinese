@@ -5,8 +5,8 @@
 }
 .card {
     box-sizing: border-box;
-    width: 250px;
-    height: 400px;
+    width: 280px;
+    height: 420px;
     background: rgba(217, 217, 217, 0.58);
     border: 1px solid white;
     box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
@@ -20,7 +20,7 @@
     user-select: none;
     font-weight: bolder;
     color: black;
-    margin-top: 700px;
+    margin-top: 820px;
     margin-left: 30px;
     position: relative;
     transform: translateY(10%);
@@ -169,3 +169,13 @@ input {
   text-align: center;
 }
 
+hr {
+  background-color: black;
+  height: 1px;
+  border: none;
+  margin-left: 300px;
+  width: 1000px;
+  z-index: 1;
+  margin-top: 750px;
+  position: absolute;
+}

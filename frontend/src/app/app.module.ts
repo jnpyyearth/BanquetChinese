@@ -21,8 +21,13 @@ import { PackageSizeComponent } from './package-size/package-size.component';
 import { SidebarPackageComponent } from './sidebar-package/sidebar-package.component';
 import { MaindishCardComponent } from './maindish/maindish-card/maindish-card.component';
 import { DrinksCardComponent } from './drinks/drinks-card/drinks-card.component';
-import { AppetizerCardComponent } from './appetizer/appetizer-card/appetizer-card.component';
 import { DessertCardComponent } from './dessert/dessert-card/dessert-card.component';
+import { AppetizerCardComponent } from './appetizer/appetizer-card/appetizer-card.component';
+import { AddmenuComponent } from './admin/addmenu/addmenu.component';
+
+import { SidebarAdminComponent } from './admin/sidebar-admin/sidebar-admin.component';
+import { OrerlistComponent } from './admin/orerlist/orerlist.component';
+
 
 @NgModule({
   declarations: [
@@ -41,8 +46,11 @@ import { DessertCardComponent } from './dessert/dessert-card/dessert-card.compon
     SidebarPackageComponent,
     MaindishCardComponent,
     DrinksCardComponent,
+    DessertCardComponent,
     AppetizerCardComponent,
-    DessertCardComponent
+    AddmenuComponent,
+    SidebarAdminComponent,
+    OrerlistComponent
   ],
   imports: [
     BrowserModule,

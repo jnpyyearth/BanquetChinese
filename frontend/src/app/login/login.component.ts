@@ -11,7 +11,9 @@ import {AuthService} from '../Service/auth.service'
   
 })
 export class LoginComponent implements OnInit {
+[x: string]: any;
 loginForm!: FormGroup;
+showPassword: boolean = false; 
 errorMessage:string ='';
 userRole:string|null =null;
 constructor(private fb:FormBuilder,private http: HttpClient,private router: Router,private authService:AuthService){}
@@ -76,3 +78,4 @@ onLogin():void{
     }
   }
 }
+
