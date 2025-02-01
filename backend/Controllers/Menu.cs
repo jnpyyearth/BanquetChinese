@@ -59,6 +59,17 @@ namespace backnet.Controllers
                 return StatusCode(500, new{Mesasge="can not fecthing Drink data",Error=ex.Message});
             }
         }
+
+    //       [HttpPost("AddMenu")]
+    // public async Task<IActionResult> AddMenu([FromBody]){
+
+    //     try{
+    //         var addMenu = await _context.
+    //     }catch(Exception ex){
+
+    //     }
+    // }
+    }
     }
     
-}
+  
