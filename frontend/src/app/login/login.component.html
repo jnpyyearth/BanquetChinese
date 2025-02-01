@@ -3,28 +3,24 @@
     <h2>Login</h2>
     <div>
       <label for="username">Username</label>
-      <input
-        id="username"
-        formControlName="username"
-        type="username"
-        placeholder="Enter your username"
-      />
+      <input id="username" formControlName="username" type="username" placeholder="Enter your username"/>
       <!-- <div ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
         <smallngIf="loginForm.get('username')?.errors?.['required']">Username is required.</small>
         <small ngIf="loginForm.get('username')?.errors?.['username']">Invalid username format.</small>
       </div> -->
+     
     </div>
+
+
     <div>
       <label for="password">Password</label>
-      <input
-        id="password"
-        formControlName="password"
-        type="password"
-        placeholder="Enter your password"
-      />
+      <input id="password" formControlName="password" type="password" placeholder="Enter your password"/>
       <!-- <divngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
         <small>Password is required.</small>
       </div> -->
+    </div>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
     </div>
     <button type="submit" [disabled]="loginForm.invalid">Sign In</button>
     
