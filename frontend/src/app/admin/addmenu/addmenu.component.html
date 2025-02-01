@@ -7,8 +7,11 @@
         <label for="foodname">ชื่อเมนู : </label>
         <input type="text" id="foodname" formControlName="foodname" placeholder="กรอกชื่อเมนู" required>
         
-        <label for="image">ภาพเมนูอาหาร :</label>
-                <input type="file" id="image" (change)= "onFileSelected($event)" class="form-control" />
+        <label for="foodname">ภาพเมนู : </label>
+        <input type="text" id="foodpic" formControlName="foodpic" placeholder="วางภาพเมนู" required>
+
+        <!-- <label for="image">ภาพเมนูอาหาร :</label>
+                <input type="file" id="image" (change)= "onFileSelected($event)" class="form-control" /> -->
          <!-- change คือ การ binding เพราะมีค่า input ที่เปลี่ยนไป  -->
          <!-- onFileSelected($event)  คือ ตัวตรวจจับการใส่ข้อมูลที่เลือกและเก็บค่าในevent -->
         <label for="cost">ราคา :</label>

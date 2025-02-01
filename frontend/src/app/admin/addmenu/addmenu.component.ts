@@ -20,6 +20,7 @@ export class AddmenuComponent {
   // constructor(private fb: FormBuilder) {
   //   this.myForm = this.fb.group({
   //     foodname: ['', Validators.required],  // ต้องกรอกชื่อเมนู
+  //     foodpic: ['', Validators.required],  // ต้องกรอกภาพเมนู
   //     cost: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],  // ต้องกรอกราคาเป็นตัวเลขเท่านั้น
   //     category: ['', Validators.required] // ต้องเลือกประเภทหมวดหมู่
   //   });
