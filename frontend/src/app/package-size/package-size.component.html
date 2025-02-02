@@ -1,17 +1,47 @@
 <app-navbar />
 <app-sidebar-package />
 
-<div class="topic"> กรุณากรอกข้อมูลแพ็กเกจที่เลือกเพิ่มเติม</div>
+<h5> Step 1 : กรุณากรอกข้อมูลวันเวลาที่จัดงาน </h5>
 
-<div class="package-choose">
-    <div class="form">
-        <p> Package : </p>
-        <input class="input" placeholder="ชื่อ-นามสกุล"><br>
-        <input class="input" placeholder="จังหวัด"><br>
-        <input class="input" placeholder="สถานที่จัด"><br>
-        <input class="input" placeholder="วันเวลาจัดโต๊ะ"><br>
-        <input class="input" placeholder="เบอร์มือถือ"><br>
-    </div>
+<div class="container">
+  <div class="left">
+    <img src="https://www.mendetails.com/wp-content/uploads/2023/09/03-%E0%B9%82%E0%B8%95%E0%B9%8A%E0%B8%B0%E0%B8%88%E0%B8%B5%E0%B8%99-chinese-food-sep23.jpg"
+      alt="Burger">
+  </div>
 
+  <div class="right">
+
+    <form [formGroup]="packageform" (ngSubmit)="onSubmit()">
+      <p> | Package : Size | </p>
+
+      <label for="namesname">ชื่อ-นามสกุล: </label>
+      <input type="text" id="namesname" formControlName="namesname" placeholder="โปรดใส่ชื่อของท่าน" required>
+
+      <!-- <label for="province">จังหวัด : </label>
+      <input type="text" id="province" formControlName="province" placeholder="จังหวัดของท่าน" required> -->
+     
+      <label for="province">จังหวัด: </label>
+      <select id="province" formControlName="province"  required >
+        <option value="bangkok">กรุงเทพมหานคร</option>
+        <option value="chonburi">ชลบุรี</option>
+        <option value="chachoengsao">ฉะเชิงเทรา</option>
+        <option value="samutprakan">สมุทรปราการ</option>
+        <option value="prachinburi">ปราจีนบุรี</option>
+        <option value="nakhonpathom">นครพนม</option>
+        <option value="songkhla">สงขลา</option>
+        <option value="patthalung">พัทลุง</option>
+      </select>
+
+      <label for="place">สถานที่จัดงาน :</label>
+      <input type="text" id="place" formControlName="place" placeholder="ระบุสถานที่จัดงาน" required>
+
+      <label for="date">วันเวลาที่จัดงาน :</label>
+      <input type="date" id="date" formControlName="date" placeholder="วันเวลาที่จัดงาน" required>
+
+      <label for="date">หมายเลขโทรศัพท์ติดต่อ :</label>
+      <input type="text" id="phone" formControlName="phone" placeholder="กรุณากรอกเบอร์โทรของท่าน" required>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 </div>
-
