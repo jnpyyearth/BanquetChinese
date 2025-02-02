@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { ApiServiceService } from '../../Service/api-service.service';
 
 @Component({
   selector: 'app-addmenu',
@@ -9,68 +10,54 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrl: './addmenu.component.css'
 })
 export class AddmenuComponent {
-  addmenuform = new FormGroup({
-    foodname: new FormControl(''),
-    cost : new FormControl(''),
-    category: new FormControl(''),
-  });
 
-  addmenuForm!: FormGroup;
+    addmenuForm!: FormGroup;
+    selectedFile:File|null=null;
+    fileUrl: string | null = null;
+    constructor(private fb: FormBuilder,private apiService:ApiServiceService){
+      this.addmenuForm =this.fb.group({
+        menu_Name:['', Validators.required],
+        menu_Type:['', Validators.required],
+        menu_Price:['', [Validators.required,Validators.pattern("^[0-9]*$")]],
+        // menu_Picturename:['',Validators.required]
+      })
+    }
 
-  // constructor(private fb: FormBuilder) {
-  //   this.myForm = this.fb.group({
-  //     foodname: ['', Validators.required],  // ต้องกรอกชื่อเมนู
-  //     foodpic: ['', Validators.required],  // ต้องกรอกภาพเมนู
-  //     cost: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],  // ต้องกรอกราคาเป็นตัวเลขเท่านั้น
-  //     category: ['', Validators.required] // ต้องเลือกประเภทหมวดหมู่
-  //   });
-  // }
-
-  onSubmit() {
-    // console.log('Form Data:', this.myForm.value);
-    // alert('ข้อมูลถูกเพิ่มในระบบ success!!');
-      if (this.addmenuForm.invalid) {
-        alert("กรุณากรอกข้อมูลให้ครบถ้วน");
-        return; // หยุดการทำงานถ้าฟอร์มไม่ถูกต้อง
+  onFileSelected(event:any){
+    this.selectedFile =event.target.files[0];
+  }
+  onSubmit(){
+    if(!this.addmenuForm.valid){
+      alert('invalid form');
+      return;
+    }
+    if (!this.selectedFile) {
+      alert('กรุณาเลือกไฟล์รูปภาพ');
+      return;
+    }
+    this.apiService.uploadImage(this.selectedFile).subscribe(
+      response=>{
+        this.fileUrl =response.fileUrl;
+        const menuData = {
+          Menu_Name: this.addmenuForm.value.menu_Name,
+          Menu_Type: this.addmenuForm.value.menu_Type,
+          Menu_Price: this.addmenuForm.value.menu_Price,
+          Menu_Picturename: this.fileUrl 
+        };
+        console.log(menuData)
+        this.apiService.addMenu(menuData).subscribe(
+          ()=>{
+            console.log("add complete")
+            this.addmenuForm.reset();
+          },
+          error =>{
+            console.error("faild addmenu",error)
+          }
+        );
+      },
+      error=>{
+        console.error("faild upload Image",error);
       }
-    
-      console.log('Form Data:', this.addmenuForm.value);
-      alert('ข้อมูลถูกเพิ่มในระบบ success!!');
-    
+    );
   }
-
-  // onSubmit() {
-  //   try {
-  //     // จำลองการส่งข้อมูลไป API
-  //     const formData = this.myForm.value;
-      
-  //     // สมมติว่ามีฟังก์ชันส่งข้อมูล
-  //     this.sendDataToServer(formData)
-  //       .then(response => {
-  //         console.log('Form Data:', formData);
-  //         alert('✅ ข้อมูลถูกเพิ่มในระบบสำเร็จ!');
-  //       })
-  //       .catch(error => {
-  //         console.error('❌ เกิดข้อผิดพลาด:', error);
-  //         alert('❌ ไม่สามารถเพิ่มข้อมูลได้ กรุณาลองอีกทีนะ');
-  //       });
-  
-  //   } catch (error) {
-  //     console.error('❌ ข้อผิดพลาดบางอย่างนะ:', error);
-  //     alert('❌ มีบางอย่างผิดพลาด กรุณาติดต่ออาจารย์บุญชู');
-  //   }
-  // }
-
-  onFileSelected(event: any): void {
-    // const file = event.target.files[0];
-    // if (file) {
-    //   this.selectedFile = file;
-    //   this.addTourForm.patchValue({ image: file });
-    //   this.addTourForm.get('image')?.updateValueAndValidity();
-    // }
-
-    //event คือตัวแปรที่เราจะใส่ค่าที่ดึงมาจาก target file และบันทึกใน selectedfile **note จากเอิร์ธ**
   }
-
-
-}
