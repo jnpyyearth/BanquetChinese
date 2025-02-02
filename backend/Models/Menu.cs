@@ -11,5 +11,6 @@ public class Menu{
 
     public int? Menu_Status {set;get;} =null!;
     public decimal? Menu_Price {set;get;} =null!;
+     public ICollection<OrderDetail> OrderDetail { get; set; }
 
 }
