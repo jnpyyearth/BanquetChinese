@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-
+import { fork } from 'child_process';
+import { Observable ,forkJoin} from 'rxjs';
+import { map } from 'rxjs/operators';
 const apiUrl ='http://localhost:5014'
+const jsonUrl = '/menu-mapping.json';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,6 +20,19 @@ export class ApiServiceService {
     console.log("Hello get maindish service");
     return this.http.get(`${apiUrl}/api/Menu/getMainDish`);
   }
+  // getMainDish2():Observable<any>{
+  //   return forkJoin({
+  //     apiData:this.http.get<any>(`${apiUrl}/api/Menu/getMainDish`),
+  //     jsonMapping:this.http.get<{[key:string]:string}>(`${jsonUrl}`)
+  //   }).pipe(
+  //     map(({apiData,jsonMapping})=>{
+  //       console.log(apiData.data)
+  //       return apiData.data.map((item:any)=>({
+  //         ...item,menu_Name_TH:jsonMapping[item.menu_Name]||item.menu_Name
+  //       }));
+  //     })
+  //   );
+  // }
   getDessert():Observable<any>{
     console.log("Hello get dessert service");
     return this.http.get(`${apiUrl}/api/Menu/Getdessert`);
