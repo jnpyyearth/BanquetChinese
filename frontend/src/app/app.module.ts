@@ -55,7 +55,7 @@ import { OrderlistComponent } from './admin/orderlist/orderlist.component';
     SidebarAdminComponent,
     HirelistComponent,
     OrderlistComponent,
-
+  
 
   ],
   imports: [
