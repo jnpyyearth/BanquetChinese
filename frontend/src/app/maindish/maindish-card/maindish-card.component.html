@@ -1,4 +1,5 @@
 <div class="container mt-4">
+  <h2 *ngIf="maindishes.length === 0" class="text-danger">❌ ไม่พบข้อมูลเมนู</h2>
     <div class="row">
       <div class="col-md-4" *ngFor="let maindish of maindishes  ">
         
@@ -6,6 +7,7 @@
           <img [src]="'http://localhost:5014/api' + maindish.menu_Picturename"  class="card-img-top" alt="maindish Image">
           <div class="card-body">
             <h5 class="card-title">ชื่อ:{{ maindish.menu_Name }}</h5>
+            <!-- <h5 class="card-title">ชื่อ: {{ maindish.menu_Name_TH }}</h5>  -->
             <h5 class="card-title">ไอดี:{{ maindish.menu_ID }}</h5>
             <!-- <button class="btn btn-success"button [routerLink]="['/tour-detail',Tour.ProgramTour_ID]">ดูรายละเอียด</button> -->
             <!-- <button class="btn btn-success"button [routerLink]="['/tour-detail',Tour.ProgramTour_ID]">ดูรายละเอียด</button> -->
