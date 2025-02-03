@@ -26,12 +26,14 @@ export class ApiServiceService {
     console.log("Hello get Appetizer service");
     return this.http.get(`${apiUrl}/api/Menu/GetAppetizer`);
   }
-  
 
   getDrink():Observable<any>{
     console.log("Hello get Drink service");
     return this.http.get(`${apiUrl}/api/Menu/getDrink`);
+
   }
+
+  
   uploadImage(imagedata:File):Observable<any>{
     const formData =new FormData();
     formData.append('file',imagedata);
@@ -42,4 +44,8 @@ export class ApiServiceService {
     console.log("Hello addmenu service");
     return this.http.post(`${apiUrl}/api/Menu/AddMenu`,menuData);
   }
+
+
+
+
 }
