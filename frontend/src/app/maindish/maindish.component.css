@@ -27,6 +27,7 @@ p {
   
   .card img {
     max-width: 100%; /* ปรับรูปให้พอดีกับ card */
+    margin-top: 20px;
     height: auto;
     border-radius: 5px;
   }
@@ -55,3 +56,30 @@ button:hover {
   color: #6D2323;
 }
 
+.form-check-input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #FFD95A;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.form-check-input:checked {
+  background-color: #55ff00;
+  border-color: #55ff00;
+}
+
+.form-check-input:checked::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
