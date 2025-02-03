@@ -13,7 +13,9 @@
           </div>
 
           <div class="text-center mt-2">
-            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);">
+            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);"
+            [checked]="isChecked(drinks.menu_ID)"  
+                   (change)="toggleSelection(drinks, $event)">
           </div>
         </div>
       </div>
