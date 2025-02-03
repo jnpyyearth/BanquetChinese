@@ -60,6 +60,10 @@ export class ApiServiceService {
     return this.http.post(`${apiUrl}/api/Menu/AddMenu`,menuData);
   }
 
+  getTable():Observable<any>{
+    console.log("Hello get Drink service");
+    return this.http.get(`${apiUrl}/api/Table/GetDrink`);
+  }
 
 
 
