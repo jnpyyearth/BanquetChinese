@@ -16,7 +16,8 @@ import { DrinksCardComponent } from './drinks/drinks-card/drinks-card.component'
 import { MaindishCardComponent } from './maindish/maindish-card/maindish-card.component';
 import { AddmenuComponent } from './admin/addmenu/addmenu.component';
 import { SidebarAdminComponent } from './admin/sidebar-admin/sidebar-admin.component';
-import { OrerlistComponent } from './admin/orerlist/orerlist.component';
+import { HirelistComponent } from './hirelist/hirelist.component';
+import { OrderlistComponent } from './admin/orderlist/orderlist.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/mainpage', pathMatch: 'full' },
@@ -34,7 +35,8 @@ const routes: Routes = [
   { path: 'maindish-card', component: MaindishCardComponent},
   { path: 'addmenu', component: AddmenuComponent},
   { path: 'sidebar-admin', component: SidebarAdminComponent},
-  { path: 'orerlist', component: OrerlistComponent},
+  { path: 'hirelist', component: HirelistComponent},
+  { path: 'orderlist', component: OrderlistComponent},
   
 ];
 

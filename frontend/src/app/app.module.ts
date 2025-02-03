@@ -24,9 +24,12 @@ import { DrinksCardComponent } from './drinks/drinks-card/drinks-card.component'
 import { DessertCardComponent } from './dessert/dessert-card/dessert-card.component';
 import { AppetizerCardComponent } from './appetizer/appetizer-card/appetizer-card.component';
 import { AddmenuComponent } from './admin/addmenu/addmenu.component';
-
+import { HirelistComponent } from './hirelist/hirelist.component';
 import { SidebarAdminComponent } from './admin/sidebar-admin/sidebar-admin.component';
-import { OrerlistComponent } from './admin/orerlist/orerlist.component';
+import { OrderlistComponent } from './admin/orderlist/orderlist.component';
+
+
+
 
 
 @NgModule({
@@ -50,7 +53,10 @@ import { OrerlistComponent } from './admin/orerlist/orerlist.component';
     AppetizerCardComponent,
     AddmenuComponent,
     SidebarAdminComponent,
-    OrerlistComponent
+    HirelistComponent,
+    OrderlistComponent,
+
+
   ],
   imports: [
     BrowserModule,

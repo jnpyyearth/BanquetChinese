@@ -1,18 +1,36 @@
 <div class="container mt-4">
     <div class="row">
+
+
       <div class="col-md-4" *ngFor="let maindish of maindishes  ">
         
-        <div class="card">
-          <img [src]="'http://localhost:5014/api' + maindish.menu_Picturename"  class="card-img-top" alt="maindish Image">
-          <div class="card-body">
-            <h5 class="card-title">ชื่อ:{{ maindish.menu_Name }}</h5>
-            <h5 class="card-title">ไอดี:{{ maindish.menu_ID }}</h5>
+        <div class="card" style="cursor: pointer;">
+          <div class="text-center">
+            <img [src]="'http://localhost:5014/api' + maindish.menu_Picturename"  class="rounded" style="width: 150px" alt="maindish Image">
+          </div>
+
+          <div class="card-body position-relative">
+            <h5 class="card-title">{{ maindish.menu_Name }}</h5>
+            <h5 class="card-title">{{ maindish.menu_Price }} ฿ </h5>
+          </div>
+
+          <div class="text-center mt-2">
+            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);">
+          </div>
+          
+          <!-- <div class="card-body"> -->
+            
+            <!-- <h5 class="card-title">ไอดี:{{ maindish.menu_ID }}</h5> -->
             <!-- <button class="btn btn-success"button [routerLink]="['/tour-detail',Tour.ProgramTour_ID]">ดูรายละเอียด</button> -->
             <!-- <button class="btn btn-success"button [routerLink]="['/tour-detail',Tour.ProgramTour_ID]">ดูรายละเอียด</button> -->
              
-          </div>
+          <!-- </div> -->
+
+
         </div>
       </div>
+
+
     </div>
   </div>
   
