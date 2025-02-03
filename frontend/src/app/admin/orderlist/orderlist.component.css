@@ -69,3 +69,21 @@ button:hover {
     background-color: #3e0000;
     transform: translateY(-2px);
 }
+
+/* ปรับให้สีของปุ่มเป็นสีแดงเมื่อเริ่มต้น */
+#btn-check-2-outlined:checked + label {
+    background-color: red;
+    color: white;
+  }
+  
+  /* เมื่อกดแล้วให้ปุ่มเปลี่ยนเป็นสีเขียว */
+  #btn-check-2-outlined:not(:checked) + label {
+    background-color: green;
+    color: white;
+  }
+  
+  /* เพิ่มการเปลี่ยนแปลงสีเมื่อ hover */
+  label:hover {
+    opacity: 0.8;
+  }
+  
