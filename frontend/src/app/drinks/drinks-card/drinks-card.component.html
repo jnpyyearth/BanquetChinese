@@ -2,11 +2,17 @@
     <div class="row">
       <div class="col-md-4" *ngFor="let drinks of drinks ">
         
-        <div class="card">
-          <!-- <img [src]="'http://localhost:3000/' + Tour.Tour_Picture" onerror="this.src='assets/images/error.gif'" class="card-img-top" alt="Tour Image"> -->
-          <div class="card-body">
+        <div class="card" style="cursor: pointer;">
+          <div class="text-center">
+            <img [src]="'http://localhost:3000/' + drinks.Menu_Picture"  class="card-img-top" alt="Tour Image">
+          </div>
+          
+          <div class="card-body position-relative">
             <h5 class="card-title">ชื่อ:{{ drinks.menu_Name }}</h5>
-            <!-- <button class="btn btn-success"button [routerLink]="['/tour-detail',Tour.ProgramTour_ID]">ดูรายละเอียด</button> -->
+          </div>
+
+          <div class="text-center mt-2">
+            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);">
           </div>
         </div>
       </div>

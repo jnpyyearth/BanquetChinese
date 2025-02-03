@@ -10,4 +10,6 @@ public class Menu{
     public string? Menu_Picturename {set;get;} =null!;
 
     public int? Menu_Status {set;get;} =null!;
+    public decimal? Menu_Price {set;get;} =null!;
+
 }

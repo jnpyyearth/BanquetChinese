@@ -1,0 +1,89 @@
+/* Main container for the hire list */
+.hirelist-container {
+    width: 90%;  /* กำหนดความกว้างของ container ให้กว้างกว่า 100% */
+    max-width: 1000px;  /* เพิ่มขนาดสูงสุดของ container */
+    padding: 50px;
+    background-color: #3e0000; /* Dark red */
+    color: #ffaa00; /* Gold text */
+    border-radius: 35px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Adds depth */
+    text-align: center;
+
+    /* Centering and shifting */
+    position: absolute;
+    top: 56%;
+    left: 59%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Heading styling */
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffaa00;
+}
+
+/* Table styling */
+table {
+    width: 100%;  /* ขยายความกว้างของตาราง */
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ffaa00;
+    padding: 20px; /* เพิ่มขนาด padding ของแต่ละเซลล์ */
+    text-align: center;
+    font-size: 18px; /* ขยายขนาดตัวอักษร */
+}
+
+th {
+    background-color: #6b0000; /* Darker red for headers */
+    font-weight: bold;
+}
+
+td {
+    background-color: #3e0000; /* Matches container background */
+}
+
+/* Button styling */
+.button-container {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #6b0000;
+    color: #ffaa00;
+    border: none;
+    padding: 10px 30px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #3e0000;
+    transform: translateY(-2px);
+}
+
+/* ปรับให้สีของปุ่มเป็นสีแดงเมื่อเริ่มต้น */
+#btn-check-2-outlined:checked + label {
+    background-color: red;
+    color: white;
+  }
+  
+  /* เมื่อกดแล้วให้ปุ่มเปลี่ยนเป็นสีเขียว */
+  #btn-check-2-outlined:not(:checked) + label {
+    background-color: green;
+    color: white;
+  }
+  
+  /* เพิ่มการเปลี่ยนแปลงสีเมื่อ hover */
+  label:hover {
+    opacity: 0.8;
+  }
+  

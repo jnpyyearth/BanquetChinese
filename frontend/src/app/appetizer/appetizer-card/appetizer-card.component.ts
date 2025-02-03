@@ -23,4 +23,8 @@ export class AppetizerCardComponent implements OnInit{
         }
       )
     }
+
+
+
+
 }
