@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using backnet.Models;
 using backnet.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 namespace backnet.Controllers
 {
  [Route ("api/Menu")]
@@ -72,9 +73,49 @@ namespace backnet.Controllers
                  return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
-  
+        [HttpPut("EditMenu/{id}")]
+        public async Task<IActionResult> EditMenu(int id,[FromBody] EditMenuModel editMenuRequest){
+           
+            if(editMenuRequest ==null){
+                return NotFound("Invalid editMenu input");
+            }
+
+            var existingMenu = await _context.Menu.FindAsync(id);
+            if (existingMenu == null)
+            {
+                return NotFound($"Menu with ID {id} not found.");
+            }
+            existingMenu.Menu_Name = editMenuRequest.Menu_Name;
+            existingMenu.Menu_Price = editMenuRequest.Menu_Price;
+            try{
+                await _context.SaveChangesAsync();
+            }catch(DbUpdateConcurrencyException){
+                return StatusCode(500, "Error updating the menu. Please try again.");
+            }
+             return Ok(new { message = "Menu updated successfully.", Data=editMenuRequest });
+        }
+        [HttpPut("CancelMenu/{id}")]
+        public async Task<IActionResult> CancelMenu(int id,[FromBody] CancelMenuModel cancelModelRequest){
+            if(cancelModelRequest==null){
+                return NotFound($"dont have Request data");
+            }
+            var existingMenu =await _context.Menu.FindAsync(id);
+            if(existingMenu == null){
+                return NotFound($"this menu id {id} not found");
+            }
+            existingMenu.Menu_Status = cancelModelRequest.Menu_Status;
+            try{
+                await _context.SaveChangesAsync();
+            }catch(DbUpdateConcurrencyException){
+                  return StatusCode(500, "Error updating the menuStatus. Please try again.");
+            }
+             return Ok(new { message = "Menu updated successfully.", Data=cancelModelRequest });
+
+        }
+
+        }
     }
-    }
+
 
 
 
