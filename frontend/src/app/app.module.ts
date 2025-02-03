@@ -27,6 +27,7 @@ import { AddmenuComponent } from './admin/addmenu/addmenu.component';
 import { HirelistComponent } from './hirelist/hirelist.component';
 import { SidebarAdminComponent } from './admin/sidebar-admin/sidebar-admin.component';
 import { OrderlistComponent } from './admin/orderlist/orderlist.component';
+import { ReceiptComponent } from './receipt/receipt.component';
 
 
 
@@ -55,6 +56,7 @@ import { OrderlistComponent } from './admin/orderlist/orderlist.component';
     SidebarAdminComponent,
     HirelistComponent,
     OrderlistComponent,
+    ReceiptComponent,
 
 
   ],

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { ApiServiceService } from '../../Service/api-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-addmenu',
@@ -48,14 +49,17 @@ export class AddmenuComponent {
         this.apiService.addMenu(menuData).subscribe(
           ()=>{
             console.log("add complete")
+             Swal.fire('success', 'Addmenu succesccfully!', 'success');
             this.addmenuForm.reset();
           },
           error =>{
+             Swal.fire('failed', 'Addmenu failed!', 'error');
             console.error("faild addmenu",error)
           }
         );
       },
       error=>{
+        Swal.fire('failed', 'uploadImage failed!', 'error');
         console.error("faild upload Image",error);
       }
     );

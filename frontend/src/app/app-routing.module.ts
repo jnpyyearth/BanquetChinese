@@ -18,6 +18,7 @@ import { AddmenuComponent } from './admin/addmenu/addmenu.component';
 import { SidebarAdminComponent } from './admin/sidebar-admin/sidebar-admin.component';
 import { HirelistComponent } from './hirelist/hirelist.component';
 import { OrderlistComponent } from './admin/orderlist/orderlist.component';
+import { ReceiptComponent } from './receipt/receipt.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/mainpage', pathMatch: 'full' },
@@ -37,6 +38,7 @@ const routes: Routes = [
   { path: 'sidebar-admin', component: SidebarAdminComponent},
   { path: 'hirelist', component: HirelistComponent},
   { path: 'orderlist', component: OrderlistComponent},
+  { path: 'receipt', component: ReceiptComponent},
   
 ];
 
