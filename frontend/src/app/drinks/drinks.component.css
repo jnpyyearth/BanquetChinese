@@ -1,4 +1,4 @@
-p {
+/* p {
   font-family: Kanit , sans-serif;
   font-size: 25px;
   color: #1d1401;
@@ -9,38 +9,38 @@ p {
 }
 
 .container {
-  margin-right: 50px; /* ชิดขวา */
-  max-width: 80%; /* ลดขนาดความกว้างของ container */
+  margin-right: 50px; 
+  max-width: 80%; 
   
 }
 
 .card {
-  width: 200px; /* ย่อขนาด card */
-  margin: 100px; /* จัดกึ่งกลางในแต่ละ column */
-  margin-top: 100px; /* ปรับระยะห่างด้านบน */
-  margin-bottom: 20px; /* ปรับระยะห่างด้านล่าง */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้สวยงาม */
-  border-radius: 10px; /* ปรับมุมให้โค้ง */
-  background-color: #6D2323; /* เปลี่ยนสีพื้นหลังของ card */
+  width: 200px; 
+  margin: 100px; 
+  margin-top: 100px; 
+  margin-bottom: 20px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  border-radius: 10px; 
+  background-color: #6D2323; 
   
 }
 
 .card img {
-  max-width: 100%; /* ปรับรูปให้พอดีกับ card */
+  max-width: 100%; 
   margin-top: 20px;
   height: auto;
   border-radius: 5px;
 }
 
 .card-body {
-  text-align: center; /* จัดข้อความให้อยู่กลาง */
+  text-align: center; 
   color: #FFD95A;
   
 }
 
 .card-text {
-  font-weight: bold; /* ทำตัวอักษรราคาให้เด่นขึ้น */
-  color: #ff5722; /* เพิ่มสีส้ม */
+  font-weight: bold; 
+  color: #ff5722; 
   font-size: 18px;
 }
 
@@ -82,4 +82,17 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-}
+} */
+
+button {
+  background-color: #6D2323;
+  color: #FFD95A;
+  border: none; 
+  border-radius: 5px;
+  }
+  
+  button:hover {
+  background-color: #FFD95A;
+  color: #6D2323;
+  }
+  

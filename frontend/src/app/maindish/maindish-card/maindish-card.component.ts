@@ -16,8 +16,8 @@ export class MaindishCardComponent implements OnInit{
   constructor(private http: HttpClient,private authService: AuthService,private apiService:ApiServiceService){}
   ngOnInit(): void {
     this.apiService.getMainDish().subscribe(
-      (response:any)=>{
-        this.maindishes =response.data;
+      (response:any)=> {
+        this.maindishes = response.data;
         console.log(this.maindishes)
       },(error:any)=>{
         console.error('error')
