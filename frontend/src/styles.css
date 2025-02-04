@@ -17,6 +17,7 @@ body.login-page {
     height: 500px;
   }
 
+/*เพิ่มพื้นหลัง register*/
   body.register-page {
     background-image: url('/assets/images/Background.jpg');
     background-size: cover;

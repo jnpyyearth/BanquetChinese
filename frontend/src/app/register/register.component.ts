@@ -18,7 +18,8 @@ errorMessage:string ='';
 constructor(private fb:FormBuilder,private http: HttpClient,private router: Router,private authService:AuthService,private apiService:ApiServiceService){}
 ngOnInit(): void {
 
-  document.body.classList.add('register-page');
+  document.body.classList.add('register-page');//เพิ่มอันนี้เพื่อทำให้พื้นหลังขึ้นแก้พื้นหลังใน style.css
+
      this.registerForm = this.fb.group({
         username: ['', Validators.required],
         password: ['', [Validators.required, Validators.minLength(6)]],
