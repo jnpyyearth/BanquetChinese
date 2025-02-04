@@ -1,11 +1,6 @@
-p {
-    font-family: Kanit , sans-serif;
-    font-size: 25px;
-    color: #1d1401;
-    text-align: center;
-    position: absolute;
-    margin-top: 100px;
-    margin-left: 200px;
+h2 {
+  margin-top: 20px;
+  color: #000;
 }
 
 .container {
@@ -17,7 +12,7 @@ p {
   .card {
     width: 200px; /* ย่อขนาด card */
     margin: 100px; /* จัดกึ่งกลางในแต่ละ column */
-    margin-top: 150px; /* ปรับระยะห่างด้านบน */
+    margin-top: 20px; /* ปรับระยะห่างด้านบน */
     margin-bottom: 20px; /* ปรับระยะห่างด้านล่าง */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้สวยงาม */
     border-radius: 10px; /* ปรับมุมให้โค้ง */
@@ -44,42 +39,29 @@ p {
     font-size: 18px;
   }
   
-button {
-  background-color: #6D2323;
-  color: #FFD95A;
-  border: none; 
-  border-radius: 5px;
-}
+/* สไตล์ปุ่มแก้ไขและลบ */
+.btn {
+    margin: 5px;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+  }
+  
+  .btn-warning {
+    background-color: #ffc107;
+    color: white;
+  }
+  
+  .btn-warning:hover {
+    background-color: #e0a800;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
 
-button:hover {
-  background-color: #FFD95A;
-  color: #6D2323;
-}
-
-.form-check-input {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #FFD95A;
-  border-radius: 50%;
-  outline: none;
-  cursor: pointer;
-  position: relative;
-}
-
-.form-check-input:checked {
-  background-color: #55ff00;
-  border-color: #55ff00;
-}
-
-.form-check-input:checked::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  background-color: white;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}

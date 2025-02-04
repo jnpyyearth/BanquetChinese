@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
@@ -27,6 +27,11 @@ import { AddmenuComponent } from './admin/addmenu/addmenu.component';
 import { HirelistComponent } from './hirelist/hirelist.component';
 import { SidebarAdminComponent } from './admin/sidebar-admin/sidebar-admin.component';
 import { OrderlistComponent } from './admin/orderlist/orderlist.component';
+import { ShowmenuComponent } from './admin/showmenu/showmenu.component';
+import { ShowmaindishComponent } from './admin/showmaindish/showmaindish.component';
+import { ShowappetizerComponent } from './admin/showappetizer/showappetizer.component';
+import { ShowdessertComponent } from './admin/showdessert/showdessert.component';
+import { ShowdrinksComponent } from './admin/showdrinks/showdrinks.component';
 
 
 
@@ -55,14 +60,24 @@ import { OrderlistComponent } from './admin/orderlist/orderlist.component';
     SidebarAdminComponent,
     HirelistComponent,
     OrderlistComponent,
+<<<<<<< HEAD
+    ShowmenuComponent,
+    ShowmaindishComponent,
+    ShowappetizerComponent,
+    ShowdessertComponent,
+    ShowdrinksComponent,
 
+=======
+  
+>>>>>>> master
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration(withEventReplay()),

@@ -1,5 +1,5 @@
 /* Main container for the hire list */
-.hirelist-container {
+.orderlist-container {
     width: 90%;  /* กำหนดความกว้างของ container ให้กว้างกว่า 100% */
     max-width: 1000px;  /* เพิ่มขนาดสูงสุดของ container */
     padding: 50px;
@@ -70,7 +70,6 @@ button:hover {
     transform: translateY(-2px);
 }
 
-/* ปรับให้สีของปุ่มเป็นสีแดงเมื่อเริ่มต้น */
 #btn-check-2-outlined:checked + label {
     background-color: red;
     color: white;

@@ -60,7 +60,15 @@ export class ApiServiceService {
     return this.http.post(`${apiUrl}/api/Menu/AddMenu`,menuData);
   }
 
+   editmenu(menuData:any):Observable<any>{
+    console.log("Hello editmenu service");
+    return this.http.put(`${apiUrl}/api/Menu/EditMenu`,menuData);
+  }
 
 
+  canclemenu(menuData:any):Observable<any>{
+    console.log("Hello canclemenu service");
+    return this.http.put(`${apiUrl}/api/Menu/CancelMenu`,menuData);
+  }
 
 }
