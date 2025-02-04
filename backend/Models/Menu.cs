@@ -9,7 +9,7 @@ public class Menu{
 
     public string? Menu_Picturename {set;get;} =null!;
 
-    public int? Menu_Status {set;get;} =null!;
+    public int? Menu_Status {set;get;} =0;
     public decimal? Menu_Price {set;get;} =null!;
-
+        public ICollection<OrderDetail>? OrderDetail { get; set; } = new List<OrderDetail>();
 }
