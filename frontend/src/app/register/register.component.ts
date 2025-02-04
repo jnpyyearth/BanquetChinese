@@ -18,6 +18,7 @@ errorMessage:string ='';
 constructor(private fb:FormBuilder,private http: HttpClient,private router: Router,private authService:AuthService,private apiService:ApiServiceService){}
 ngOnInit(): void {
 
+  document.body.classList.add('register-page');
      this.registerForm = this.fb.group({
         username: ['', Validators.required],
         password: ['', [Validators.required, Validators.minLength(6)]],

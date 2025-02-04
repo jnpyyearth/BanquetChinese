@@ -17,4 +17,9 @@ body.login-page {
     height: 500px;
   }
 
-  
+  body.register-page {
+    background-image: url('/assets/images/Background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+  }  

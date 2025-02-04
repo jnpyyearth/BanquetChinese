@@ -17,7 +17,7 @@ p {
   .card {
     width: 200px; /* ย่อขนาด card */
     margin: 100px; /* จัดกึ่งกลางในแต่ละ column */
-    margin-top: 100px; /* ปรับระยะห่างด้านบน */
+    margin-top: 150px; /* ปรับระยะห่างด้านบน */
     margin-bottom: 20px; /* ปรับระยะห่างด้านล่าง */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้สวยงาม */
     border-radius: 10px; /* ปรับมุมให้โค้ง */

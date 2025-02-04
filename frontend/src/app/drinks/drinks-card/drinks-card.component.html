@@ -1,15 +1,15 @@
 <div class="container mt-4">
     <div class="row">
-      <div class="col-md-4" *ngFor="let drinks of drinks ">
+      <div class="col-md-4" *ngFor="let drink of drinks ">
         
         <div class="card" style="cursor: pointer;">
           <div class="text-center">
-            <img [src]="'http://localhost:5014/api' + drinks.menu_Picturename"  class="card-img-top" alt="Tour Image">
+            <img [src]="'http://localhost:5014/api' + drink.menu_Picturename"  class="card-img-top" alt="Tour Image">
           </div>
           
           <div class="card-body position-relative">
-            <h5 class="card-title">{{ drinks.menu_Name }}</h5>
-            <h5 class="card-title">{{ drinks.menu_Price }} ฿ </h5>
+            <h5 class="card-title">{{ drink.menu_Name }}</h5>
+            <h5 class="card-title">{{ drink.menu_Price }} ฿ </h5>
           </div>
 
           <div class="text-center mt-2">
@@ -19,4 +19,3 @@
       </div>
     </div>
   </div>
-  

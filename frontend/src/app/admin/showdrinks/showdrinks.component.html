@@ -1,0 +1,62 @@
+<div class="container mt-4">
+    <div class="container ml-4">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="row">
+        <h2>Drinks</h2>
+        <!-- ตัวอย่างเมนูที่แสดงเป็นการ์ด -->
+        <div class="col-3" *ngFor="let drink of drinks">
+            <div class="card" style="cursor: pointer ;">
+                <div class="text-center">
+                    <img [src]="'http://localhost:5014/api' + drink.menu_Picturename"  class="rounded" style="width: 150px;">
+                </div>
+                <div class="card-body position-relative">
+                    <div class="card-title h5 text-center">
+                        <h5 class="card-title">{{ drink.menu_Name }}</h5>
+                        <h5 class="card-title">{{ drink.menu_Price }} ฿ </h5>
+                    </div>
+
+                    <div class="text-center mt-2">
+                        <!-- Button to open Edit modal -->
+                        <button class="btn btn-warning"
+                            (click)="editDrink(drink)">แก้ไข</button>
+
+
+                        <!-- Button to open Delete confirmation modal -->
+                        <button class="btn btn-danger"  (click)="cancelDrink(drink)">ลบ</button>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+        <!-- Edit Modal -->
+       
+    </div>
+</div>
+
+
+<div class="modal" tabindex="-1" role="dialog" *ngIf="isModalOpen">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">แก้ไขข้อมูล [ {{ selectedDrink.menu_Name}}]</h5>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>ชื่อเมนู</label>
+            <input class="form-control" [(ngModel)]="selectedDrink.menu_Name" type="text" />
+          </div>
+          <div class="mb-3">
+            <label for="editPrice" class="form-label">ราคา</label>
+            <input type="number" class="form-control" [(ngModel)]="selectedDrink.menu_Price" id="editPrice" >
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="closeModal()">ยกเลิก</button>
+          <button type="button" class="btn btn-primary" (click)="updateDrink()">บันทึกการเปลี่ยนแปลง</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

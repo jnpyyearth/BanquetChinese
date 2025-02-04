@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
@@ -64,7 +64,8 @@ import { ReceiptComponent } from './receipt/receipt.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration(withEventReplay()),

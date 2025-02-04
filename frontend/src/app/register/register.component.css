@@ -1,6 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/assets/images/china.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
+.register-container {
+  width: 600px;
+  padding: 20px;
+  border: 1px solid #521010;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(112, 12, 12, 0.1);
+  background-color: #521010; /* Keep the form background */
+  position: relative;
+  color: #FFB109;
+  font-family: 'Merienda','Kanit', sans-serif;
+  font-weight: bold;
+}
+
 .register-container {
   width: 600px;
   margin: 170px auto;
