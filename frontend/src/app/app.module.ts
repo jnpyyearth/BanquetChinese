@@ -60,16 +60,12 @@ import { ShowdrinksComponent } from './admin/showdrinks/showdrinks.component';
     SidebarAdminComponent,
     HirelistComponent,
     OrderlistComponent,
-<<<<<<< HEAD
     ShowmenuComponent,
     ShowmaindishComponent,
     ShowappetizerComponent,
     ShowdessertComponent,
-    ShowdrinksComponent,
-
-=======
+    ShowdrinksComponent
   
->>>>>>> master
 
   ],
   imports: [
