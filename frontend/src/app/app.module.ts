@@ -64,8 +64,8 @@ import { ShowdrinksComponent } from './admin/showdrinks/showdrinks.component';
     ShowmaindishComponent,
     ShowappetizerComponent,
     ShowdessertComponent,
-    ShowdrinksComponent,
-
+    ShowdrinksComponent
+  
 
   ],
   imports: [
