@@ -99,11 +99,13 @@ namespace backnet.Controllers
             if(cancelModelRequest==null){
                 return NotFound($"dont have Request data");
             }
+             Console.WriteLine($"📢 ค่า Menu_Status ที่ได้รับ: {cancelModelRequest.Menu_Status}");
             var existingMenu =await _context.Menu.FindAsync(id);
             if(existingMenu == null){
                 return NotFound($"this menu id {id} not found");
             }
             existingMenu.Menu_Status = cancelModelRequest.Menu_Status;
+            
             try{
                 await _context.SaveChangesAsync();
             }catch(DbUpdateConcurrencyException){
