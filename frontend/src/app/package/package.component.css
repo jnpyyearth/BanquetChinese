@@ -27,12 +27,16 @@
   }
   
   .card:hover {
-    border: 1px solid black;
+    border-width: 12px;
+    border-style: solid;
+    border-color: rgba(76, 248, 18, 0.874);
     transform: scale(1.05);
-  }
+}
+
   
   .card:active {
     transform: scale(0.95) rotateZ(1.7deg);
+    
   }
 
 
@@ -179,3 +183,4 @@ hr {
   margin-top: 750px;
   position: absolute;
 }
+
