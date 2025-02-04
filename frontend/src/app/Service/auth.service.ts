@@ -43,5 +43,4 @@ export class AuthService {
     isLoggedIn() {
       return JSON.parse(localStorage.getItem('loggedIn') || 'false');
     }
-  
 }

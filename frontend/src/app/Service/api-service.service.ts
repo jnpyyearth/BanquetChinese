@@ -64,7 +64,16 @@ export class ApiServiceService {
     console.log("Hello get Drink service");
     return this.http.get(`${apiUrl}/api/Table/GetDrink`);
   }
+  
+   editmenu(menuData:any):Observable<any>{
+    console.log("Hello editmenu service");
+    return this.http.put(`${apiUrl}/api/Menu/EditMenu`,menuData);
+  }
 
 
+  canclemenu(menuData:any):Observable<any>{
+    console.log("Hello canclemenu service");
+    return this.http.put(`${apiUrl}/api/Menu/CancelMenu`,menuData);
+  }
 
 }

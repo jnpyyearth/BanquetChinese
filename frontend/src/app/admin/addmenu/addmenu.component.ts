@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { ApiServiceService } from '../../Service/api-service.service';
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-addmenu',
@@ -15,12 +15,15 @@ export class AddmenuComponent {
     addmenuForm!: FormGroup;
     selectedFile:File|null=null;
     fileUrl: string | null = null;
-    constructor(private fb: FormBuilder,private apiService:ApiServiceService){
+
+    constructor(private fb: FormBuilder,private apiService:ApiServiceService){ }
+
+    ngOnInit() {
       this.addmenuForm =this.fb.group({
         menu_Name:['', Validators.required],
         menu_Type:['', Validators.required],
         menu_Price:['', [Validators.required,Validators.pattern("^[0-9]*$")]],
-        // menu_Picturename:['',Validators.required]
+        menu_picturename:['',Validators.required],
       })
     }
 
@@ -29,11 +32,13 @@ export class AddmenuComponent {
   }
   onSubmit(){
     if(!this.addmenuForm.valid){
-      alert('invalid form');
+      Swal.fire("โปรดกรอกข้อมูลให้ครบถ้วน");
+      // alert('invalid form');
       return;
     }
     if (!this.selectedFile) {
-      alert('กรุณาเลือกไฟล์รูปภาพ');
+      Swal.fire("โปรดเลือกรูปภาพเมนูอาหาร");
+      // alert('กรุณาเลือกไฟล์รูปภาพ');
       return;
     }
     this.apiService.uploadImage(this.selectedFile).subscribe(

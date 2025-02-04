@@ -20,6 +20,15 @@ export class OrderService {
     }
   }
 
+  adddetail(item: any) {
+    if (!this.selectedItems.some(i => i.menu_ID === item.menu_ID)) {
+      this.selectedItems.push(item);
+      this.saveToLocalStorage();
+      this.selectedItems$.next(this.selectedItems); // ✅ อัปเดต UI หลังเพิ่มเมนู
+    }
+  }
+
+
   removeItem(menuId: number) {
     this.selectedItems = this.selectedItems.filter(item => item.menu_ID !== menuId);
     this.saveToLocalStorage();
