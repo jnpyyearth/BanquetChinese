@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../Service/auth.service';
 import { ApiServiceService } from '../../Service/api-service.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-maindish-card',
@@ -15,16 +16,27 @@ export class MaindishCardComponent implements OnInit{
   maindishes:any=[];
   constructor(private http: HttpClient,private authService: AuthService,private apiService:ApiServiceService){}
   ngOnInit(): void {
-    this.apiService.getMainDish().subscribe(
+    // this.apiService.getMainDish().subscribe(
       
-      (response:any)=>{
-        console.log("🟢 API Response:", response);
-        this.maindishes =response.data;
-        console.log("🟢 Successfully received data:", this.maindishes);
-      },(error:any)=>{
-        console.error("🔴 API Error:", error);
-        console.error('error')
-      }
-    )
-  }
-}
+    //   (response:any)=>{
+    //     console.log("🟢 API Response:", response);
+    //     this.maindishes =response.data;
+    //     console.log("🟢 Successfully received data:", this.maindishes);
+    //   },(error:any)=>{
+    //     console.error("🔴 API Error:", error);
+    //     console.error('error')
+    //   }
+    // )
+    this.apiService.getMainDish()
+  .pipe(
+    map((response: any) => {
+      console.log("Raw API response:", response);
+      return Array.isArray(response.data) ? response.data.filter((maindish:any) => maindish.menu_Status === 0) : [];
+    })
+  )
+  .subscribe(filterMenu => {
+    this.maindishes = filterMenu;
+    console.log('Filtered data:', this.maindishes);
+  });
+
+}}
