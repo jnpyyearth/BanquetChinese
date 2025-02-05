@@ -71,9 +71,12 @@ export class ApiServiceService {
   }
 
 
-  canclemenu(menuData:any):Observable<any>{
+  cancelMenu(cancelMenuData:any):Observable<any>{
     console.log("Hello canclemenu service");
-    return this.http.put(`${apiUrl}/api/Menu/CancelMenu`,menuData);
+    return this.http.put(`${apiUrl}/api/Menu/CancelMenu/${cancelMenuData.Menu_ID}`,cancelMenuData);
+  }
+  updateMenu(updateMenuData:any):Observable<any[]>{
+    return this.http.put<any[]>(`${apiUrl}/api/Menu/EditMenu/${updateMenuData.Menu_ID}`,updateMenuData);
   }
 
 }

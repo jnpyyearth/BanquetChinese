@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../Service/auth.service';
 import { ApiServiceService } from '../../Service/api-service.service';
 import { OrderService } from '../../Service/order.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-appetizer-card',

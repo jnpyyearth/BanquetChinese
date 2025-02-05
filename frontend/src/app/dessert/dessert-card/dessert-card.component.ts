@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../Service/auth.service';
 import { ApiServiceService } from '../../Service/api-service.service';
 import { OrderService } from '../../Service/order.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dessert-card',
@@ -55,7 +56,8 @@ export class DessertCardComponent implements OnInit{
 
     isChecked(menuId: number): boolean {
       return this.selectedMenus.some(item => item.menu_ID === menuId); // ✅ ตรวจสอบค่าจาก selectedMenus
+  
+    
     }
-}
-
+  }
 

@@ -1,0 +1,80 @@
+h2 {
+  margin-top: 20px;
+  color: #000;
+}
+
+.container {
+    margin-right: 50px; /* ชิดขวา */
+    max-width: 80%; /* ลดขนาดความกว้างของ container */
+    
+  }
+  
+  .card {
+    width: 200px; /* ย่อขนาด card */
+    margin: 100px; /* จัดกึ่งกลางในแต่ละ column */
+    margin-top: 20px; /* ปรับระยะห่างด้านบน */
+    margin-bottom: 20px; /* ปรับระยะห่างด้านล่าง */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้สวยงาม */
+    border-radius: 10px; /* ปรับมุมให้โค้ง */
+    background-color: #6D2323; /* เปลี่ยนสีพื้นหลังของ card */
+    
+  }
+  
+  .card img {
+    max-width: 100%; /* ปรับรูปให้พอดีกับ card */
+    margin-top: 20px;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .card-body {
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+    color: #FFD95A;
+    
+  }
+  
+  .card-text {
+    font-weight: bold; /* ทำตัวอักษรราคาให้เด่นขึ้น */
+    color: #ff5722; /* เพิ่มสีส้ม */
+    font-size: 18px;
+  }
+  
+/* สไตล์ปุ่มแก้ไขและลบ */
+.btn {
+    margin: 5px;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+  }
+  
+  .btn-warning {
+    background-color: #ffc107;
+    color: white;
+  }
+  
+  .btn-warning:hover {
+    background-color: #e0a800;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+  .modal {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+}
