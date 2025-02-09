@@ -23,6 +23,7 @@ export class PackageComponent {
       (response:any)=>{
         this.tablesize = response.data.map((item: any) => {
           // เปลี่ยนชื่อที่จะแสดงผล
+          
           if (item.id === 1) {
             item.name = 'S'  // เปลี่ยนชื่อที่จะแสดง
           } else if (item.id === 2) {
@@ -44,18 +45,32 @@ export class PackageComponent {
 
 
 
-  toggleSelection(item: any) {
+//   toggleSelection(item: any) {
+//   console.log("🖱️ กดเลือก:", item);
+
+//   // รีเซ็ตค่าเก่า (เลือกได้ทีละ 1 อัน)
+//   this.selectedMenus = [];
+//   this.OrderService.clearTables(); // เพิ่มเมธอดนี้ใน OrderService
+
+//   // เพิ่มข้อมูลใหม่
+//   this.OrderService.addtable(item);
+
+//   // อัปเดตรายการที่เลือก
+//   this.selectedMenus = this.OrderService.getSelectedItems();
+//   console.log("📋 รายการที่เลือก:", this.selectedMenus);
+// }
+
+toggleSelection(item: any) {
   console.log("🖱️ กดเลือก:", item);
 
   // รีเซ็ตค่าเก่า (เลือกได้ทีละ 1 อัน)
-  this.selectedMenus = [];
-  this.OrderService.clearTables(); // เพิ่มเมธอดนี้ใน OrderService
+  this.OrderService.clearOrder(); // ✅ เปลี่ยนจาก clearTables() เป็น clearOrder()
 
   // เพิ่มข้อมูลใหม่
-  this.OrderService.addtable(item);
+  this.OrderService.setUserInfo(item); // ✅ ใช้ setUserInfo() แทน addtable()
 
   // อัปเดตรายการที่เลือก
-  this.selectedMenus = this.OrderService.getSelectedItems();
+  this.selectedMenus = this.OrderService.getOrderData();
   console.log("📋 รายการที่เลือก:", this.selectedMenus);
 }
 

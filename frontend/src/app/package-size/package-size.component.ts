@@ -20,11 +20,12 @@ export class PackageSizeComponent {
     const parsedData = storedData ? JSON.parse(storedData) : {};
 
     this.packageform = new FormGroup({
-      namesname: new FormControl(parsedData.namesname || '', Validators.required),
+      contact_Name: new FormControl(parsedData.contact_Name || '', Validators.required),
       province: new FormControl(parsedData.province || '', Validators.required),
       place: new FormControl(parsedData.place || '', Validators.required),
       date: new FormControl(parsedData.date || '', Validators.required),
-      phone: new FormControl(parsedData.phone || '', Validators.required)
+      phone: new FormControl(parsedData.phone || '', Validators.required),
+      guestamount:new FormControl(parsedData.guestamount||'',Validators.required)
     });
   }
 
@@ -94,7 +95,7 @@ export class PackageSizeComponent {
       draggable: true
     }).then(() => {
       
-      this.OrderService.adddetail(formData);
+      this.OrderService.setUserInfo(formData);
       this.router.navigate(['/maindish']);
     });
   }

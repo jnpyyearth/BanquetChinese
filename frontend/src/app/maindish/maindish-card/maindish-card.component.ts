@@ -21,8 +21,8 @@ export class MaindishCardComponent implements OnInit{
   ngOnInit(): void {
 
     // ✅ Subscribe ข้อมูลที่ถูกเลือกจาก OrderService เพื่อให้ UI อัปเดตอัตโนมัติ
-    this.OrderService.getSelectedItemsObservable().subscribe(items => {
-      this.selectedMenus = items;
+    this.OrderService.getOrderDataObservable().subscribe(data => {
+      this.selectedMenus = (data && Array.isArray(data.menus)) ? data.menus : []; 
     });
 
     this.apiService.getMainDish().subscribe(
@@ -39,33 +39,21 @@ export class MaindishCardComponent implements OnInit{
 
   toggleSelection(item: any, event: any) {
     console.log("🖱️ กดเลือก:", item);
-  
+
     if (event.target.checked) {
-      this.OrderService.addItem(item);
+      this.OrderService.addMenu(item); // ✅ ใช้ addMenu() แทน addItem()
     } else {
-      this.OrderService.removeItem(item.menu_ID);
+      this.OrderService.removeMenu(item.menu_ID); // ✅ ใช้ removeMenu()
     }
-    this.selectedMenus = this.OrderService.getSelectedItems(); // อัปเดต UI
-  
-    console.log("📋 รายการปัจจุบัน:", this.OrderService.getSelectedItems());
+
+    // ✅ ไม่ต้องเรียก getOrderData() เพราะ UI อัปเดตอัตโนมัติผ่าน Observable
+    console.log("📋 รายการปัจจุบัน:", this.selectedMenus);
   }
-  
 
   isChecked(menuId: number): boolean {
-    return this.selectedMenus.some(item => item.menu_ID === menuId); // ✅ ตรวจสอบค่าจาก selectedMenus
+    return Array.isArray(this.selectedMenus) && this.selectedMenus.some(item => item.menu_ID === menuId);
   }
   
 }
-  //   this.apiService.getMainDish()
-  // .pipe(
-  //   map((response: any) => {
-  //     console.log("Raw API response:", response);
-  //     return Array.isArray(response.data) ? response.data.filter((maindish:any) => maindish.menu_Status === 0) : [];
-  //   })
-  // )
-  // .subscribe(filterMenu => {
-  //   this.maindishes = filterMenu;
-  //   console.log('Filtered data:', this.maindishes);
-  // });
-
+ 
 

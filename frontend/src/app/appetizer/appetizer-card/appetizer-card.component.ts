@@ -22,8 +22,8 @@ export class AppetizerCardComponent implements OnInit{
     ngOnInit(): void {
 
       // ✅ Subscribe ข้อมูลที่ถูกเลือกจาก OrderService เพื่อให้ UI อัปเดตอัตโนมัติ
-      this.OrderService.getSelectedItemsObservable().subscribe(items => {
-        this.selectedMenus = items;
+      this.OrderService.getOrderDataObservable().subscribe(items => {
+        this.selectedMenus = Array.isArray(items.menus) ? items.menus : [];   
       });
 
 
@@ -43,18 +43,19 @@ export class AppetizerCardComponent implements OnInit{
       console.log("🖱️ กดเลือก:", item);
     
       if (event.target.checked) {
-        this.OrderService.addItem(item);
+        this.OrderService.addMenu(item);
       } else {
-        this.OrderService.removeItem(item.menu_ID);
+        this.OrderService.removeMenu(item.menu_ID);
       }
-      this.selectedMenus = this.OrderService.getSelectedItems(); // อัปเดต UI
+      // อัปเดต UI
     
-      console.log("📋 รายการปัจจุบัน:", this.OrderService.getSelectedItems());
+      console.log("📋 รายการปัจจุบัน:", this.selectedMenus);
     }
     
 
     isChecked(menuId: number): boolean {
-      return this.selectedMenus.some(item => item.menu_ID === menuId); // ✅ ตรวจสอบค่าจาก selectedMenus
+      //return true false  check ว่ามี selected menu ใช่มั้ย 
+      return Array.isArray(this.selectedMenus) && this.selectedMenus.some(item => item.menu_ID === menuId); 
     }
     
     

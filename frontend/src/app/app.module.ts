@@ -32,6 +32,7 @@ import { ShowmaindishComponent } from './admin/showmaindish/showmaindish.compone
 import { ShowappetizerComponent } from './admin/showappetizer/showappetizer.component';
 import { ShowdessertComponent } from './admin/showdessert/showdessert.component';
 import { ShowdrinksComponent } from './admin/showdrinks/showdrinks.component';
+import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 
 
 
@@ -64,7 +65,8 @@ import { ShowdrinksComponent } from './admin/showdrinks/showdrinks.component';
     ShowmaindishComponent,
     ShowappetizerComponent,
     ShowdessertComponent,
-    ShowdrinksComponent
+    ShowdrinksComponent,
+    ConfirmOrderComponent
   
 
   ],
