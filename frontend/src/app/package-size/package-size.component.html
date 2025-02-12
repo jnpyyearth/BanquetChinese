@@ -11,11 +11,13 @@
 
   <div class="right">
 
-    <form [formGroup]="packageform" (ngSubmit)="onSubmit()">
+    <form [formGroup]="packageform" (ngSubmit)="onSubmit()"   >
       <p> | Package : Size | </p>
 
-      <label for="namesname">ชื่อ-นามสกุล: </label>
-      <input type="text" id="namesname" formControlName="namesname" placeholder="โปรดใส่ชื่อของท่าน" required>
+      <label for="namesname">ชื่อผู้ติดต่อ: </label>
+      <input type="text" id="namesname" formControlName="contact_Name" placeholder="โปรดใส่ชื่อของท่าน" required>
+      <label for="guestamount">จำนวนคน: </label>
+      <input type="number" id="guestamount" formControlName="guestamount" placeholder="โปรดใส่จำนวนคน" required>
 
       <!-- <label for="province">จังหวัด : </label>
       <input type="text" id="province" formControlName="province" placeholder="จังหวัดของท่าน" required> -->
@@ -40,7 +42,7 @@
 
       <label for="date">หมายเลขโทรศัพท์ติดต่อ :</label>
       <input type="text" id="phone" formControlName="phone" placeholder="กรุณากรอกเบอร์โทรของท่าน" required>
-
+      
       <button type="submit" >Submit</button>
     </form>
   </div>

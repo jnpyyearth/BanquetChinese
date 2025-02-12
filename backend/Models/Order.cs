@@ -33,7 +33,9 @@ public class Order
 
     public decimal TotalPrice { get; set; }
 
-    public bool Cancelled { get; set; }
+    public int Cancelled { get; set; }
+    public string? Contact_Name { get; set; }
 
+    public string? Payment_Status {get;set;}
     public ICollection<OrderDetail> OrderDetail { get; set; }
 }
