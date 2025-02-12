@@ -86,5 +86,8 @@ export class ApiServiceService {
     console.log("Hello add order",orderData);
     return this.http.post(`${apiUrl}/api/orders/addOrder`,orderData);
   }
-
+  getOrderReport():Observable<any>{
+    console.log("Hello getOrderReport");
+    return this.http.get(`${apiUrl}/api/orders/getOrderReport`)
+  }
 }

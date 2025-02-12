@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using backnet.Models;
-using backnet.Data; // นำเข้า Models
+using backnet.Data;
+using Microsoft.Identity.Client; // นำเข้า Models
 [ApiController]
 [Route("api/orders")]
 public class OrderController : ControllerBase{
@@ -57,5 +58,18 @@ public class OrderController : ControllerBase{
                     return StatusCode(500,"Error while creating order.");
                 };
             }
+           
         }
+         [HttpGet("getOrderReport")]
+            public async Task<IActionResult> GetOrderReport(){
+                try{
+                    var order = await _context.Order.ToListAsync();
+                    if(order==null || !order.Any()){
+                        return BadRequest("not found order");
+                    }
+                    return Ok(new{message="query successful Data=",Data=order});
+                }catch(Exception ex){
+                    return StatusCode(500,new{message="internal error",Error=ex.Message});    
+                }
+            }
     }
