@@ -23,6 +23,7 @@ public class OrderRequestModel{
    
     public decimal SumMenuPrice { get; set; }
      public string Contact_Name { get; set; }
+     public string? phone { get; set; }
         public List<OrderDetailDto> OrderDetails { get; set; }
 }
 

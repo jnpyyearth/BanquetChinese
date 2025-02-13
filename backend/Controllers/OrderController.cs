@@ -40,6 +40,7 @@ public class OrderController : ControllerBase{
                     Table_ID = orderRequest.Table_ID,
                     Contact_Name=orderRequest.Contact_Name,
                     TotalPrice = TotalPrice, 
+                    phone = orderRequest.phone,
                     
                     };
                     _context.Order.Add(order);
@@ -63,7 +64,26 @@ public class OrderController : ControllerBase{
          [HttpGet("getOrderReport")]
             public async Task<IActionResult> GetOrderReport(){
                 try{
-                    var order = await _context.Order.ToListAsync();
+                    var order = await _context.Order 
+            .Include(o => o.User) // ดึงข้อมูล User ที่เกี่ยวข้อง
+            .Select(o => new 
+            {
+                o.Order_ID,
+                o.User_ID,
+                Username = o.User.username, // เพิ่ม Username
+                o.Province,
+                o.PlaceEvent,
+                o.GuestAmount,
+                o.Orderdate,
+                o.Eventdate,
+                o.Table_ID,
+                o.TotalPrice,
+                o.Cancelled,
+                o.Contact_Name,
+                o.Payment_Status,
+                o.phone
+            })
+            .ToListAsync();
                     if(order==null || !order.Any()){
                         return BadRequest("not found order");
                     }
@@ -73,3 +93,10 @@ public class OrderController : ControllerBase{
                 }
             }
     }
+
+
+
+
+
+
+
