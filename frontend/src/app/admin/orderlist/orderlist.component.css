@@ -3,6 +3,7 @@
     width: 90%;  /* กำหนดความกว้างของ container ให้กว้างกว่า 100% */
     max-width: 1000px;  /* เพิ่มขนาดสูงสุดของ container */
     padding: 50px;
+    margin-top: 300px;
     background-color: #3e0000; /* Dark red */
     color: #ffaa00; /* Gold text */
     border-radius: 35px;
