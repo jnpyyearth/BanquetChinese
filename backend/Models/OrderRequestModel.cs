@@ -20,7 +20,10 @@ public class OrderRequestModel{
     public DateTime Orderdate { get; set; }
     public DateTime Eventdate { get; set; }
     public int Table_ID { get; set; }
+   
     public decimal SumMenuPrice { get; set; }
+     public string Contact_Name { get; set; }
+     public string? phone { get; set; }
         public List<OrderDetailDto> OrderDetails { get; set; }
 }
 

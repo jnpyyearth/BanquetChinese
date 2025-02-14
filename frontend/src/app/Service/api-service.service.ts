@@ -60,15 +60,34 @@ export class ApiServiceService {
     return this.http.post(`${apiUrl}/api/Menu/AddMenu`,menuData);
   }
 
+  getTable():Observable<any>{
+    console.log("Hello get Drink service");
+    return this.http.get(`${apiUrl}/api/Table/GetTable`);
+  }
+  
    editmenu(menuData:any):Observable<any>{
     console.log("Hello editmenu service");
     return this.http.put(`${apiUrl}/api/Menu/EditMenu`,menuData);
   }
 
 
-  canclemenu(menuData:any):Observable<any>{
+  cancelMenu(cancelMenuData:any):Observable<any>{
     console.log("Hello canclemenu service");
-    return this.http.put(`${apiUrl}/api/Menu/CancelMenu`,menuData);
+    return this.http.put(`${apiUrl}/api/Menu/CancelMenu/${cancelMenuData.Menu_ID}`,cancelMenuData);
   }
-
+  updateMenu(updateMenuData:any):Observable<any[]>{
+    return this.http.put<any[]>(`${apiUrl}/api/Menu/EditMenu/${updateMenuData.Menu_ID}`,updateMenuData);
+  }
+  getTableByID(Table_ID:number):Observable<any>{
+    console.log("Hello getTableBy ID: ",Table_ID)
+    return this.http.get(`${apiUrl}/api/Table/GetTableById/${Table_ID}`);
+  }
+  addOrder(orderData:any):Observable<any>{
+    console.log("Hello add order",orderData);
+    return this.http.post(`${apiUrl}/api/orders/addOrder`,orderData);
+  }
+  getOrderReport():Observable<any>{
+    console.log("Hello getOrderReport");
+    return this.http.get(`${apiUrl}/api/orders/getOrderReport`)
+  }
 }

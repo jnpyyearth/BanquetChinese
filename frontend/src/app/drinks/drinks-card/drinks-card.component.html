@@ -4,16 +4,18 @@
         
         <div class="card" style="cursor: pointer;">
           <div class="text-center">
-            <img [src]="'http://localhost:5014/api' + drinks.menu_Picturename"  class="card-img-top" alt="Image">
+            <img [src]="'http://localhost:5014/api' + drink.menu_Picturename"  class="card-img-top" alt="Tour Image">
           </div>
           
           <div class="card-body position-relative">
-            <h5 class="card-title">{{ drinks.menu_Name }}</h5>
-            <h5 class="card-title">{{ drinks.menu_Price }} ฿ </h5>
+            <h5 class="card-title">{{ drink.menu_Name }}</h5>
+            <h5 class="card-title">{{ drink.menu_Price }} ฿ </h5>
           </div>
 
           <div class="text-center mt-2">
-            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);">
+            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);"
+            [checked]="isChecked(drink.menu_ID)"  
+                   (change)="toggleSelection(drink, $event)">
           </div>
         </div>
       </div>
