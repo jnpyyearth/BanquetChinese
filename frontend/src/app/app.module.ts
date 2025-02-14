@@ -27,16 +27,20 @@ import { AddmenuComponent } from './admin/addmenu/addmenu.component';
 import { HirelistComponent } from './hirelist/hirelist.component';
 import { SidebarAdminComponent } from './admin/sidebar-admin/sidebar-admin.component';
 import { OrderlistComponent } from './admin/orderlist/orderlist.component';
-<<<<<<< HEAD
+
 import { ReceiptComponent } from './receipt/receipt.component';
-=======
+
 import { ShowmenuComponent } from './admin/showmenu/showmenu.component';
 import { ShowmaindishComponent } from './admin/showmaindish/showmaindish.component';
 import { ShowappetizerComponent } from './admin/showappetizer/showappetizer.component';
 import { ShowdessertComponent } from './admin/showdessert/showdessert.component';
 import { ShowdrinksComponent } from './admin/showdrinks/showdrinks.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
->>>>>>> origin
+
+import { DatePipe } from '@angular/common';
+
+
+
 
 
 
@@ -65,10 +69,7 @@ import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
     SidebarAdminComponent,
     HirelistComponent,
     OrderlistComponent,
-<<<<<<< HEAD
     ReceiptComponent,
-
-=======
     ShowmenuComponent,
     ShowmaindishComponent,
     ShowappetizerComponent,
@@ -76,7 +77,6 @@ import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
     ShowdrinksComponent,
     ConfirmOrderComponent
   
->>>>>>> origin
 
   ],
   imports: [
@@ -88,7 +88,8 @@ import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
   ],
   providers: [
     provideClientHydration(withEventReplay()),
-    ApiServiceService 
+    ApiServiceService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

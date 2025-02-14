@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+
+
+.row{
+    padding-top: 50px;
+    
+}
+
+#boxgap{
+    justify-content: center; /* จัดให้อยู่ตรงกลาง */
+    gap: 20px;
+}
+
+#image-section {
+    background-color: #4d0f0f;
+    padding: 15px;
+    width: 35%;
+    text-align: center;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    position: relative;
+    z-index: 3;
+}
+
+#info-section {
+    background-color: #4d0f0f;
+    width: 35%;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    position: relative;
+    z-index: 3;
+    color: #e1a100;
+    padding-left: 10px;
+    font-family: 'Merienda','Kanit', sans-serif;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.infoorder{
+    margin-left: 20px;
+}
+
+.btn{
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+#btn{
+    background-color: #4d0f0f;
+    color: #FFD95A;
+    border: none; 
+    border-radius: 5px;
+
+    bottom: 24px;
+    right: 240px;
+    font-size: 18px;
+    padding: 15px 30px;
+}
