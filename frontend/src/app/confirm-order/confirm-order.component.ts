@@ -12,6 +12,8 @@ import Swal from 'sweetalert2';
   
   templateUrl: './confirm-order.component.html',
   styleUrl: './confirm-order.component.css'
+
+  
 })
 export class ConfirmOrderComponent implements OnInit {
   orderData:any|null=null;

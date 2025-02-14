@@ -38,36 +38,7 @@ export class PackageSizeComponent {
     console.log("📋 โหลดข้อมูลจาก localStorage:", this.selectedMenus);
   }
 
-  // onSubmit() {
-  //   if (this.packageform.invalid) {
-  //     Swal.fire({
-  //       title: "กรุณากรอกข้อมูลให้ครบ",
-  //       icon: "warning",
-  //     });
-  //     return;
-  //   }
-
-  //   // ✅ ล้างข้อมูลเก่าก่อนบันทึกใหม่ (เพื่อป้องกันการซ้อนทับ)
-  //   localStorage.removeItem('formData');
-
-  //   // ✅ บันทึกฟอร์มใหม่แทนที่ของเก่า
-  //   const formData = this.packageform.value;
-  //   localStorage.setItem('formData', JSON.stringify(formData));
-
-  //   // ✅ ตรวจสอบว่า LocalStorage ถูกแทนที่จริงหรือไม่
-  //   console.log("📌 Form Data ที่บันทึกลง LocalStorage:", localStorage.getItem('formData'));
-
-  //   Swal.fire({
-  //     title: "success",
-  //     icon: "success",
-  //     text: "เยี่ยมมาก ไปเลือกเมนูอาหารกัน",
-  //     draggable: true
-  //   }).then(() => {
-      
-  //     this.OrderService.adddetail(formData);
-  //     this.router.navigate(['/maindish']);
-  //   });
-  // }
+  
  
   onSubmit() {
     if (this.packageform.invalid) {
