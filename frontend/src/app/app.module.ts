@@ -33,7 +33,7 @@ import { ShowappetizerComponent } from './admin/showappetizer/showappetizer.comp
 import { ShowdessertComponent } from './admin/showdessert/showdessert.component';
 import { ShowdrinksComponent } from './admin/showdrinks/showdrinks.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
-
+import { DatePipe } from '@angular/common';
 
 
 
@@ -79,7 +79,8 @@ import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
   ],
   providers: [
     provideClientHydration(withEventReplay()),
-    ApiServiceService 
+    ApiServiceService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

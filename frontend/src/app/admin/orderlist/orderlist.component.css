@@ -70,16 +70,16 @@ button:hover {
     transform: translateY(-2px);
 }
 
-#btn-check-2-outlined:checked + label {
-    background-color: red;
-    color: white;
+.btn-outline-success {
+    color: green;
+    border-color: rgb(255, 255, 255);
   }
   
-  /* เมื่อกดแล้วให้ปุ่มเปลี่ยนเป็นสีเขียว */
-  #btn-check-2-outlined:not(:checked) + label {
-    background-color: green;
-    color: white;
+  .btn-outline-danger {
+    color: red;
+    border-color: rgb(255, 255, 255);
   }
+  
   
   /* เพิ่มการเปลี่ยนแปลงสีเมื่อ hover */
   label:hover {
