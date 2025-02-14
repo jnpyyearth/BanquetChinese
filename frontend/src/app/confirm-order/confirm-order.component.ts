@@ -38,6 +38,7 @@ export class ConfirmOrderComponent implements OnInit {
           eventdate: selectedMenus.date || '',
           table_ID: selectedMenus.id || 0,
           sumMenuPrice: sumMenuPrice,
+          phone:selectedMenus.phone,
           orderDetails: selectedMenus.menus.map((item: any) => ({
             menu_ID: item.menu_ID
           }))

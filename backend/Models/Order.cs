@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using backnet.Models;
 public class Order
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Order_ID { get; set; }
-
+    [ForeignKey("User")]
     public int User_ID { get; set; }
 
     [Required]
@@ -36,6 +36,9 @@ public class Order
     public int Cancelled { get; set; }
     public string? Contact_Name { get; set; }
 
-    public string? Payment_Status {get;set;}
+    public string? Payment_Status {get;set;}="pending";
+    public string? phone { get; set; }
     public ICollection<OrderDetail> OrderDetail { get; set; }
+    public virtual User User { get; set; }
+
 }

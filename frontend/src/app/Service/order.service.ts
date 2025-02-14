@@ -109,6 +109,7 @@ export class OrderService {
     guestAmount: 0,
     orderdate: '',
     eventdate: '',
+    phone:'',
     table_ID: 0,
     menus: []
   };

@@ -28,5 +28,6 @@ public partial class User
 
     [NotMapped] // ระบุว่าไม่ต้องแมปกับฐานข้อมูล
      public string confirmPassword { get; set; } = null!;
-   
+   public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
+
 }
