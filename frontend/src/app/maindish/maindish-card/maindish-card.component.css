@@ -87,7 +87,7 @@ button:hover {
     display: grid;
     grid-template-columns: repeat(4, minmax(150px, 1fr)); 
     gap: 15px; 
-    justify-content: start; 
+    justify-content: start;
     margin-top: 100px; 
     width: 80%; 
     margin-left: 180px; 
