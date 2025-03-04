@@ -1,11 +1,12 @@
-<app-navbar />
-<app-sidebar-admin />
+<app-navbar></app-navbar>
+<app-sidebar-admin></app-sidebar-admin>
 
 <div class="orderlist-container">
     <h1>Banquet Chinese</h1>
     <table>
         <thead>
             <tr>
+                <th>Id</th>
                 <th>ชื่อ</th>
                 <th>จังหวัด</th>
                 <th>สถานที่</th>
@@ -16,58 +17,25 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>พีพี</td>
-                <td>กรุงเทพ</td>
-                <td>111/1 ม.1</td>
-                <td>5</td>
-                <td>0801233540</td>
-                <td>01/01/2025</td>
+            <tr *ngFor="let Orderreport of Orderreports">
+                <td>{{ Orderreport.user_ID }}</td>
+                <td>{{ Orderreport.username }}</td>
+                <td>{{ Orderreport.province }}</td>
+                <td>{{ Orderreport.placeEvent }}</td>
+                <td>{{ Orderreport.guestAmount }}</td>
+                <td>{{ Orderreport.phone }}</td>
+                <td>{{ Orderreport.eventdate | date:'yyyy-MM-dd'}}</td>
                 <td>
-                    <input type="checkbox" class="btn-check" id="btn-check-2-outlined" checked autocomplete="off">
-                    <label class="btn btn-outline-secondary" for="btn-check-2-outlined">Checked</label><br>
-                </td>
-            </tr>
-            <tr>
-                <td>พีพี</td>
-                <td>กรุงเทพ</td>
-                <td>111/1 ม.1</td>
-                <td>5</td>
-                <td>0801233540</td>
-                <td>01/01/2025</td>
-                <td>
-                    <input type="checkbox" class="btn-check" id="btn-check-2-outlined" checked autocomplete="off">
-                    <label class="btn btn-outline-secondary" for="btn-check-2-outlined">Checked</label><br>
-                </td>
-            </tr>
-            <tr>
-                <td>พีพี</td>
-                <td>กรุงเทพ</td>
-                <td>111/1 ม.1</td>
-                <td>5</td>
-                <td>0801233540</td>
-                <td>01/01/2025</td>
-                <td>
-                    <input type="checkbox" class="btn-check" id="btn-check-2-outlined" checked autocomplete="off">
-                    <label class="btn btn-outline-secondary" for="btn-check-2-outlined">Checked</label><br>
-                </td>
-            </tr>
-            <tr>
-                <td>พีพี</td>
-                <td>กรุงเทพ</td>
-                <td>111/1 ม.1</td>
-                <td>5</td>
-                <td>0801233540</td>
-                <td>01/01/2025</td>
-                <td>
-                    <input type="checkbox" class="btn-check" id="btn-check-2-outlined" checked autocomplete="off">
-                    <label class="btn btn-outline-secondary" for="btn-check-2-outlined">Checked</label><br>
-                </td>
+                    <label  [ngClass]="{'btn-outline-success': Orderreport.payment_Status === 'paid', 'btn-outline-danger': Orderreport.payment_Status === 'pending'}" for="btn-check-2-outlined">
+                      {{ Orderreport.payment_Status === 'paid' ? 'Paid' : 'Pending' }}
+                    </label><br>
+                  </td>
+                  
             </tr>
         </tbody>
     </table>
+    
     <div class="button-container">
         <button>BACK</button>
     </div>
 </div>
-

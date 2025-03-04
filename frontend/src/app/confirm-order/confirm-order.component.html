@@ -1,19 +1,39 @@
-<h2>รายละเอียดคำสั่งซื้อ</h2>
+<app-navbar />
+<app-sidebar />
 
-<p><strong>ชื่อติดต่อ:</strong> {{ orderData?.contact_Name }}</p>
-<p><strong>จังหวัด:</strong> {{ orderData?.province }}</p>
-<p><strong>สถานที่จัดงาน:</strong> {{ orderData?.place}}</p>
-<p><strong>จำนวนแขก:</strong> {{ orderData?.guestAmount }}</p>
-<p><strong>ขนาดโต๊ะ:</strong> {{ tableAmount }} คนต่อโต๊ะ</p>
-<p><strong>วันที่สั่ง:</strong> {{ orderData?.orderdate | date}}</p>
-<p><strong>วันที่จัดงาน:</strong> {{ orderData?.eventdate | date}}</p>
-<p><strong>ราคารวม:</strong> {{ finalPrice }} บาท</p>
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-10">
+    <div class="row" id="boxgap">
+      <div class="col" id="image-section"></div>
+      <div class="col" id="info-section">
+        <div class="infoorder">
+          <h2>รายละเอียดคำสั่งซื้อ</h2>
 
 <h3>เมนูที่เลือก</h3>
-<ul>
-  <li *ngFor="let item of menuData?.menu_name">
-    เมนู : {{ item.menu_name }}
-  </li>
-</ul>
+          <p><strong>ชื่อติดต่อ:</strong> {{ orderData?.contact_Name }}</p>
+          <p><strong>จังหวัด:</strong> {{ orderData?.province }}</p>
+          <p><strong>สถานที่จัดงาน:</strong> {{ orderData?.place }}</p>
+          <p><strong>จำนวนแขก:</strong> {{ orderData?.guestAmount }}</p>
+          <p><strong>ขนาดโต๊ะ:</strong> {{ tableAmount }} คนต่อโต๊ะ</p>
+          <p><strong>วันที่สั่ง:</strong> {{ orderData?.orderdate | date }}</p>
+          <p>
+            <strong>วันที่จัดงาน:</strong> {{ orderData?.eventdate | date }}
+          </p>
+          <p><strong>ราคารวม:</strong> {{ finalPrice }} บาท</p>
 
-<button (click)="sendOrder()">ส่งคำสั่งซื้อ</button>
+          <h3>เมนูที่เลือก</h3>
+          <ul>
+            <li *ngFor="let item of menuData?.menu_name">
+              เมนู : {{ item.menu_name }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="btn" >
+      <button onclick="window.history.back()" id="btn">ย้อนกลับ</button>
+      <button (click)="sendOrder()" id="btn">ส่งคำสั่งซื้อ</button>
+    </div>
+  </div>
+</div>
