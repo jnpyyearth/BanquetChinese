@@ -29,7 +29,8 @@ public class OrderController : ControllerBase{
                     if(table ==null){//
                         return BadRequest("Table not found");
                     }//
-                    decimal TotalPrice =(table.Table_Price+orderRequest.SumMenuPrice)*((decimal)orderRequest.GuestAmount/table.Table_Size);
+                    decimal TotalPrice =table.Table_Price*((decimal)orderRequest.GuestAmount/table.Table_Size);
+                   
                     var order = new Order{
                     User_ID = user.User_ID, // ได้จากการ Query
                     Province = orderRequest.Province,
