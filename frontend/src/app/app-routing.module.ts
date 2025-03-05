@@ -43,6 +43,7 @@ const routes: Routes = [
   { path: 'orderlist', component: OrderlistComponent},
   { path: 'receipt', component: ReceiptComponent},
   
+  
   { path: 'showmenu', component: ShowmenuComponent},
   { path: 'showmaindish', component: ShowmaindishComponent},
   {path:'confirmorder',component:ConfirmOrderComponent}
