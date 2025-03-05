@@ -10,11 +10,14 @@
           <div class="card-body position-relative">
             <h5 class="card-title">{{ dessert.menu_Name }}</h5>
             <h5 class="card-title">{{ dessert.menu_Price }} ฿ </h5>
+            
           </div>
           
           
           <div class="text-center mt-2">
-            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);">
+            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);"
+            [checked]="isChecked(dessert.menu_ID)"  
+                   (change)="toggleSelection(dessert, $event)">
           </div>
         </div>
       </div>

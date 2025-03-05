@@ -261,6 +261,7 @@ hr  {
   position: absolute;
   width: 100px;
   bottom: 10px;
+  height: 100px;
   right: 10px;
   background-color: #A31D1D;
   color: #FEF9E1;
@@ -287,7 +288,6 @@ hr  {
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transform: scale(1.1) 0.3s ease-in-out;
-
 }
 
 
@@ -309,7 +309,6 @@ hr  {
 .bounce-up {
   animation: bounceUp 1s ease-in-out forwards;
 } */
-
 
 
 .card1::after {

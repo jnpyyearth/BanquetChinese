@@ -16,16 +16,12 @@
           </div>
 
           <div class="text-center mt-2">
-            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);">
+            <input class="form-check-input" type="checkbox" id="checkbox1" style="transform: scale(1.5);"
+            [checked]="isChecked(maindish.menu_ID)"  
+                   (change)="toggleSelection(maindish, $event)">
           </div>
           
-          <!-- <div class="card-body"> -->
-            
-            <!-- <h5 class="card-title">ไอดี:{{ maindish.menu_ID }}</h5> -->
-            <!-- <button class="btn btn-success"button [routerLink]="['/tour-detail',Tour.ProgramTour_ID]">ดูรายละเอียด</button> -->
-            <!-- <button class="btn btn-success"button [routerLink]="['/tour-detail',Tour.ProgramTour_ID]">ดูรายละเอียด</button> -->
-             
-          <!-- </div> -->
+          
 
 
         </div>
@@ -34,4 +30,5 @@
 
     </div>
   </div>
-  
+
+

@@ -5,7 +5,7 @@
     <div class="row">
         <h3>Main dishes</h3>
         <!-- ตัวอย่างเมนูที่แสดงเป็นการ์ด -->
-        <div class="col-3" *ngFor="let maindish of maindishes">
+        <div class="col-3" *ngFor="let maindish of maindishes ">
             <div class="card" style="cursor: pointer ;">
                 <div class="text-center">
                     <img [src]="'http://localhost:5014/api' + maindish.menu_Picturename" class="rounded" style="width: 150px;">

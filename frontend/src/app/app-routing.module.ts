@@ -18,8 +18,10 @@ import { AddmenuComponent } from './admin/addmenu/addmenu.component';
 import { SidebarAdminComponent } from './admin/sidebar-admin/sidebar-admin.component';
 import { HirelistComponent } from './hirelist/hirelist.component';
 import { OrderlistComponent } from './admin/orderlist/orderlist.component';
+import { ReceiptComponent } from './receipt/receipt.component';
 import { ShowmenuComponent } from './admin/showmenu/showmenu.component';
 import { ShowmaindishComponent } from './admin/showmaindish/showmaindish.component';
+import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/mainpage', pathMatch: 'full' },
@@ -39,9 +41,11 @@ const routes: Routes = [
   { path: 'sidebar-admin', component: SidebarAdminComponent},
   { path: 'hirelist', component: HirelistComponent},
   { path: 'orderlist', component: OrderlistComponent},
-  { path: 'showmenu', component: ShowmenuComponent},
-  { path: 'showmaindish', component: ShowmaindishComponent}
+  { path: 'receipt', component: ReceiptComponent},
   
+  { path: 'showmenu', component: ShowmenuComponent},
+  { path: 'showmaindish', component: ShowmaindishComponent},
+  {path:'confirmorder',component:ConfirmOrderComponent}
 ];
 
 @NgModule({

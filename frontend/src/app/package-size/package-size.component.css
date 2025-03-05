@@ -6,9 +6,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 60px;
+  padding: 30px;
   width: 100%;
-  max-width: 920px; 
+  max-width: 1020px; 
   max-height: 550px;
   margin-top: 150px;
   margin-left: 320px;
@@ -19,6 +19,9 @@
   position: fixed;
   font-family: kanit , sans-serif;
 }
+
+
+
 
 .left {
   flex: 1;
@@ -44,13 +47,14 @@
 
 form {
   width: 100%;
+  margin: 10px;
 }
 
-input {
+/* input {
   width: 100%;
   padding: 8px;
   margin: 5px 0;
-}
+} */
 
 button {
   margin-left: 280px;
@@ -79,22 +83,45 @@ button:hover {
     font-size: 14px;
   }
 
-  input, select {
-    width: 100%;
+  input , select  {
+    width: 210px;
     padding: 8px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 14px;
-    background-color: #110204;
-    color: #ccc;
+    font-size: 16px;
+    background-color: #ffeff1;
+    /* background-color: #f5f1f2; */
+    color: #060606;
   }
 
+.namesname{
+  width: 440px;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #ffeff1;
+    color: #060606;
+}
+
+.place{
+  width: 440px;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #ffeff1;
+    color: #060606;
+}
 
   p {
     align-items: center;
     margin-left: 110px;
     font-size: 20px;
+    font-family: Merienda , sans-serif;
   }
 
   .my-swal-title {
@@ -109,4 +136,17 @@ button:hover {
     margin-left: 300px;
     font-family: Kanit , sans-serif;
   }
+  
+  .rol {
+    display: flex;  
+    gap: 1px;      
+    align-items: center; 
+  }
+  .col-6 {
+    display: flex;
+    flex-direction: column; 
+  }
+  
+
+
   

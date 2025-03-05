@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.Identity.Client;
 
 public class Table
 {
@@ -12,4 +13,7 @@ public class Table
 
     
     public decimal Table_Price { get; set; }
+}
+public class GetTableByIdRequestModel{
+    public int Table_ID { get; set;}
 }

@@ -18,13 +18,13 @@ export class NavbarComponent {
   
     
 
-  // เข้าถึง loggedIn โดยใช้ ['loggedIn']
+  // เข้าถึง loggedIn 
   if (navigation?.extras?.state?.['loggedIn']) {
     this.isLoggedIn = true; // ตั้งค่าสถานะการล็อกอินเป็น true
   }
   } 
 
-  ngOnInIt(): void{
+  ngOnInit(): void {
     this.isLoggedIn = this.authService.isLoggedIn();
   }
   
