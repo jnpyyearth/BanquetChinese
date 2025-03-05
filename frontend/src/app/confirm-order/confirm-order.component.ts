@@ -22,6 +22,7 @@ export class ConfirmOrderComponent implements OnInit {
   finalPrice: number | null = null;
   tableAmount: number | null = null;
   username:string|null=null;
+  menuData:any|null=null;
   constructor(private orderservice:OrderService,private apiService:ApiServiceService,private authService:AuthService){}
   ngOnInit(){
     this.username = this.authService.getUsername()
@@ -31,6 +32,14 @@ export class ConfirmOrderComponent implements OnInit {
     if(selectedMenus){
       const sumMenuPrice =selectedMenus.menus.reduce((sum:number,item:any)=>sum+(item.menu_Price||0),0);
         // จัดรูปแบบข้อมูลให้ตรงกับโครงสร้าง API
+      this.menuData ={
+        menu_name:selectedMenus.menus.map((item: any) => ({
+          menu_name: item.menu_Name
+          
+        }))
+      }
+        console.log("menu_name:",this.menuData)
+      
         this.orderData = {
           contact_Name:selectedMenus.contact_Name||'',
           username: this.username || '',
@@ -44,6 +53,7 @@ export class ConfirmOrderComponent implements OnInit {
           phone:selectedMenus.phone,
           orderDetails: selectedMenus.menus.map((item: any) => ({
             menu_ID: item.menu_ID
+            
           }))
         };
         console.log("check table_ID",this.orderData.table_ID)

@@ -68,8 +68,8 @@ onLogin():void{
     });
 
     }else if(this.userRole ==='manager'){
-      this.router.navigate(['/mainpage'])
-      console.log("route to mm main")
+      this.router.navigate(['/addmenu'])
+      console.log("route to addmenu")
       
     }else {
       console.log("cannot route")
