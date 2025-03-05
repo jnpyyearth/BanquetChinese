@@ -312,7 +312,7 @@ hr  {
 
 
 .card1::after {
-  content: "Package : M"; 
+  content: "Package : M 1000.- "; 
   position: absolute;
   top: 0; 
   left: 50%;
@@ -326,10 +326,11 @@ hr  {
   visibility: hidden;
   transition: opacity 0.3s ease-in-out;
   font-family: Merienda , sans-serif;
+  font-family: Kanit , sans-serif;
 }
 
 .card2::after {
-  content: "Package : L"; 
+  content: "Package : L 1000.- "; 
   position: absolute;
   top: 0; 
   left: 50%;
@@ -343,6 +344,7 @@ hr  {
   visibility: hidden;
   transition: opacity 0.3s ease-in-out;
   font-family: Merienda , sans-serif;
+  font-family: Kanit , sans-serif;
 }
 
 /* .card3::before {
@@ -362,7 +364,7 @@ hr  {
 
 
 .card3::after {
-  content: "Package : XL"; 
+  content: "Package : XL 1000.-"; 
   position: absolute;
   top: 0; 
   left: 50%;
@@ -376,6 +378,7 @@ hr  {
   visibility: hidden;
   transition: opacity 0.3s ease-in-out;
   font-family: Merienda , sans-serif;
+  font-family: Kanit , sans-serif;
 }
 
 .card1:hover::after,  

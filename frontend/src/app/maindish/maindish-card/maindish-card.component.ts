@@ -4,6 +4,7 @@ import { AuthService } from '../../Service/auth.service';
 import { ApiServiceService } from '../../Service/api-service.service';
 import { OrderService } from '../../Service/order.service';
 import { map } from 'rxjs/operators';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-maindish-card',
@@ -14,7 +15,8 @@ import { map } from 'rxjs/operators';
 })
 
 export class MaindishCardComponent implements OnInit{
-  maindishes:any=[];selectedMenus: any[] = [];
+  maindishes:any=[];
+  selectedMenus: any[] = [];
   
       constructor(private http: HttpClient,private authService: AuthService,private apiService:ApiServiceService,private OrderService: OrderService,){}
   
@@ -41,14 +43,28 @@ export class MaindishCardComponent implements OnInit{
     console.log("🖱️ กดเลือก:", item);
 
     if (event.target.checked) {
-      this.OrderService.addMenu(item); // ✅ ใช้ addMenu() แทน addItem()
+      if (this.selectedMenus.length >= 2) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'เลือกได้สูงสุด 2 เมนู!',
+          text: 'คุณไม่สามารถเลือกเมนูมากกว่า 2 รายการได้',
+          confirmButtonText: 'ตกลง'
+        }).then(() => {
+          // ลบเมนูล่าสุดที่เลือกออก
+          event.target.checked = false;
+          this.OrderService.removeMenu(item.menu_ID);
+          console.log("ลบเมนูที่กดเลือกล่าสุด:");
+      });
+      return;
+      }
+      this.OrderService.addMenu(item); //เพิ่มเมนุ
     } else {
-      this.OrderService.removeMenu(item.menu_ID); // ✅ ใช้ removeMenu()
+      this.OrderService.removeMenu(item.menu_ID); //ลบเมนูออก
     }
 
-    // ✅ ไม่ต้องเรียก getOrderData() เพราะ UI อัปเดตอัตโนมัติผ่าน Observable
     console.log("📋 รายการปัจจุบัน:", this.selectedMenus);
   }
+  
 
   isChecked(menuId: number): boolean {
     return Array.isArray(this.selectedMenus) && this.selectedMenus.some(item => item.menu_ID === menuId);
