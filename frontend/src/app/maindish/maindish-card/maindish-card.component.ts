@@ -9,14 +9,13 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-maindish-card',
   standalone: false,
-  
+
   templateUrl: './maindish-card.component.html',
   styleUrl: './maindish-card.component.css'
 })
 
 export class MaindishCardComponent implements OnInit{
-  maindishes:any=[];
-  selectedMenus: any[] = [];
+  maindishes:any=[];selectedMenus: any[] = [];
   
       constructor(private http: HttpClient,private authService: AuthService,private apiService:ApiServiceService,private OrderService: OrderService,){}
   
@@ -24,15 +23,15 @@ export class MaindishCardComponent implements OnInit{
 
     // ✅ Subscribe ข้อมูลที่ถูกเลือกจาก OrderService เพื่อให้ UI อัปเดตอัตโนมัติ
     this.OrderService.getOrderDataObservable().subscribe(data => {
-      this.selectedMenus = (data && Array.isArray(data.menus)) ? data.menus : []; 
+      this.selectedMenus = (data && Array.isArray(data.menus)) ? data.menus : [];
     });
 
     this.apiService.getMainDish().subscribe(
-      (response:any)=>{
+      (response: any) => {
         console.log("🟢 API Response:", response);
-        this.maindishes =response.data;
+        this.maindishes = response.data;
         console.log("🟢 Successfully received data:", this.maindishes);
-      },(error:any)=>{
+      }, (error: any) => {
         console.error("🔴 API Error:", error);
         console.error('error')
       }
@@ -41,23 +40,22 @@ export class MaindishCardComponent implements OnInit{
 
   toggleSelection(item: any, event: any) {
     console.log("🖱️ กดเลือก:", item);
+    const orderData = this.OrderService.getOrderData();
+    const table_ID = orderData?.id || 0;
+
+    console.log(" Table_ID ที่ได้จาก LocalStorage:", table_ID);
+    let maxMenuSelection = 999;
+    if (table_ID === 1) maxMenuSelection = 5;
+    else if (table_ID === 2) maxMenuSelection = 6;
+    else if (table_ID === 3) maxMenuSelection = 8;
+
+    // ✅ ตรวจสอบจำนวนเมนูที่เลือกแล้วใน OrderService
+    const selectedMenus = this.OrderService.getOrderData().menus || [];
+    const currentCount = selectedMenus.filter((menu:any) => menu.menu_Type === "maindish").length;
+    console.log(`maindish count =${currentCount}`)
 
     if (event.target.checked) {
-      if (this.selectedMenus.length >= 2) {
-        Swal.fire({
-          icon: 'warning',
-          title: 'เลือกได้สูงสุด 2 เมนู!',
-          text: 'คุณไม่สามารถเลือกเมนูมากกว่า 2 รายการได้',
-          confirmButtonText: 'ตกลง'
-        }).then(() => {
-          // ลบเมนูล่าสุดที่เลือกออก
-          event.target.checked = false;
-          this.OrderService.removeMenu(item.menu_ID);
-          console.log("ลบเมนูที่กดเลือกล่าสุด:");
-      });
-      return;
-      }
-      this.OrderService.addMenu(item); //เพิ่มเมนุ
+      this.OrderService.addMenu(item); // ✅ ใช้ addMenu() แทน addItem()
     } else {
       this.OrderService.removeMenu(item.menu_ID); //ลบเมนูออก
     }
@@ -69,7 +67,7 @@ export class MaindishCardComponent implements OnInit{
   isChecked(menuId: number): boolean {
     return Array.isArray(this.selectedMenus) && this.selectedMenus.some(item => item.menu_ID === menuId);
   }
-  
+
 }
- 
+
 

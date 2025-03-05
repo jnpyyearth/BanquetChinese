@@ -68,7 +68,7 @@ export class ConfirmOrderComponent implements OnInit {
              console.log("Table Size:", this.selectedTable?.table_Size);
               this.tableAmount = Math.ceil(this.orderData.guestAmount/this.selectedTable.table_Size);
               console.log("tableAmount",this.tableAmount);
-             this.finalPrice = ((Number(this.selectedTable.table_Price)) + (Number(this.orderData.sumMenuPrice))) * (this.tableAmount);
+             this.finalPrice = ((Number(this.selectedTable.table_Price))) * (this.tableAmount);
              console.log("final price is: ",this.finalPrice)
              
           },(erorr:any)=>{
@@ -81,25 +81,7 @@ export class ConfirmOrderComponent implements OnInit {
     
     
   }
-  // sendOrder(){
-  //   if (!this.orderData) {
-  //     console.error("Error: Missing order data");
-  //     return;
-  //   }
-  //   console.log("Sending Order:", this.orderData);
-
-  //   this.apiService.addOrder(this.orderData).subscribe(
-  //     (response) => {
-  //       console.log("Order successfully sent!", response);
-  //       alert("คำสั่งซื้อถูกส่งเรียบร้อยแล้ว!");
-  //     },
-  //     (error) => {
-  //       console.error("Error sending order:", error);
-  //       alert("เกิดข้อผิดพลาดในการส่งคำสั่งซื้อ");
-  //     }
-  //   );
   
-  // }
   sendOrder() {
     if (!this.orderData) {
       console.error("❌ Error: Missing order data");

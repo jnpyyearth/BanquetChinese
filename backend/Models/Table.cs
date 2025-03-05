@@ -11,7 +11,6 @@ public class Table
     [Required] 
     public int Table_Size { get; set; } 
 
-    
     public decimal Table_Price { get; set; }
 }
 public class GetTableByIdRequestModel{
