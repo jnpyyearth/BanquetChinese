@@ -35,6 +35,7 @@ import { ShowdessertComponent } from './admin/showdessert/showdessert.component'
 import { ShowdrinksComponent } from './admin/showdrinks/showdrinks.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 import { DatePipe } from '@angular/common';
+import { CalendarComponent } from './calendar/calendar.component';
 
 
 
@@ -69,8 +70,8 @@ import { DatePipe } from '@angular/common';
     ShowappetizerComponent,
     ShowdessertComponent,
     ShowdrinksComponent,
-    ConfirmOrderComponent
-  
+    ConfirmOrderComponent,
+    CalendarComponent
 
   ],
   imports: [
@@ -78,8 +79,8 @@ import { DatePipe } from '@angular/common';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
-  ],
+    FormsModule,
+],
   providers: [
     provideClientHydration(withEventReplay()),
     ApiServiceService,

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators , FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2'
 import { OrderService } from '../Service/order.service';
+
 
 @Component({
   selector: 'app-package-size',
@@ -13,6 +14,9 @@ import { OrderService } from '../Service/order.service';
 export class PackageSizeComponent {
   selectedMenus: any[] = [];
   packageform: FormGroup;
+  selectedDate: string | null = null;
+  showCalendar = false;
+  form: any;
 
   constructor(private router: Router, private OrderService: OrderService) {
     // ✅ โหลดข้อมูลจาก LocalStorage
@@ -36,6 +40,7 @@ export class PackageSizeComponent {
       this.selectedMenus = JSON.parse(storedMenus);
     }
     console.log("📋 โหลดข้อมูลจาก localStorage:", this.selectedMenus);
+    
   }
 
   
@@ -70,5 +75,44 @@ export class PackageSizeComponent {
       this.router.navigate(['/maindish']);
     });
   }
+
+  toggleCalendar() {
+    this.showCalendar = !this.showCalendar;
+    console.log("📆 Toggle Calendar:", this.showCalendar);
+  }
+
+  // onDateSelected(date: string) {
+  //   console.log("📌 วันที่ที่เลือก:", date);
+  //   this.selectedDate = date;
+  //   this.packageform.patchValue({ date }); 
+  //   this.closeCalendarModal(); 
+  // }
    
+
+  onDateSelected(date: string) {
+    console.log("📌 วันที่ที่เลือก (ค่าจาก Calendar):", date);
+    // ใช้ new Date() เพื่อแปลงค่าวันที่ให้ถูกต้อง
+    const selectedDateObj = new Date(date + 'T00:00:00'); // ใช้เวลาเที่ยงคืนเพื่อป้องกัน TimeZone Error
+    const localDate = new Date(selectedDateObj.getTime() - selectedDateObj.getTimezoneOffset() * 60000);
+    // แปลงเป็น "YYYY-MM-DD" เพื่อให้ตรงกับ input text
+    const formattedDate = localDate.toISOString().split('T')[0];
+    console.log("วันที่ที่เลือก (แก้ไขแล้ว):", formattedDate);
+    this.selectedDate = formattedDate; // อัปเดตค่าที่ input
+    this.packageform.patchValue({ date: formattedDate }); // อัปเดตฟอร์ม
+    this.closeCalendarModal();
+  }
+
+  
+  
+  openCalendarModal() {
+    this.showCalendar = true;
+  }
+  
+  closeCalendarModal() {
+    this.showCalendar = false;
+  }
+
+
+
+  
 }
