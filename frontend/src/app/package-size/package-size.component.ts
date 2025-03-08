@@ -54,8 +54,8 @@ export class PackageSizeComponent {
       return;
     }
   
-    // ✅ ล้างข้อมูลเก่าก่อนบันทึกใหม่ (เพื่อป้องกันการซ้อนทับ)
-    localStorage.removeItem('formData');
+    
+    localStorage.removeItem('formData'); // ✅ ล้างข้อมูลเก่าก่อนบันทึกใหม่ (เพื่อป้องกันการซ้อนทับ)
   
     // ✅ บันทึกฟอร์มใหม่แทนที่ของเก่า
     const formData = this.packageform.value;

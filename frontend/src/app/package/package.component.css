@@ -2,14 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@800&display=swap');
 .package{
   margin-left: 250px;
-  
 }
+
+/*แก้การ์ด */
+
 .card1 {
     box-sizing: border-box;
     width: 280px;
-    height: 420px;
+    height: 450px;
     /* background: rgba(217, 217, 217, 0.58); */
-    background-image: url("/assets/images/sizeM.jpg");
+    background-image: url("/assets/images/pack 2000.png");
+    background-size: cover;
+    background-position: center; 
     border: 1px solid white;
     box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
     backdrop-filter: blur(6px);
@@ -30,10 +34,12 @@
 
    .card2 {
     box-sizing: border-box;
-    width: 280px;
-    height: 420px;
+    width: 290px;
+    height: 450px;
     /* background: rgba(217, 217, 217, 0.58); */
-    background-image: url("/assets/images/sizeL.jpg");
+    background-image: url("/assets/images/pack 2500.png");
+    background-size: cover;
+    background-position: center; 
     border: 1px solid white;
     box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
     backdrop-filter: blur(6px);
@@ -54,10 +60,12 @@
 
    .card3 {
     box-sizing: border-box;
-    width: 280px;
-    height: 420px;
+    width: 290px;
+    height: 450px;
     /* background: rgba(217, 217, 217, 0.58); */
-    background-image: url("/assets/images/sizeXL.jpg");
+    background-image: url("/assets/images/pack 3000.png");
+    background-size: cover;
+    background-position: center; 
     border: 1px solid white;
     box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
     backdrop-filter: blur(6px);
