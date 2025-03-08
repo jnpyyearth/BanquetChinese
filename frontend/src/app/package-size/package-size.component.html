@@ -1,49 +1,77 @@
 <app-navbar />
 <app-sidebar-package />
 
-<h5> Step 1 : กรุณากรอกข้อมูลวันเวลาที่จัดงาน </h5>
 
 <div class="container">
   <div class="left">
-    <img src="https://www.mendetails.com/wp-content/uploads/2023/09/03-%E0%B9%82%E0%B8%95%E0%B9%8A%E0%B8%B0%E0%B8%88%E0%B8%B5%E0%B8%99-chinese-food-sep23.jpg"
+    <img
+      src="https://www.mendetails.com/wp-content/uploads/2023/09/03-%E0%B9%82%E0%B8%95%E0%B9%8A%E0%B8%B0%E0%B8%88%E0%B8%B5%E0%B8%99-chinese-food-sep23.jpg"
       alt="Burger">
   </div>
 
   <div class="right">
+    <form [formGroup]="packageform" (ngSubmit)="onSubmit()">
+      <p>  กรุณากรอกข้อมูลวันเวลาที่จัดงาน <i class="bi bi-pen-fill"></i>   </p>
 
-    <form [formGroup]="packageform" (ngSubmit)="onSubmit()"   >
-      <p> | Package : Size | </p>
+      <label for="namesname">ชื่อผู้ติดต่อ <i class="bi bi-person-square"></i> : </label>
+      <input class="namesname" type="text" id="namesname" formControlName="contact_Name"
+        placeholder="โปรดใส่ชื่อของท่าน" required>
 
-      <label for="namesname">ชื่อผู้ติดต่อ: </label>
-      <input type="text" id="namesname" formControlName="contact_Name" placeholder="โปรดใส่ชื่อของท่าน" required>
-      <label for="guestamount">จำนวนคน: </label>
-      <input type="number" id="guestamount" formControlName="guestamount" placeholder="โปรดใส่จำนวนคน" required>
+      <div class="rol">
+        <div class="col-6">
+          <label for="guestamount">จำนวนคน: </label>
+          <input type="number" id="guestamount" formControlName="guestamount" placeholder="โปรดใส่จำนวนคน" required>
+        </div>
 
-      <!-- <label for="province">จังหวัด : </label>
-      <input type="text" id="province" formControlName="province" placeholder="จังหวัดของท่าน" required> -->
-     
-      <label for="province">จังหวัด: </label>
-      <select id="province" formControlName="province"  required >
-        <option value="bangkok">กรุงเทพมหานคร</option>
-        <option value="chonburi">ชลบุรี</option>
-        <option value="chachoengsao">ฉะเชิงเทรา</option>
-        <option value="samutprakan">สมุทรปราการ</option>
-        <option value="prachinburi">ปราจีนบุรี</option>
-        <option value="nakhonpathom">นครพนม</option>
-        <option value="songkhla">สงขลา</option>
-        <option value="patthalung">พัทลุง</option>
-      </select>
+        <div class="col-6">
+          <label for="province">จังหวัด: </label>
+          <select id="province" formControlName="province" required>
+            <option value="bangkok">กรุงเทพมหานคร</option>
+            <option value="chonburi">ชลบุรี</option>
+            <option value="chachoengsao">ฉะเชิงเทรา</option>
+            <option value="samutprakan">สมุทรปราการ</option>
+            <option value="prachinburi">ปราจีนบุรี</option>
+            <option value="nakhonpathom">นครพนม</option>
+            <option value="songkhla">สงขลา</option>
+            <option value="patthalung">พัทลุง</option>
+          </select>
+        </div>
+      </div>
 
       <label for="place">สถานที่จัดงาน :</label>
-      <input type="text" id="place" formControlName="place" placeholder="ระบุสถานที่จัดงาน" required>
+      <input class="place" type="text" id="place" formControlName="place" placeholder="ระบุสถานที่จัดงาน" required>
 
-      <label for="date">วันเวลาที่จัดงาน :</label>
-      <input type="date" id="date" formControlName="date" placeholder="วันเวลาที่จัดงาน" required>
+      <div class="rol">
+        <div class="col-6">
+          <label for="date">วันเวลาที่จัดงาน :</label>
+        
+          <div class="input-wrapper">
+            <input type="text" id="date" formControlName="date" [value]="selectedDate"
+              placeholder="เลือกวันเวลาที่จัดงาน" required readonly (click)="openCalendarModal()">
+        
+            <!-- ไอคอนปฏิทิน -->
+            <div class="icon" (click)="openCalendarModal()">
+              <i class="bi bi-calendar2-check-fill"></i>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="modal-overlay" *ngIf="showCalendar">
+          <div class="modal-content">
+            <span class="close" (click)="closeCalendarModal()">&times;</span>
+            <app-calendar (dateSelected)="onDateSelected($event)"></app-calendar>
+          </div>
+        </div>
+        
 
-      <label for="date">หมายเลขโทรศัพท์ติดต่อ :</label>
-      <input type="tel" id="phone" formControlName="phone" placeholder="กรุณากรอกเบอร์โทรของท่าน" required>
-      
-      <button type="submit" >Submit</button>
-    </form>
+        <div class="col-6">
+          <label for="phone">หมายเลขโทรศัพท์ติดต่อ <i class="bi bi-telephone-fill"></i> :</label>
+          <input type="tel" id="phone" formControlName="phone" placeholder="กรุณากรอกเบอร์โทรของท่าน" required>
+        </div>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form> 
   </div>
 </div>

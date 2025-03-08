@@ -4,6 +4,7 @@ import { AuthService } from '../../Service/auth.service';
 import { ApiServiceService } from '../../Service/api-service.service';
 import { OrderService } from '../../Service/order.service';
 import { map } from 'rxjs/operators';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dessert-card',
@@ -42,8 +43,30 @@ export class DessertCardComponent implements OnInit{
 
     toggleSelection(item: any, event: any) {
       console.log("🖱️ กดเลือก:", item);
+     const orderData = this.OrderService.getOrderData();
+        const table_ID = orderData?.id || 0;
     
-      if (event.target.checked) {
+        console.log(" Table_ID ที่ได้จาก LocalStorage:", table_ID);
+        let maxMenuSelection = 999;
+        if (table_ID === 1) maxMenuSelection = 1;
+        else if (table_ID === 2) maxMenuSelection = 2;
+        else if (table_ID === 3) maxMenuSelection = 2;
+    
+        // ✅ ตรวจสอบจำนวนเมนูที่เลือกแล้วใน OrderService
+        const selectedMenus = this.OrderService.getOrderData().menus || [];
+        const currentCount = selectedMenus.filter((menu:any) => menu.menu_Type === "dessert").length;
+        console.log(`dessert count =${currentCount}`)
+    
+        if (event.target.checked) {
+          if (currentCount>= maxMenuSelection) {
+    
+            event.target.checked = false;
+            Swal.fire({
+              title: `packageที่ ${table_ID} เลือกจานของหวานได้ไม่เกิน ${maxMenuSelection} เมนู`,
+              icon: "error",
+            });
+            return;
+          }
         this.OrderService.addMenu(item);
       } else {
         this.OrderService.removeMenu(item.menu_ID);

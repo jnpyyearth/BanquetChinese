@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-drinks',
   standalone: false,
-  
   templateUrl: './drinks.component.html',
-  styleUrl: './drinks.component.css'
+  styleUrls: ['./drinks.component.css']
 })
 export class DrinksComponent {
-  
+   
 }

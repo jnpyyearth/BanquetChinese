@@ -4,6 +4,7 @@ import { ApiServiceService } from '../Service/api-service.service';
 import { response } from 'express';
 import { table } from 'console';
 import { AuthService } from '../Service/auth.service';
+
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,6 +13,8 @@ import Swal from 'sweetalert2';
   
   templateUrl: './confirm-order.component.html',
   styleUrl: './confirm-order.component.css'
+
+  
 })
 export class ConfirmOrderComponent implements OnInit {
   orderData:any|null=null;
@@ -19,6 +22,7 @@ export class ConfirmOrderComponent implements OnInit {
   finalPrice: number | null = null;
   tableAmount: number | null = null;
   username:string|null=null;
+  menuData:any|null=null;
   constructor(private orderservice:OrderService,private apiService:ApiServiceService,private authService:AuthService){}
   ngOnInit(){
     this.username = this.authService.getUsername()
@@ -28,6 +32,14 @@ export class ConfirmOrderComponent implements OnInit {
     if(selectedMenus){
       const sumMenuPrice =selectedMenus.menus.reduce((sum:number,item:any)=>sum+(item.menu_Price||0),0);
         // จัดรูปแบบข้อมูลให้ตรงกับโครงสร้าง API
+      this.menuData ={
+        menu_name:selectedMenus.menus.map((item: any) => ({
+          menu_name: item.menu_Name
+          
+        }))
+      }
+        console.log("menu_name:",this.menuData)
+      
         this.orderData = {
           contact_Name:selectedMenus.contact_Name||'',
           username: this.username || '',
@@ -41,6 +53,7 @@ export class ConfirmOrderComponent implements OnInit {
           phone:selectedMenus.phone,
           orderDetails: selectedMenus.menus.map((item: any) => ({
             menu_ID: item.menu_ID
+            
           }))
         };
         console.log("check table_ID",this.orderData.table_ID)
@@ -55,7 +68,7 @@ export class ConfirmOrderComponent implements OnInit {
              console.log("Table Size:", this.selectedTable?.table_Size);
               this.tableAmount = Math.ceil(this.orderData.guestAmount/this.selectedTable.table_Size);
               console.log("tableAmount",this.tableAmount);
-             this.finalPrice = ((Number(this.selectedTable.table_Price)) + (Number(this.orderData.sumMenuPrice))) * (this.tableAmount);
+             this.finalPrice = ((Number(this.selectedTable.table_Price))) * (this.tableAmount);
              console.log("final price is: ",this.finalPrice)
              
           },(erorr:any)=>{
@@ -68,25 +81,7 @@ export class ConfirmOrderComponent implements OnInit {
     
     
   }
-  // sendOrder(){
-  //   if (!this.orderData) {
-  //     console.error("Error: Missing order data");
-  //     return;
-  //   }
-  //   console.log("Sending Order:", this.orderData);
-
-  //   this.apiService.addOrder(this.orderData).subscribe(
-  //     (response) => {
-  //       console.log("Order successfully sent!", response);
-  //       alert("คำสั่งซื้อถูกส่งเรียบร้อยแล้ว!");
-  //     },
-  //     (error) => {
-  //       console.error("Error sending order:", error);
-  //       alert("เกิดข้อผิดพลาดในการส่งคำสั่งซื้อ");
-  //     }
-  //   );
   
-  // }
   sendOrder() {
     if (!this.orderData) {
       console.error("❌ Error: Missing order data");

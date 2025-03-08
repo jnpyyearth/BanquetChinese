@@ -11,6 +11,7 @@
     margin-top: -2rem;
     z-index: 1000;
     position: fixed;
+    /* position: sticky; */
 }
 
 .navbar p{

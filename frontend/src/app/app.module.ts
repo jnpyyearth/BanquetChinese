@@ -27,13 +27,22 @@ import { AddmenuComponent } from './admin/addmenu/addmenu.component';
 import { HirelistComponent } from './hirelist/hirelist.component';
 import { SidebarAdminComponent } from './admin/sidebar-admin/sidebar-admin.component';
 import { OrderlistComponent } from './admin/orderlist/orderlist.component';
+<<<<<<< HEAD
+=======
+import { ReceiptComponent } from './receipt/receipt.component';
+>>>>>>> origin
 import { ShowmenuComponent } from './admin/showmenu/showmenu.component';
 import { ShowmaindishComponent } from './admin/showmaindish/showmaindish.component';
 import { ShowappetizerComponent } from './admin/showappetizer/showappetizer.component';
 import { ShowdessertComponent } from './admin/showdessert/showdessert.component';
 import { ShowdrinksComponent } from './admin/showdrinks/showdrinks.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
+<<<<<<< HEAD
 import { ReceiptComponent } from './receipt/receipt.component';
+=======
+import { DatePipe } from '@angular/common';
+import { CalendarComponent } from './calendar/calendar.component';
+>>>>>>> origin
 
 
 
@@ -62,14 +71,22 @@ import { ReceiptComponent } from './receipt/receipt.component';
     SidebarAdminComponent,
     HirelistComponent,
     OrderlistComponent,
+<<<<<<< HEAD
+=======
+    ReceiptComponent,
+>>>>>>> origin
     ShowmenuComponent,
     ShowmaindishComponent,
     ShowappetizerComponent,
     ShowdessertComponent,
     ShowdrinksComponent,
     ConfirmOrderComponent,
+<<<<<<< HEAD
     ReceiptComponent
   
+=======
+    CalendarComponent
+>>>>>>> origin
 
   ],
   imports: [
@@ -77,11 +94,12 @@ import { ReceiptComponent } from './receipt/receipt.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
-  ],
+    FormsModule,
+],
   providers: [
     provideClientHydration(withEventReplay()),
-    ApiServiceService 
+    ApiServiceService,
+    DatePipe,
   ],
   bootstrap: [AppComponent]
 })

@@ -22,12 +22,11 @@ p {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้สวยงาม */
     border-radius: 10px; /* ปรับมุมให้โค้ง */
     background-color: #6D2323; /* เปลี่ยนสีพื้นหลังของ card */
-    
+    height: 330px;
   }
   
   .card img {
     max-width: 100%; /* ปรับรูปให้พอดีกับ card */
-    margin-top: 20px;
     height: auto;
     border-radius: 5px;
   }
@@ -65,6 +64,7 @@ button:hover {
   outline: none;
   cursor: pointer;
   position: relative;
+  margin-top: -8px;
 }
 
 .form-check-input:checked {

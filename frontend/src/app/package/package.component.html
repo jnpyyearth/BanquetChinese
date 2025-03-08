@@ -53,39 +53,42 @@
   <hr> 
 </div>
 
-
-
 <div class="package">
-  
+  <div class="recomment-package d-flex flex-wrap justify-content-center gap-5 h-100">
+    <p class="package-title"> เรามีแพ็กเกจโต๊ะจีนให้ท่านได้เลือกสรรได้ดั่งใจที่ท่านต้องการ </p>
+    <p class="package-discription">"เลือกแพ็กเกจโต๊ะจีนที่ตรงกับความต้องการของคุณ!
+      เรามีตัวเลือกหลากหลาย ทั้งเมนูเรียกน้ำย่อย อาหารหลัก และของหวาน คลิกเพื่อดูรายละเอียดเพิ่มเติม!"</p>
 
-  <div class="recomment-package d-flex flex-wrap justify-content-center gap-5">
-    <p class = "package-title"> เรามีแพ็กเกจโต๊ะจีนให้ท่านได้เลือกสรรได้ดั่งใจที่ท่านต้องการ </p>
     <div class="card1">
       <button class="next-btn" routerLink="/package-size"
-              [ngClass]="{'btn-primary': isChecked(1), 'btn-outline-primary': !isChecked(1)}" 
-              (click)="toggleSelection({ id: 1, name: 'S' })">
+        [ngClass]="{'btn-primary': isChecked(1), 'btn-outline-primary': !isChecked(1)}"
+        (click)="toggleSelection({ id: 1, name: 'S' })">จองเลย! <i class="bi bi-hand-index"></i>
       </button>
     </div>
-    
+  
     <div class="card2">
       <button class="next-btn" routerLink="/package-size"
-              [ngClass]="{'btn-primary': isChecked(2), 'btn-outline-primary': !isChecked(2)}" 
-              (click)="toggleSelection({ id: 2, name: 'M' })">
+        [ngClass]="{'btn-primary': isChecked(2), 'btn-outline-primary': !isChecked(2)}"
+        (click)="toggleSelection({ id: 2, name: 'M' })">จองเลย! <i class="bi bi-hand-index"></i>
       </button>
     </div>
-    
+  
     <div class="card3">
       <button class="next-btn" routerLink="/package-size"
-              [ngClass]="{'btn-primary': isChecked(3), 'btn-outline-primary': !isChecked(3)}" 
-              (click)="toggleSelection({ id: 3, name: 'L' })">
+        [ngClass]="{'btn-primary': isChecked(3), 'btn-outline-primary': !isChecked(3)}"
+        (click)="toggleSelection({ id: 3, name: 'L' })">จองเลย! <i class="bi bi-hand-index"></i>
       </button>
     </div>
-    
-    
-    <p class = "package-footer"> เรามีแพ็กเกจโต๊ะจีนให้ท่านได้เลือกสรรได้ดั่งใจที่ท่านต้องการ </p>
+  
+  
+    <p class="package-footer"> "✨ สัมผัสประสบการณ์โต๊ะจีนระดับพรีเมียม! ✨
+      เราให้บริการด้วยใจรักและคุณภาพ ใส่ใจทุกเมนู พร้อมรังสรรค์ความอร่อยให้ทุกงานเลี้ยงของท่านพิเศษกว่าที่เคย
+      ด้วยวัตถุดิบสดใหม่ รสชาติที่ลงตัว และการจัดเสิร์ฟสุดประณีต" </p>
   </div>
+
+
 </div>
- 
+
 <!-- <div class="card1">
   <button class="btn" 
           [ngClass]="{'btn-primary': isChecked(1), 'btn-outline-primary': !isChecked(1)}" 
