@@ -1,7 +1,6 @@
 <app-navbar />
 <app-sidebar-package />
 
-<h5> Step 1 : กรุณากรอกข้อมูลวันเวลาที่จัดงาน </h5>
 
 <div class="container">
   <div class="left">
@@ -12,9 +11,9 @@
 
   <div class="right">
     <form [formGroup]="packageform" (ngSubmit)="onSubmit()">
-      <p> | Fill in your information | </p>
+      <p>  กรุณากรอกข้อมูลวันเวลาที่จัดงาน <i class="bi bi-pen-fill"></i>   </p>
 
-      <label for="namesname">ชื่อผู้ติดต่อ: </label>
+      <label for="namesname">ชื่อผู้ติดต่อ <i class="bi bi-person-square"></i> : </label>
       <input class="namesname" type="text" id="namesname" formControlName="contact_Name"
         placeholder="โปรดใส่ชื่อของท่าน" required>
 
@@ -67,7 +66,7 @@
         
 
         <div class="col-6">
-          <label for="phone">หมายเลขโทรศัพท์ติดต่อ :</label>
+          <label for="phone">หมายเลขโทรศัพท์ติดต่อ <i class="bi bi-telephone-fill"></i> :</label>
           <input type="tel" id="phone" formControlName="phone" placeholder="กรุณากรอกเบอร์โทรของท่าน" required>
         </div>
       </div>

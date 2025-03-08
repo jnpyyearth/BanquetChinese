@@ -115,7 +115,6 @@
 // }
 
 
-
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ApiServiceService } from '../Service/api-service.service';
 import { OrderService } from '../Service/order.service';
@@ -203,7 +202,6 @@ export class CalendarComponent implements OnInit {
       const dateString = date.toLocaleDateString('en-CA'); // ป้องกัน Timezone ลดวันไป 1 วัน
       const isToday = date.toDateString() === new Date().toDateString();
       const isBooked = this.bookedDates.includes(dateString);
-
       this.days.push({ date, isToday, isBooked });
     }
   }

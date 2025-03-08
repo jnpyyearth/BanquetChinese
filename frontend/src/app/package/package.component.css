@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@800&display=swap');
 .package{
   margin-left: 250px;
+  max-width: 100%;
 }
 
 /*แก้การ์ด */
@@ -26,7 +27,7 @@
     user-select: none;
     font-weight: bolder;
     color: black;
-    margin-top: 900px;
+    margin-top: 1000px;
     margin-left: 30px;
     position: relative;
     transform: translateY(10%);
@@ -52,7 +53,7 @@
     user-select: none;
     font-weight: bolder;
     color: black;
-    margin-top: 900px;
+    margin-top: 1000px;
     margin-left: 30px;
     position: relative;
     transform: translateY(10%);
@@ -78,7 +79,7 @@
     user-select: none;
     font-weight: bolder;
     color: black;
-    margin-top: 900px;
+    margin-top: 1000px;
     margin-left: 30px;
     position: relative;
     transform: translateY(10%);
@@ -122,6 +123,7 @@
   color: #FEF9E1;
   font-size:x-large;
   font-family: Kanit , sans-serif;
+  margin: 20px;
 }
 
 .top-content .en{
@@ -192,6 +194,7 @@ input {
   flex-shrink: 0;
   align-items: center;
   min-width: 100%;
+
 }
 
 .slide img {
@@ -271,12 +274,12 @@ hr  {
   bottom: 10px;
   height: 50px;
   right: 10px;
-  background-color: #A31D1D;
-  color: #FEF9E1;
+  background-color: #c22727;
+  color: #FEF9E1 ;
   border: none;
-  padding: 5px 10px;
+  padding: 4px 8px;
   border-radius: 15px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: Kanit , sans-serif;
   opacity: 0; /* มันคือคีย์เวิร์ดตัวซ่อนปุ่มแบบมองไม่เห็น ก็คือปิดไว้เรายังไม่เห็นความโปร่งใส */
   visibility: hidden; /* ตัวทำให้ปุ่มยังไม่สามารถูกคลิกหรือแสดงผล */
@@ -291,8 +294,8 @@ hr  {
 }
 
 .next-btn:hover {
-  background-color: #6D2323;
-  color: #FEF9E1;
+  background-color:  #FEF9E1;
+  color: #6D2323;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transform: scale(1.1) 0.3s ease-in-out;
@@ -355,21 +358,6 @@ hr  {
   font-family: Kanit , sans-serif;
 }
 
-/* .card3::before {
-  content: "Special Offer"; 
-  top: -20px; 
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 0, 0, 0.7);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 15px;
-  font-size: 14px;
-  font-family: Merienda, sans-serif;
-  opacity: 1;
-  visibility: visible;
-} */
-
 
 .card3::after {
   content: "Package : XL 1000.-"; 
@@ -404,6 +392,7 @@ hr  {
   margin-top: 850px;
   text-align: center;
   font-weight: bold;
+  font-size: 25px;
   padding: 10px;
   border-radius: 10px;
   font-family: Kanit , sans-serif;
@@ -414,10 +403,24 @@ hr  {
   top: -20px; 
   left: 60%;
   transform: translateX(-50%);
-  margin-top: 1500px;
+  margin-top: 1600px;
   text-align: center;
   font-weight: bold;
   padding: 10px;
   border-radius: 10px;
   font-family: Kanit , sans-serif;
 }
+
+.package-discription {
+  position: absolute;
+  top: -2px; 
+  left: 60%;
+  transform: translateX(-50%);
+  margin-top: 900px;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: Kanit , sans-serif;
+}
+
