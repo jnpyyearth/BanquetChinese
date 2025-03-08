@@ -6,6 +6,8 @@ import { table } from 'console';
 import { AuthService } from '../Service/auth.service';
 
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-confirm-order',
@@ -23,7 +25,7 @@ export class ConfirmOrderComponent implements OnInit {
   tableAmount: number | null = null;
   username:string|null=null;
   menuData:any|null=null;
-  constructor(private orderservice:OrderService,private apiService:ApiServiceService,private authService:AuthService){}
+  constructor(private orderservice:OrderService,private apiService:ApiServiceService,private authService:AuthService,private router: Router){}
   ngOnInit(){
     this.username = this.authService.getUsername()
     console.log("hello username:",this.username);
@@ -92,7 +94,12 @@ export class ConfirmOrderComponent implements OnInit {
       (response) => {
         console.log("🎉 Order successfully sent!", response);
         
-        Swal.fire('success', 'confirmorder succesccfully!', 'success');
+        Swal.fire({
+          title: 'ท่านชำระเงินเสร็จเรียบร้อยแล้ว',
+          text: `ขอบคุณสำหรับการจองของท่าน ครับ/ค่ะ`,
+          icon: 'success',
+          confirmButtonText: 'ตกลง',
+        });
       },
       (error) => {
         Swal.fire('failed', 'confirmorder failed!', 'error');
@@ -100,5 +107,27 @@ export class ConfirmOrderComponent implements OnInit {
       }
     );
   }
+
+
+
+  popup() {
+    Swal.fire({
+      title: 'ยืนยันการสั่งซื้อ',
+      text: 'กรุณาตรวจสอบรายละเอียดให้ถูกต้องก่อนยืนยัน',
+      imageUrl: 'assets/images/payment.png',
+      imageWidth: 200,
+      imageHeight: 200,
+      showCancelButton: true,
+      confirmButtonText: 'ยืนยัน',
+      cancelButtonText: 'ยกเลิก',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.sendOrder(); 
+        this.router.navigate(['/mainpage']);
+      }
+    });
+  }
+  
+  
   
 }
