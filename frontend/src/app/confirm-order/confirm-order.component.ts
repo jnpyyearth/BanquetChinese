@@ -73,6 +73,9 @@ export class ConfirmOrderComponent implements OnInit {
              this.finalPrice = ((Number(this.selectedTable.table_Price))) * (this.tableAmount);
              console.log("final price is: ",this.finalPrice)
              
+            
+
+
           },(erorr:any)=>{
             console.error("erorr:",erorr)
           }
@@ -83,6 +86,7 @@ export class ConfirmOrderComponent implements OnInit {
     
     
   }
+
   
   sendOrder() {
     if (!this.orderData) {
@@ -109,12 +113,13 @@ export class ConfirmOrderComponent implements OnInit {
   }
 
 
+  paymentUrl: string = `https://promptpay.io/0823177345/${this.finalPrice}`;
 
   popup() {
     Swal.fire({
       title: 'ยืนยันการสั่งซื้อ',
       text: 'กรุณาตรวจสอบรายละเอียดให้ถูกต้องก่อนยืนยัน',
-      imageUrl: 'assets/images/payment.png',
+      imageUrl: this.paymentUrl,
       imageWidth: 200,
       imageHeight: 200,
       showCancelButton: true,

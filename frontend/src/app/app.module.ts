@@ -39,8 +39,6 @@ import { CalendarComponent } from './calendar/calendar.component';
 
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,6 +78,7 @@ import { CalendarComponent } from './calendar/calendar.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+  
 ],
   providers: [
     provideClientHydration(withEventReplay()),
