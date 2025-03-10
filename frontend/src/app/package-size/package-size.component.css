@@ -9,7 +9,7 @@
   padding: 30px;
   width: 100%;
   max-width: 1020px; 
-  max-height: 550px;
+  max-height: 540px;
   margin-top: 150px;
   margin-left: 320px;
   border-radius: 20px; 
@@ -19,8 +19,6 @@
   position: fixed;
   font-family: kanit , sans-serif;
 }
-
-
 
 
 .left {
@@ -56,7 +54,7 @@ form {
   margin: 5px 0;
 } */
 
-button {
+/* button {
   margin-left: 280px;
   width: 120px;
   padding: 10px;
@@ -66,7 +64,22 @@ button {
   border-radius: 15px;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 150px;
+  transition: 0.3s;
+  font-family: Merienda, sans-serif;
+} */
+
+.btn-submit{
+  margin-left: 300px;
+  width: 120px;
+  padding: 10px;
+  background-color: #a20a30; 
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 50px;
   transition: 0.3s;
   font-family: Merienda, sans-serif;
 }

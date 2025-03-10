@@ -117,7 +117,7 @@ export class ConfirmOrderComponent implements OnInit {
 
   popup() {
     Swal.fire({
-      title: 'ยืนยันการสั่งซื้อ',
+      title: 'กรุณาชำระเงิน',
       text: 'กรุณาตรวจสอบรายละเอียดให้ถูกต้องก่อนยืนยัน',
       imageUrl: this.paymentUrl,
       imageWidth: 200,

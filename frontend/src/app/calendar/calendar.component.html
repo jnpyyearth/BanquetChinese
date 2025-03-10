@@ -1,9 +1,9 @@
 <div class="calendar-container"  *ngIf="true">
     <div class="calendar">
       <div class="header">
-        <button type="button" (click)="changeMonth(-1)"> <i class="bi bi-caret-left-fill"></i> </button>
+        <button class="prev-month" type="button" (click)="changeMonth(-1)"> <i class="bi bi-caret-left-fill"></i> </button>
         <div class="month">{{ currentDate | date: 'MMMM yyyy' }}</div>
-        <button  type="button" (click)="changeMonth(1)"> <i class="bi bi-caret-right-fill"></i> </button>
+        <button  class="next-month" type="button" (click)="changeMonth(1)"> <i class="bi bi-caret-right-fill"></i> </button>
       </div>
   
       <div class="weekdays">

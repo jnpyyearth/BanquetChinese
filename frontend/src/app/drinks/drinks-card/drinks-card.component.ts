@@ -50,7 +50,7 @@ export class DrinksCardComponent implements OnInit {
   
       // ✅ ตรวจสอบจำนวนเมนูที่เลือกแล้วใน OrderService
       const selectedMenus = this.OrderService.getOrderData().menus || [];
-      const currentCount = selectedMenus.filter((menu:any) => menu.menu_Type === "maindish").length;
+      const currentCount = selectedMenus.filter((menu:any) => menu.menu_Type === "drink").length;
       console.log(`maindish count =${currentCount}`)
   
       if (event.target.checked) {

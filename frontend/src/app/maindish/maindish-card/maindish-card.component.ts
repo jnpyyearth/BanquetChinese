@@ -55,10 +55,22 @@ export class MaindishCardComponent implements OnInit{
     console.log(`maindish count =${currentCount}`)
 
     if (event.target.checked) {
-      this.OrderService.addMenu(item); // ✅ ใช้ addMenu() แทน addItem()
+      if (currentCount>= maxMenuSelection) {
+
+        event.target.checked = false;
+        Swal.fire({
+          title: `packageที่ ${table_ID} เลือกจานหลักได้ไม่เกิน ${maxMenuSelection} เมนู`,
+          icon: "error",
+        });
+        return;
+      }
+
+      this.OrderService.addMenu(item);
     } else {
-      this.OrderService.removeMenu(item.menu_ID); //ลบเมนูออก
+      this.OrderService.removeMenu(item.menu_ID); // ✅ ใช้ removeMenu()
     }
+
+    
 
     console.log("📋 รายการปัจจุบัน:", this.selectedMenus);
   }
