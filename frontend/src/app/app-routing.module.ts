@@ -22,6 +22,7 @@ import { ReceiptComponent } from './receipt/receipt.component';
 import { ShowmenuComponent } from './admin/showmenu/showmenu.component';
 import { ShowmaindishComponent } from './admin/showmaindish/showmaindish.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/mainpage', pathMatch: 'full' },
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path: 'orderlist', component: OrderlistComponent},
   { path: 'receipt', component: ReceiptComponent},
   
+  { path: 'calendar', component: CalendarComponent},
   { path: 'showmenu', component: ShowmenuComponent},
   { path: 'showmaindish', component: ShowmaindishComponent},
   {path:'confirmorder',component:ConfirmOrderComponent}

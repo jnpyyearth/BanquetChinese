@@ -1,18 +1,19 @@
 <div class="tab"
     style="background-color: #D9D9D9; width: 280px; height: 730px; position: fixed; top: 0; left: 30px; ">
     <ul class="nav nav-pills flex-column mb-auto">
-       <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-        <a routerLink="/dashboard">
-            <span class="icon">🏠</span> <span class="text">Dashboard</span>
-        </a>
+        <li class="menubar-1">
+            <a class="nav-link text-dark" id="main" routerLink="/mainpage">
+                <button>หน้าหลัก  <i class="bi bi-house-fill"></i> </button>
+            </a>
+        </li>
         <li class="menubar-2" id="tour">
             <a class="nav-link text-dark" routerLink="/package">
-                <button>เลือกแพ็กเกจ</button>
+                <button>เลือกแพ็กเกจ  <i class="bi bi-hand-index-thumb-fill"></i></button>
             </a>
         </li>
         <li class="menubar-7" id="้hirelist">
             <a class="nav-link text-dark" routerLink="/hirelist">
-                <button>ข้อมูลการจ้าง</button>
+                <button>ประวัติการจอง  <i class="bi bi-card-checklist"></i></button>
             </a>
         </li>
       
@@ -21,3 +22,4 @@
     <div class="redbar" >  </div>
   
 </div>
+

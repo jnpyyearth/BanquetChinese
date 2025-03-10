@@ -35,7 +35,7 @@ builder.Services.AddSwaggerGen(c =>
         Version = "v1"
     });
 
-    // ✅ รองรับ `multipart/form-data` ใน .NET 8
+    // ✅ รองรับ multipart/form-data ใน .NET 8
     c.MapType<IFormFile>(() => new OpenApiSchema
     {
         Type = "string",
@@ -112,8 +112,3 @@ app.UseStaticFiles(new StaticFileOptions
 });
 
 app.Run();
-
-
-
-
-

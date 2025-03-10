@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "leaflet": "^1.9.4"
+    "boxicons": "^2.1.4",
+    "leaflet": "^1.9.4",
+    "sweetalert2": "^11.17.2"
   }
 }

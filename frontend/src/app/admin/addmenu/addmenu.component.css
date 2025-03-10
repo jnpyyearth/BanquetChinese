@@ -6,8 +6,8 @@ form {
     margin-top: 150px;
     margin-left: 500px;
     padding: 30px;
-    background-color: #49041c;
-    color: aliceblue;
+    background-color:  aliceblue;
+    color: #49041c;
     border-radius: 20px; 
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
     position: fixed;
@@ -31,8 +31,8 @@ form {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 15px;
-    background-color: #110204;
-    color: #ccc;
+    background-color: #ddd6d7;
+    color: #150101;
   }
 
   button {
@@ -59,5 +59,5 @@ form {
   p {
     align-items: center;
     margin-left: 160px;
-    font-size: large;
+    font-size: 25px;
   }

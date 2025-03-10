@@ -27,22 +27,15 @@ import { AddmenuComponent } from './admin/addmenu/addmenu.component';
 import { HirelistComponent } from './hirelist/hirelist.component';
 import { SidebarAdminComponent } from './admin/sidebar-admin/sidebar-admin.component';
 import { OrderlistComponent } from './admin/orderlist/orderlist.component';
-
 import { ReceiptComponent } from './receipt/receipt.component';
-
 import { ShowmenuComponent } from './admin/showmenu/showmenu.component';
 import { ShowmaindishComponent } from './admin/showmaindish/showmaindish.component';
 import { ShowappetizerComponent } from './admin/showappetizer/showappetizer.component';
 import { ShowdessertComponent } from './admin/showdessert/showdessert.component';
 import { ShowdrinksComponent } from './admin/showdrinks/showdrinks.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
-
 import { DatePipe } from '@angular/common';
-
-
-
-
-
+import { CalendarComponent } from './calendar/calendar.component';
 
 
 
@@ -75,8 +68,8 @@ import { DatePipe } from '@angular/common';
     ShowappetizerComponent,
     ShowdessertComponent,
     ShowdrinksComponent,
-    ConfirmOrderComponent
-  
+    ConfirmOrderComponent,
+    CalendarComponent
 
   ],
   imports: [
@@ -84,12 +77,13 @@ import { DatePipe } from '@angular/common';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
-  ],
+    FormsModule,
+  
+],
   providers: [
     provideClientHydration(withEventReplay()),
     ApiServiceService,
-    DatePipe
+    DatePipe,
   ],
   bootstrap: [AppComponent]
 })

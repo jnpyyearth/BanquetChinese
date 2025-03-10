@@ -1,0 +1,31 @@
+<div class="calendar-container"  *ngIf="true">
+    <div class="calendar">
+      <div class="header">
+        <button class="prev-month" type="button" (click)="changeMonth(-1)"> <i class="bi bi-caret-left-fill"></i> </button>
+        <div class="month">{{ currentDate | date: 'MMMM yyyy' }}</div>
+        <button  class="next-month" type="button" (click)="changeMonth(1)"> <i class="bi bi-caret-right-fill"></i> </button>
+      </div>
+  
+      <div class="weekdays">
+        <div class="day">Sun</div>
+        <div class="day">Mon</div>
+        <div class="day">Tue</div>
+        <div class="day">Wed</div>
+        <div class="day">Thu</div>
+        <div class="day">Fri</div>
+        <div class="day">Sat</div>
+      </div>
+  
+      <div class="dates">
+        <div *ngFor="let day of days" 
+             class="date" 
+             [class.today]="day.isToday"
+             [class.booked]="day.isBooked"
+             [class.disabled]="day.date.getTime() < minDate.getTime() || disabledDates.includes(day.date.toISOString().split('T')[0])" 
+             (click)="selectDate(day.date)">
+          {{ day.date.getDate() }}
+        </div>
+      </div>
+    </div>
+  </div>
+  

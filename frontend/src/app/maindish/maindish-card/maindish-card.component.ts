@@ -14,11 +14,11 @@ import Swal from 'sweetalert2';
   styleUrl: './maindish-card.component.css'
 })
 
-export class MaindishCardComponent implements OnInit {
-  maindishes: any = []; selectedMenus: any[] = [];
-
-  constructor(private http: HttpClient, private authService: AuthService, private apiService: ApiServiceService, private OrderService: OrderService,) { }
-
+export class MaindishCardComponent implements OnInit{
+  maindishes:any=[];selectedMenus: any[] = [];
+  
+      constructor(private http: HttpClient,private authService: AuthService,private apiService:ApiServiceService,private OrderService: OrderService,){}
+  
   ngOnInit(): void {
 
     // ✅ Subscribe ข้อมูลที่ถูกเลือกจาก OrderService เพื่อให้ UI อัปเดตอัตโนมัติ
@@ -70,9 +70,11 @@ export class MaindishCardComponent implements OnInit {
       this.OrderService.removeMenu(item.menu_ID); // ✅ ใช้ removeMenu()
     }
 
-    // ✅ ไม่ต้องเรียก getOrderData() เพราะ UI อัปเดตอัตโนมัติผ่าน Observable
+    
+
     console.log("📋 รายการปัจจุบัน:", this.selectedMenus);
   }
+  
 
   isChecked(menuId: number): boolean {
     return Array.isArray(this.selectedMenus) && this.selectedMenus.some(item => item.menu_ID === menuId);

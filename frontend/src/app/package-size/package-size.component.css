@@ -9,7 +9,7 @@
   padding: 30px;
   width: 100%;
   max-width: 1020px; 
-  max-height: 550px;
+  max-height: 540px;
   margin-top: 150px;
   margin-left: 320px;
   border-radius: 20px; 
@@ -19,8 +19,6 @@
   position: fixed;
   font-family: kanit , sans-serif;
 }
-
-
 
 
 .left {
@@ -56,7 +54,7 @@ form {
   margin: 5px 0;
 } */
 
-button {
+/* button {
   margin-left: 280px;
   width: 120px;
   padding: 10px;
@@ -66,7 +64,22 @@ button {
   border-radius: 15px;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 150px;
+  transition: 0.3s;
+  font-family: Merienda, sans-serif;
+} */
+
+.btn-submit{
+  margin-left: 300px;
+  width: 120px;
+  padding: 10px;
+  background-color: #a20a30; 
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 50px;
   transition: 0.3s;
   font-family: Merienda, sans-serif;
 }
@@ -86,6 +99,7 @@ button:hover {
   input , select  {
     width: 210px;
     padding: 8px;
+    padding-right: 40px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -119,9 +133,9 @@ button:hover {
 
   p {
     align-items: center;
-    margin-left: 110px;
+    margin-left: 80px;
     font-size: 20px;
-    font-family: Merienda , sans-serif;
+    font-family: Kanit , sans-serif;
   }
 
   .my-swal-title {
@@ -147,6 +161,76 @@ button:hover {
     flex-direction: column; 
   }
   
-
-
+  .calendar-container {
+    position: relative;
+    top: 100%; 
+    left: 0;
+    z-index: 1000;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 250px;
+  }
   
+  .calendar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+
+  .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .icon {
+    position: absolute;
+    right: 40px;
+    top: 55%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #430707;
+    font-size: 1.2rem;
+  }
+
+
+.icon:hover {
+  color: #0056b3;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* จางพื้นหลัง */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  position: absolute;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}
