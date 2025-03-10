@@ -46,7 +46,8 @@ namespace backnet.Controllers
             var tokenDescriptor =new SecurityTokenDescriptor{
                 Subject = new ClaimsIdentity(new[]{
                     new Claim("username",user.username),
-                    new Claim("role",user.role ??"")
+                    new Claim("role",user.role ??""),
+                    new Claim("User_ID", user.User_ID.ToString())
                 }),
                 Expires =DateTime.UtcNow.AddHours(1),
                  SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
