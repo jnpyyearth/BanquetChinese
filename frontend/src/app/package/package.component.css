@@ -323,7 +323,7 @@ hr  {
 
 
 .card1::after {
-  content: "Package : M 1000.- "; 
+  content: "Package : 2000.- "; 
   position: absolute;
   top: 0; 
   left: 50%;
@@ -341,7 +341,7 @@ hr  {
 }
 
 .card2::after {
-  content: "Package : L 1000.- "; 
+  content: "Package : 2500.- "; 
   position: absolute;
   top: 0; 
   left: 50%;
@@ -360,7 +360,7 @@ hr  {
 
 
 .card3::after {
-  content: "Package : XL 1000.-"; 
+  content: "Package : 3000.-"; 
   position: absolute;
   top: 0; 
   left: 50%;
