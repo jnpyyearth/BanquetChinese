@@ -49,6 +49,7 @@ button {
   color: #FFD95A;
   border: none; 
   border-radius: 5px;
+  font-family: Kanit , sans-serif;
 }
 
 button:hover {

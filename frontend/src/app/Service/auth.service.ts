@@ -22,10 +22,20 @@ export class AuthService {
     this.getRole()
     return null;
    }
-   getUsername(){
+   getUser_ID(){
     const token = localStorage.getItem('token');
     if(token){
       const payload:any =jwtDecode(token);
+      console.log("Decoded Payload:", payload); 
+      return payload?.User_ID||0;
+    }
+   }
+   getUsername(){
+    const token = localStorage.getItem('token');
+    
+    if(token){
+      const payload:any =jwtDecode(token);
+      console.log("Decoded Payload:", payload); 
       return payload?.username||null;
     }
     this.getRole()

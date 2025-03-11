@@ -2,15 +2,29 @@
 <app-sidebar />
 
 <div class="row">
-  <div class="col-2"></div>
+  <div class="col-2">
+
+  </div>
   <div class="col-10">
     <div class="row" id="boxgap">
-      <div class="col" id="image-section"></div>
-      <div class="col" id="info-section">
+      <div class="col" id="image-section">
+        <img src="assets/images/willsmith.jpg" alt="willsmith" class="willsmith">
+        
+        <div class="discription">
+          <h4> กรุณาตรวจสอบรายการจองโต๊ะของท่าน </h4>
+          <h6> และขอขอบคุณที่ท่านไว้วางใจให้เราได้บริการ 👋🏻 </h6>
+          <br>
+          <div class="line"></div>
+          <br>
+          <img src="assets/images/TWS-logo.png" alt="logo" class="logo">
+        </div>
+      </div>
+
+      <div class="col" id="info-section">      
         <div class="infoorder">
           <h2>รายละเอียดคำสั่งซื้อ</h2>
 
-<h3>เมนูที่เลือก</h3>
+          <h3>เมนูที่เลือก</h3>
           <p><strong>ชื่อติดต่อ:</strong> {{ orderData?.contact_Name }}</p>
           <p><strong>จังหวัด:</strong> {{ orderData?.province }}</p>
           <p><strong>สถานที่จัดงาน:</strong> {{ orderData?.placeEvent }}</p>
@@ -31,7 +45,7 @@
         </div>
       </div>
     </div>
-    <div class="btn" >
+    <div class="btn">
       <button onclick="window.history.back()" id="btn">ย้อนกลับ</button>
       <button (click)="popup()" id="btn">ส่งคำสั่งซื้อ</button>
     </div>

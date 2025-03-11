@@ -21,7 +21,7 @@ p {
     margin-bottom: 20px; /* ปรับระยะห่างด้านล่าง */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้สวยงาม */
     border-radius: 10px; /* ปรับมุมให้โค้ง */
-    background-color: #6D2323; /* เปลี่ยนสีพื้นหลังของ card */
+    background-color: #9e1717; /* เปลี่ยนสีพื้นหลังของ card */
     height: 330px;
   }
   

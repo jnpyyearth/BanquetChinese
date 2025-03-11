@@ -10,7 +10,8 @@
 
 #boxgap{
     justify-content: center; /* จัดให้อยู่ตรงกลาง */
-    gap: 20px;
+    gap: 10px;
+    color: #FFD95A;
 }
 
 #image-section {
@@ -22,6 +23,7 @@
     border-radius: 20px;
     position: relative;
     z-index: 3;
+   
 }
 
 #info-section {
@@ -32,13 +34,18 @@
     position: relative;
     z-index: 3;
     color: #e1a100;
-    padding-left: 10px;
+    padding: 20px;
     font-family: 'Merienda','Kanit', sans-serif;
 }
 
 h2 {
     text-align: center;
     padding-top: 20px;
+}
+
+h4 , h6 {
+    text-align: center;
+    font-family: 'Merienda','Kanit', sans-serif;
 }
 
 .infoorder{
@@ -61,4 +68,34 @@ h2 {
     right: 240px;
     font-size: 18px;
     padding: 15px 30px;
+}
+
+.willsmith {
+    border-radius: 20px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+    width: 440px;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    margin-left: -10px;
+    margin-top: 20px;
+   
+}
+
+.logo{
+    width: 120px;
+    height: 120px;
+}
+
+.discription{
+    font-family: 'Merienda','Kanit', sans-serif;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.line{
+    width: 450px;
+    background-color: #FFD95A;
+    height: 1px;
+    margin-left: 40px;
 }

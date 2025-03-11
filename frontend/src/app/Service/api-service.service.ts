@@ -82,6 +82,9 @@ export class ApiServiceService {
     console.log("Hello getTableBy ID: ",Table_ID)
     return this.http.get(`${apiUrl}/api/Table/GetTableById/${Table_ID}`);
   }
+  GetMyOrder(User_ID:number):Observable<any[]>{
+    return this.http.get<any[]>(`${apiUrl}/api/orders/myOrder/${User_ID}`);
+  }
   addOrder(orderData:any):Observable<any>{
     console.log("Hello add order",orderData);
     return this.http.post(`${apiUrl}/api/orders/addOrder`,orderData);

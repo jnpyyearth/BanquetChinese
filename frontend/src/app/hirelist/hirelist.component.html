@@ -1,4 +1,4 @@
-<app-navbar/>
+<!-- <app-navbar/>
 <app-sidebar/>
 
 <div class="hirelist-container">
@@ -48,4 +48,74 @@
         <button>BACK</button>
     </div>
 </div>
+ -->
 
+<app-navbar/>
+<app-sidebar/> 
+
+<div class="container">
+    <h1>My Orders</h1>
+
+    <div class="row">
+        <div class="col- mb-4" *ngFor="let order of hireList">
+            <div class="card flex-row shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title m-0">Order: {{ order.order_ID }}</h3>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card-text">
+                                <strong>ชื่อติดต่อ:</strong> {{ order.contact_Name }} <br>
+                                <strong>จังหวัด:</strong> {{ order.province }} <br>
+                                <strong>สถานที่จัดงาน:</strong> {{ order.placeEvent }} <br>
+                                <strong>จำนวนแขก:</strong> {{ order.guestAmount }} คน <br>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-text">
+                                <strong>วันที่สั่ง:</strong> {{ order.orderdate | date: 'shortDate' }} <br>
+                                <strong>วันจัดงาน:</strong> {{ order.eventdate | date: 'shortDate' }} <br>
+                                <strong>ราคาทั้งหมด:</strong> {{ order.totalPrice }} บาท <br>
+                                <strong>สถานะการชำระเงิน:</strong>
+                                <span class="badge text-white" [ngClass]="{'bg-success': order.payment_Status === 'paid', 
+                                                  'bg-danger': order.payment_Status === 'pending'}">
+                                    {{ order.payment_Status }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <h5><i class="bi bi-list-task"></i> รายการเมนูที่สั่ง</h5>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ลำดับ</th>
+                                    <th>ชื่อเมนู</th>
+                                    <th>ประเภท</th>
+                                    <th>ราคา</th>
+                                    <th>รูปภาพ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let menu of order.menus; let i = index">
+                                    <td>{{ i + 1 }}</td>
+                                    <td>{{ menu.menu_Name }}</td>
+                                    <td>{{ menu.menu_Type }}</td>
+                                    <td>{{ menu.menu_Price }} บาท</td>
+                                    <td>
+                                        <img *ngIf="menu.menu_Picturename"
+                                            [src]="'http://localhost:5014/api' + menu.menu_Picturename" alt="Menu Image"
+                                            class="img-thumbnail" width="80">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

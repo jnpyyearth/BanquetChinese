@@ -101,3 +101,18 @@ button {
   #btnlogout{
     color: #212121;
   }
+
+  .dropdown-menu{
+   font-family: Kanit , sans-serif;
+  }
+
+  .dropdown-item{
+    font-family: Kanit , sans-serif;
+  }
+
+  .dropdown-item:hover{
+    background-color: #212121;
+    color: #FFD95A;
+  }
+
+ 

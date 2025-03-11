@@ -8,21 +8,53 @@
     border-radius: 35px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Adds depth */
     text-align: center;
-
     /* Centering and shifting */
     position: absolute;
     top: 56%;
     left: 59%;
     transform: translate(-50%, -50%);
+   
 }
 
 
-/* Heading styling */
+
+.card {
+  display: flex;
+  /* background-color: #6b0000; */
+  align-items: center;
+  background-color: #6b0000;
+  border-radius: 25px;
+  border-style: solid;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-body{
+    background-color: #f3eded;
+    border-radius: 25px;
+}
+
+.container{
+    /* background-color: #1a0f37; */
+    position: absolute;
+    margin-left: 80px;
+    margin-top: 120px;
+    /* background-color: #6b0000; */
+}
+
+.row{
+    margin-left: 100px;
+}
+
+
+
+
 h1 {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #ffaa00;
+    color: #6b0000;
+    font-family: Merienda, sans-serif;
+    text-align: center;
 }
 
 /* Table styling */
@@ -30,14 +62,20 @@ table {
     width: 100%;  /* ขยายความกว้างของตาราง */
     border-collapse: collapse;
     margin: 20px 0;
+    border-radius: 25px;
+    
 }
 
 th, td {
     border: 1px solid #ffaa00;
-    padding: 20px; /* เพิ่มขนาด padding ของแต่ละเซลล์ */
+    padding: 5px ; /* เพิ่มขนาด padding ของแต่ละเซลล์ */
     text-align: center;
     font-size: 18px; /* ขยายขนาดตัวอักษร */
+    font-family: Kanit , sans-serif;
+    color: aliceblue;
+  
 }
+
 
 th {
     background-color: #6b0000; /* Darker red for headers */
@@ -46,6 +84,7 @@ th {
 
 td {
     background-color: #3e0000; /* Matches container background */
+  
 }
 
 /* Button styling */
@@ -69,3 +108,19 @@ button:hover {
     background-color: #3e0000;
     transform: translateY(-2px);
 }
+
+.badge {
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.card-text{
+    font-family: Kanit , sans-serif;
+    margin-right: 20px;
+    /* background-color: black; */
+}
+
