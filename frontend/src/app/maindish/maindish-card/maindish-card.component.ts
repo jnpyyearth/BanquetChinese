@@ -49,7 +49,7 @@ export class MaindishCardComponent implements OnInit{
     else if (table_ID === 2) maxMenuSelection = 6;
     else if (table_ID === 3) maxMenuSelection = 8;
 
-    // ✅ ตรวจสอบจำนวนเมนูที่เลือกแล้วใน OrderService
+    // ตรวจสอบจำนวนเมนูใน Order loacl
     const selectedMenus = this.OrderService.getOrderData().menus || [];
     const currentCount = selectedMenus.filter((menu:any) => menu.menu_Type === "maindish").length;
     console.log(`maindish count =${currentCount}`)
@@ -67,7 +67,7 @@ export class MaindishCardComponent implements OnInit{
 
       this.OrderService.addMenu(item);
     } else {
-      this.OrderService.removeMenu(item.menu_ID); // ✅ ใช้ removeMenu()
+      this.OrderService.removeMenu(item.menu_ID); 
     }
 
     

@@ -16,6 +16,7 @@ loginForm!: FormGroup;
 showPassword: boolean = false; 
 errorMessage:string ='';
 userRole:string|null =null;
+
 constructor(private fb:FormBuilder,private http: HttpClient,private router: Router,private authService:AuthService){}
 ngOnInit(){
 
@@ -68,10 +69,12 @@ onLogin():void{
     });
 
     }else if(this.userRole ==='manager'){
-      this.router.navigate(['/addmenu'])
-      console.log("route to addmenu")
-      
-    }else {
+      this.router.navigate(['/addmenu'], { state: { loggedIn: true } }).then(() => {
+
+        this.authService.setLoggedIn(true);
+        console.log('Navigated to addmenu');
+       })
+      }else {
       console.log("cannot route")
       this.errorMessage = 'Unknown role. Cannot navigate.';
     }
