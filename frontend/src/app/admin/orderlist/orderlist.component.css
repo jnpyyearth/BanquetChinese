@@ -13,7 +13,7 @@
     text-align: center;
     /* Centering and shifting */
     position: absolute;
-    top: 90%;
+    margin-top: 500px;
     left: 59%;
     transform: translate(-50%, -50%);
 }
