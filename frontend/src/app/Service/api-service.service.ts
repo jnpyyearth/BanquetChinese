@@ -51,7 +51,7 @@ export class ApiServiceService {
   
   uploadImage(imagedata:File):Observable<any>{
     const formData =new FormData();
-    formData.append('file',imagedata);
+    formData.append('file',imagedata); //รวมไฟล์ผ่านไปให้ backend
     console.log("Hello service upload")
     return this.http.post(`${apiUrl}/api/file/upload`,formData);
   }
@@ -61,7 +61,7 @@ export class ApiServiceService {
   }
 
   getTable():Observable<any>{
-    console.log("Hello get Drink service");
+    console.log("Hello get table service");
     return this.http.get(`${apiUrl}/api/Table/GetTable`);
   }
   

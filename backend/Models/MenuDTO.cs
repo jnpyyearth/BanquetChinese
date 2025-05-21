@@ -6,3 +6,5 @@ public class MenuDTO
     public string? Menu_Picturename { get; set; }
     public decimal? Menu_Price { get; set; }
 }
+
+//เอาไว้ใช้รับส่งข้อมูลเมนูต่างๆ ที่มีในระบบ

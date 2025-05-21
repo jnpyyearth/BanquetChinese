@@ -13,7 +13,7 @@
                 <div class="card-body position-relative">
                     <div class="card-title h5 text-center">
                         <h5 class="card-title">{{ drink.menu_Name }}</h5>
-                        <h5 class="card-title">ราคาต้นทุน {{ drink.menu_Price }} ฿ </h5>
+                        <h5 class="card-title">ต้นทุน {{ drink.menu_Price }} ฿ </h5>
                     </div>
 
                     <div class="text-center mt-2">
@@ -40,7 +40,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">แก้ไขข้อมูล [ {{ selectedDrink.menu_Name}}]</h5>
+          <h5 class="modal-title">แก้ไขข้อมูล {{ selectedDrink.menu_Name}}</h5>
         </div>
         <div class="modal-body">
           <div class="form-group">
@@ -48,7 +48,7 @@
             <input class="form-control" [(ngModel)]="selectedDrink.menu_Name" type="text" />
           </div>
           <div class="mb-3">
-            <label for="editPrice" class="form-label">ราคา</label>
+            <label for="editPrice" class="form-label">ต้นทุน</label>
             <input type="number" class="form-control" [(ngModel)]="selectedDrink.menu_Price" id="editPrice" >
         </div>
         </div>

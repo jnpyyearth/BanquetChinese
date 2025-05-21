@@ -56,7 +56,6 @@ export class MaindishCardComponent implements OnInit{
 
     if (event.target.checked) {
       if (currentCount>= maxMenuSelection) {
-
         event.target.checked = false;
         Swal.fire({
           title: `packageที่ ${table_ID} เลือกจานหลักได้ไม่เกิน ${maxMenuSelection} เมนู`,

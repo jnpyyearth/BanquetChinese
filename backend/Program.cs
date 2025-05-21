@@ -21,7 +21,7 @@ builder.Services.AddCors(options =>
                .AllowAnyMethod()
                .AllowAnyHeader();
     });
-});
+}); //ให้ Angular App เข้าถึง API
 
 builder.Services.AddControllers();
 

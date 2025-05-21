@@ -75,7 +75,6 @@
                             <div class="card-text">
                                 <strong>วันที่สั่ง:</strong> {{ order.orderdate | date: 'shortDate' }} <br>
                                 <strong>วันจัดงาน:</strong> {{ order.eventdate | date: 'shortDate' }} <br>
-                                <strong>ราคาทั้งหมด:</strong> {{ order.totalPrice }} บาท <br>
                                 <strong>สถานะการชำระเงิน:</strong>
                                 <span class="badge text-white" [ngClass]="{'bg-success': order.payment_Status === 'paid', 
                                                   'bg-danger': order.payment_Status === 'pending'}">
@@ -94,7 +93,6 @@
                                     <th>ลำดับ</th>
                                     <th>ชื่อเมนู</th>
                                     <th>ประเภท</th>
-                                    <th>ราคา</th>
                                     <th>รูปภาพ</th>
                                 </tr>
                             </thead>
@@ -103,7 +101,6 @@
                                     <td>{{ i + 1 }}</td>
                                     <td>{{ menu.menu_Name }}</td>
                                     <td>{{ menu.menu_Type }}</td>
-                                    <td>{{ menu.menu_Price }} บาท</td>
                                     <td>
                                         <img *ngIf="menu.menu_Picturename"
                                             [src]="'http://localhost:5014/api' + menu.menu_Picturename" alt="Menu Image"

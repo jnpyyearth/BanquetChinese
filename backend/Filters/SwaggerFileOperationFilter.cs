@@ -10,7 +10,7 @@ public class SwaggerFileOperationFilter : IOperationFilter
     {
         var fileParams = context.ApiDescription.ParameterDescriptions
             .Where(p => p.Type == typeof(IFormFile) || p.Type == typeof(IFormFileCollection))
-            .ToList();
+            .ToList(); //อัปโหลดไฟล์ใน Swagger โดยใช้ IFormFile
 
         if (fileParams.Any())
         {

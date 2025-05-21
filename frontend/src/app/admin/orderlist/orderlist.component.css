@@ -13,7 +13,7 @@
     text-align: center;
     /* Centering and shifting */
     position: absolute;
-    margin-top: 500px;
+    margin-top: 600px;
     left: 59%;
     transform: translate(-50%, -50%);
 }

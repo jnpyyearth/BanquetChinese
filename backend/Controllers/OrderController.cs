@@ -51,7 +51,7 @@ public class OrderController : ControllerBase
                     Contact_Name = orderRequest.Contact_Name,
                     TotalPrice = TotalPrice,
                     phone = orderRequest.phone,
-
+                    Payment_Status ="paid"
                 };
                 _context.Order.Add(order);
                 await _context.SaveChangesAsync();

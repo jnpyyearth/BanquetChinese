@@ -14,11 +14,14 @@ namespace backnet.Controllers
         }
         [HttpGet("getMainDish")]
         public async Task<IActionResult> GetMainDish(){
-            try{
+            try{ //ดึงข้อมูลจากตาราง Menu ที่ Menu_Type เป็น maindish
                 var maindish = await _context.Menu.Where(maindish=>maindish.Menu_Type =="maindish").ToListAsync();
+                //tolistasync คือดึงรายการทั้งหมด
+
                 if(maindish ==null||!maindish.Any()){
                     return NotFound(new{Message="Not found"});
                 }
+                //ถ้าไม่เจอ ให้ return 404
                 return Ok(new{Message ="got maindish",Data =maindish});
             }catch (Exception ex){
                 return StatusCode(500,new{Mesasge="error while fecthing data",Error =ex.Message});

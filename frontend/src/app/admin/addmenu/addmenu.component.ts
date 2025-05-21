@@ -31,7 +31,7 @@ export class AddmenuComponent {
     this.selectedFile =event.target.files[0];
   }
   onSubmit(){
-    if(!this.addmenuForm.valid){
+    if(!this.addmenuForm.invalid){
       Swal.fire("โปรดกรอกข้อมูลให้ครบถ้วน");
       // alert('invalid form');
       return;
